@@ -1,0 +1,29 @@
+packages:
+  - dplyr
+  - tidyr
+  - purrr
+  - readr
+  - fs
+  - targets
+  - tarchetypes
+  - broom
+  - stringr
+  - readxl
+  - arrow
+  - envTargets
+  - envClean
+  - envFunc
+  - janitor
+  - scales
+  - COINr
+  - ymlthis
+  - yaml
+
+database:
+  - traitdata
+  - rredlist
+  - galah
+  - ritis
+  - taxize
+  - taxadb
+  

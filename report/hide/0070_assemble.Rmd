@@ -1,0 +1,26 @@
+# APPENDIX {-}
+
+## Taxonomy overrides
+
+```{r taxonomy-overrides}
+
+envClean::taxonomy_overrides |> 
+  dplyr::select(original_name, 
+                taxa = paste0('use_', settings$context$grain$taxonomic)
+                ) |> 
+  knitr::kable(caption = "Manual overrides stored in the `envClean` package.")
+
+```
+
+## Act overrides
+
+```{r act-overrides}
+
+rio::import("H:/data/taxonomy/act_overrides.rds") |> 
+  dplyr::select(original_name, 
+                taxa = paste0('use_', settings$context$grain$taxonomic),
+                note) |> 
+  knitr::kable(caption = "Manual overrides saved by the `envStatus` project to deal with unmatched names that appear in threatened species legislation.")
+
+```
+

@@ -1,0 +1,98 @@
+---
+title: "Using composite indicators for species risk assessment"
+subtitle: "A pilot study on bird species in USG and BP areas"
+author:
+- Department for Environment and Water
+
+output:
+  bookdown::word_document2:
+    toc: no
+    toc_depth: 3
+    fig_caption: yes
+    reference_docx: "Styles.docx"
+
+link-citations: yes
+always_allow_html: yes
+
+csl: "bib_style.csl"
+
+bibliography:
+  - "dew_refs.bib"
+  - "packages.bib"
+
+---
+
+```{r tars, echo = FALSE, warning = FALSE, error = FALSE, message = FALSE}
+
+library(targets)
+
+# these tars only work inside a knit (otherwise use _targets.yaml directly)
+tars <- yaml::read_yaml(here::here("_targets.yaml")) |>
+  purrr::modify_tree(leaf = \(x) gsub("\\.\\.\\/\\.\\.", "../../..", x))
+
+```
+
+```{r setup, echo = FALSE, warning = FALSE, error = FALSE, message = FALSE}
+
+# # load targets -------
+tar_load_everything(store = tars$report_prep$store)
+tar_load_everything(store = tars$envBird$database$store)
+tar_load_everything(store = tars$envBird$birdcoin$store)
+tar_load_everything(store = tars$birdraster$store)
+
+#--------knitr options--------
+
+knitr::opts_chunk$set(echo = FALSE
+                      , warning = FALSE
+                      , error = FALSE
+                      , message = FALSE
+                      , tidy = TRUE
+                      , tidy.opts = list(comment = FALSE)
+                      , eval.after = "fig.cap" 
+                      , output_dir = here::here("report")
+                      , progress = FALSE
+                      # , dpi = 150
+                      # , fig.width = 6.5
+)
+
+#--------book options-------
+
+options(knitr.kable.NA = ""
+        , knitr.duplicate.label = "allow"
+)
+
+# --- tmap options ---
+
+# view/plot mode
+#depending on output format
+is_html_output <-  function() {
+  knitr::opts_knit$get("rmarkdown.pandoc.to")=="html"
+}
+
+if(is_html_output()) {
+  use_tmap_mode <- "view"
+} else {
+  use_tmap_mode <- "plot"
+  knitr::opts_chunk$set(fig.width = 6.5)
+}
+
+##or set manually
+if(FALSE){use_tmap_mode <- "plot"}
+
+tmap::tmap_mode(use_tmap_mode)
+
+#suppress progress bars
+terra::terraOptions(progress=0)
+
+```
+
+# Aim {-}
+
+The goal of the species risk assessment is to develop a composite indicator of species vulnerability to development pressures, and to translate this into a spatially explicit three-tier zoning map. This map classifies areas as: (1) low risk to biodiversity values and generally suitable for development, (2) moderate risk requiring careful planning and mitigation, and (3) high risk and not suitable for development.
+
+By integrating intrinsic species sensitivity with external pressures (including current, past, and projected impacts), the assessment identifies species most at risk and quantifies the level of pressure they face. This enables the evaluation of both existing and future development impacts.
+
+The resulting spatial outputs are designed to support timely, evidence-based decision-making, guide development planning, and facilitate stakeholder discussions. The framework is flexible and can be adapted to specific development contexts, allowing risks to be reassessed as mitigation measures are incorporated.
+
+
+

@@ -1,0 +1,15 @@
+### `bio_fbd`: Filter by distribution {#fbd}
+
+Erroneous or vagrant records are filtered by comparing records to known distributions for taxa where distributions are available, using the `filter_by_distribution` function from `envDistribution` `r cite_package("envDistribution")`. These distributions are sourced from:
+
+a)  [Environment Protection and Biodiversity Conservation (EPBC) Act listings](https://fed.dcceew.gov.au/datasets/9d313bb078b9421ebebc835b3a69c470/about)
+b)  the Expert distributions layer for some South Australian taxa in EGIS (internal DEW dataset)
+c)  [Birds SA vetted distributions](https://birdssa.asn.au/distribution-maps/)
+d)  IUCN Red List maps - directly from the [IUCN Red List](https://www.iucnredlist.org/resources/spatial-data-download) for non-avian taxa; and [BirdLife International](https://datazone.birdlife.org/species/requestdis) for avian taxa
+e)  SA Seed Conservation Centre IBRA subregion lookup - distribution polygons were created from the relevent IBRA subregions per taxa.
+
+For cases where taxa had a distribution in more than one source (e.g. EPBC and Red List), distribution sources are ranked such that the most authoritative or fine-scaled are used over broader or less authoritative sources (i.e. EPBC \> Expert \> Birds SA \> Red List).
+
+Records were filtered if they were \> `r settings_clean$fbd_dist_km` km from the relevant known distribution to allow for uncertainty around the edges of distributions. This buffer is not used for EPBC distributions, as these already include an uncertain 'may occur' category that covers areas around known ranges.
+
+Some taxa are known to have outdated or otherwise inaccurate distribution data; these are skipped by manually specifying them in the envCleaned settings.

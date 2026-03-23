@@ -1,0 +1,28 @@
+# Introduction
+
+## Trait-based species risk assessment
+
+1. traits were used to do meta-analysis across large amount of species to get general trends
+2. risk assessment using trait data: A trait-based framework for assessing the vulnerability of marine species to human impacts (Butt2022)
+3. meta-analysis using traits on birds
+
+
+## Environmental impact of renewable energy
+
+1. compared to fossil fuel the impact is lower
+2. however, there is still significant impact of renewable energy farm that needs to be mitigate, otherwise it's not as "sustainable" as it advertises
+3. Impact identified: CSIRO causal network and IUCN renewable energy planning.
+
+## Renewable energy in South Australia
+
+1. the 100% renewable energy goal
+2. introduce the pilot areas
+3. the impact of solar and wind farms in the arid zone
+
+## Combining species risk assessment with species distribution models
+
+At the current stage of bioregional planning, biodiversity is represented using the sum of a species distribution model (SDM) prediction stack, where species presence and absence are expressed as binary values (1 and 0). This approach enables biodiversity value to be mapped by visualising the number of concerned species predicted to occur within each spatial unit (e.g., pixel). In this context, concerned species include those that are nationally or state-listed, may be listed in the future, or have a high level of regional contribution (e.g., >30% of their distribution occurring within South Australia).
+
+A key next step is the development of a consequence map, which moves beyond species presence to explicitly represent the risks faced by species under development pressures. Trait-based risk assessment is used to quantify the potential impacts of proposed activities on affected species. These quantified composite indicator is then integrated with SDMs to spatially represent risk, with the highest value across species summarised for each spatial unit. The resulting consequence map is classified using defined thresholds to delineate development zones, which are intended to guide decisions on the siting of proposed developments and land uses. In addition, the assessment can identify species-specific risks, enabling targeted avoidance measures and the design of appropriate mitigation strategies to be addressed within development applications.
+
+In this report, the Upper Spencer Gulf and Braemar Province are used as pilot study areas, with renewable energy developments (wind and solar farms) as the focal development types. A total of 143 concerned bird species predicted to occur in these two pilot areas were utilised to develop the framework, as bird data is relatively rich for analysis. These case studies are used to design, implement, and demonstrate the proposed risk assessment framework and workflow.

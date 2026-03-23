@@ -1,0 +1,4 @@
+# Outliers
+
+While the cleaning process attempts to remove erroneous or unreliable records in a number of ways, some such records may remain. These are flagged as possible outliers in the final process in envCleaned. Outliers are **not removed** from the data. Instead, a separate data frame `outlier_flags` is created, associating various outlier scores with each unique taxa, cell_lat, and cell_long. Records can then be removed by downstream projects, if desired, by further filtering of `clean_end` to maximum values of the flags (for example, species distribution models may be especially sensitive to outliers, so the envSDMs project does this step).
+

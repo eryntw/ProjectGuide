@@ -1,0 +1,5 @@
+#### Geographic range
+
+Records were filtered by removing records that did not fall in a raster cell from the [spatial bin][Spatial bin] step and therefore had no cell ID. This effectively acted to filter out non-terrestrial records by removing all records more than 500 m from the Australian coast (i.e. the extent of the binning raster).
+
+`r paste0(clean_text$text[i], " ", clean_text$context_text[i])`

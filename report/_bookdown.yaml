@@ -1,0 +1,7 @@
+delete_merged_file: yes
+edit: https =//github.com/dew-landscapes/RiskMap/edit/master/%s
+rmd_files:
+- index.Rmd
+- 0010_test.Rmd
+output_dir: ../../../../dev/out/RiskMap/_targets/report/compiled_report
+repo: https://github.com/eryntw/RiskMap.git
