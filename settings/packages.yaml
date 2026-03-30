@@ -3,23 +3,35 @@ packages:
   - tidyr
   - purrr
   - readr
-  - fs
   - targets
   - tarchetypes
   - broom
   - stringr
+  - stringi
+  - usethis
+  - here
   - readxl
   - arrow
-  - envTargets
-  - envClean
-  - envFunc
   - janitor
   - scales
   - COINr
   - ymlthis
   - yaml
-
-database:
+  - knitr
+  - kableExtra
+  
+  ## env
+  - envTargets
+  - envClean
+  - envFunc
+  - envReport
+  - envRaster
+  
+  ## Spatial
+  - terra
+  - fs
+  
+  ## Databse
   - traitdata
   - rredlist
   - galah

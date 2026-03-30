@@ -1,4 +1,4 @@
-# Methods
+# General Methods
 
 ## Trait and indicator selection
 
@@ -34,7 +34,7 @@ This approach allows the inclusion of important ecological and life-history trai
 **Limitations:**
 Manual coding can be time-intensive and may introduce subjectivity, particularly when translating qualitative descriptions into quantitative scores. Consistency in interpretation and documentation is therefore critical.
 
-### Theoretical framework for composite indicator construction
+## Theoretical framework
 
 Designing the framework for constructing a composite indicator is a critical step, as it provides the theoretical foundation for selecting, structuring, and combining variables. This ensures that the resulting indicator appropriately captures and represents the complex, multidimensional phenomenon of interest [@OECD2008].
 
@@ -42,45 +42,27 @@ The first step is to clearly define the composite indicator—*species vulnerabi
 
 The definition of vulnerability can vary depending on the context and objectives of the assessment. More commonly, vulnerability frameworks incorporate three dimensions—sensitivity, adaptive capacity, and exposure—to provide a comprehensive assessment of species risk [@Foden2019; @Butt2022; @Hyman2025]. However, the dimensions can be customised depending on the aims and context of the assessment. For example, vulnerability has been defined as a function of sensitivity (the degree to which a species is affected by a stressor) and adaptive capacity (its ability to adapt to or recover from that stressor) when assessing human impacts on a broad range of marine species [@Butt2022].
 
-In this pilot study, species vulnerability is defined as a function of three core, interacting dimensions: Sensitivity (the intrinsic degree to which a species is affected by pressures), Exposure (the likelihood of encountering future stressors), and Cumulative Pressure (the influence of past and current impacts on population status). Due to limited availability of adaptability-related data, and its conceptual overlap with sensitivity [REF], adaptive capacity is incorporated within the sensitivity dimension.
+In this pilot study, species vulnerability is defined as a function of three core, interacting dimensions: Sensitivity (the intrinsic degree to which a species is affected by pressures), Exposure (the likelihood of encountering future stressors), and Cumulative Pressure (the influence of past and current impacts on population status). Due to limited availability of adaptability-related data, and its conceptual overlap with sensitivity, adaptive capacity is incorporated within the sensitivity dimension [@Hyman2025].
 
-The inclusion of cumulative pressure provides important context by accounting for species that may not be intrinsically sensitive but are already under significant pressure due to ongoing or historical human activities and land-use conflicts. Where spatial data are available, current and anticipated development pressures beyond the study area can also be incorporated within this dimension to better reflect the overall risk profile of each species. [CITE IUCN]
+The inclusion of cumulative pressure provides important context by accounting for species that may not be intrinsically sensitive but are already under significant pressure due to ongoing or historical human activities and land-use conflicts. Where spatial data are available, current and anticipated development pressures beyond the study area can also be incorporated within this dimension to better reflect the overall risk profile of each species [@Bennun2021].
 
 These dimensions provide a comprehensive and context-appropriate representation of species vulnerability, supporting the identification and spatial management of risks associated with future development and land-use planning.
 
 ### Steps of compressing information
 
-The three dimensions of the index—sensitivity, exposure, and cumulative pressure—form the primary sub-indices of species vulnerability. Each of these dimensions is further structured into thematic sub-groups (Level 2), which ensures transparency and ecological relevance in the classification of underlying traits and indicators (Level 1) (\@ref(FrameworkDiagram)).
+The vulnerability index represents the highest level of the composite indicator (Level 4) and is supported by three sub-indices (Level 3) corresponding to the core dimensions of vulnerability: sensitivity, exposure, and cumulative pressure. Each of these dimensions is further structured into thematic sub-groups (Level 2), ensuring transparency and ecological relevance in the classification and organisation of the underlying traits and indicators (Level 1)(\@ref(framework_diagram)).
 
-Each thematic sub-group comprises one or more traits or indicators. Where multiple variables are included within a sub-group, they are aggregated to produce a single representative measure of that theme. These thematic sub-groups are then further aggregated to construct the three primary sub-indices (Level 3), forming the basis for the overall vulnerability indicator (\@ref(FrameworkDiagram)).
+```{r framework_diagram, echo=FALSE, fig.cap = "Overview of the vulnerability assessment framework, showing the aggregation of species traits into a composite index and its application in generating vulnerability and zoning maps."}
 
-This hierarchical structure allows the composite indicator to be traced back to its underlying components, enabling analysis of its internal structure at each level. From a framework design perspective, it is also highly flexible, as traits and indicators can be readily added to or removed from thematic sub-groups. This supports ongoing refinement, allowing the relevance and contribution of each component to be transparently evaluated and updated over time.
-
-<!-- The current index structure is shown in \@ref(index_structure) where Vulnerability is the Level 4 index, composing three sub-indices, sensitivity, exposure, cumulated pressure. The definition of thematic sub-groups are explained as below: -->
-
-
-By integrating stable biological traits, current population trends, and dynamic future development pressures, the framework provides a comprehensive assessment of risk designed to support decision-makers and initiate meaningful stakeholder discussion. This systematic workflow ensures that species with high sensitivity or bearing the most pressure are identified through an analytically sound and reproducible process.
-
-Species vulnerability is constructed by integrating intrinsic species properties (sensitivity), historical and current context (cumulated pressure), and projected encounters with future stressors (exposure) following the steps below:
-
-1. **Defining Thematic Sub-groups**: Specific biological traits and indicators (Level 1) are assigned to subgroups (Level 2) based on their ecological relevancy, such as climate, habitat, and diet specialisation, or specific development-related threats like collision risk and habitat fragmentation.
-
-2. **Dimensional Aggregation**: These thematic subgroups are aggregated into the three primary sub-indices (Level 3) that represent the core dimensions of the framework: Sensitivity (intrinsic degree affected by pressure), Cumulated Pressure (past and current impacts), and Exposure (estimate of future encounter with stressors).
-
-3. **Constructing Composite Indicator**: The three sub-indices are further aggregated to produce a single composite vulnerability score (Level 4) for each species.
-
-4. **Mapping Vulnerability**: The species-specific vulnerability scores are spatially projected by overlaying them onto each species’ distribution model. These layers are then stacked, and for each spatial unit (pixel), the maximum vulnerability value across all species is extracted to represent the highest level of biodiversity risk at that location.
-
-5. **Three tier zoning**: The maximum vulnerability values are classified into three risk-based zones using defined thresholds: (1) low risk to biodiversity values and generally suitable for development, (2) moderate risk requiring careful planning and mitigation, and (3) high risk and not suitable for development.
-
-Condensing complex information into a single value inevitably results in loss of details. However, if this limitation is acknowledged and the underlying data are presented alongside the aggregated values, the composite indicator can effectively summarise the data and reveal overall trends and patterns [@JointResearchCentre2008].
-
-```{r FrameworkDiagram, echo=FALSE, fig.cap = "Overview of the vulnerability assessment framework, showing the aggregation of species traits into a composite index and its application in generating vulnerability and zoning maps."}
-
-knitr::include_graphics("images/riskmap_framework.png")
+knitr::include_graphics("report/images/riskmap_framework.png")
 
 ```
-```{r index_structure, echo=FALSE, fig.cap = }
+
+Each thematic sub-group comprises one or more traits or indicators as variables. These variables were treated with log transformation where necessary and normalised using min-max approach [@OECD2008; @Becker2025]. Where multiple variables are included within a sub-group, the one with the highest score was chosen to represent the highest risk/limiting factor for that theme. These thematic sub-groups are then further aggregated using arithmetic mean to construct the three primary sub-indices (Level 3), which form the basis for the vulnerability index (\@ref(index_structure)).
+
+This hierarchical structure (\@ref(index_structure)) allows the composite indicator to be traced back to its underlying components, enabling analysis of its internal structure at each level. From a framework design perspective, it is also highly flexible, as traits and indicators can be readily added to or removed from thematic sub-groups. This supports ongoing refinement, allowing the relevance and contribution of each component to be transparently evaluated and updated over time.
+
+```{r index_structure, echo=FALSE, fig.cap = "Structure of the composite indicator used to construct species vulnerability. The overall index (Level 4: Vulnerability) is composed of three sub-indices at Level 3: Sensitivity, Exposure, and Cumulative Pressure, each representing a distinct dimension of vulnerability. Each Level 3 sub-index is further composed of multiple thematic sub-groups (Level 2), which group related traits and indicators that measure specific aspects of that dimension."}
 
 library(DiagrammeR)
 
@@ -145,27 +127,32 @@ digraph risk_index {
 
 ```
 
-### Traits and Indicators
+### Mapping vulnerability
 
-### Thematic subgroups and Composite indicators
+The species-specific vulnerability scores are spatially projected by overlaying them onto each species’ distribution model. These layers are then stacked, and for each spatial unit (pixel), the maximum vulnerability value across all species is extracted to represent the highest level of biodiversity risk at that location.
+
+The maximum vulnerability values are classified into three risk-based zones using defined thresholds: (1) low risk to biodiversity values and generally suitable for development, (2) moderate risk requiring careful planning and mitigation, and (3) high risk and not suitable for development.
+
+Condensing complex information into a single value inevitably results in loss of details. However, if this limitation is acknowledged and the underlying data are presented alongside the aggregated values, the composite indicator can effectively summarise the data and reveal overall trends and patterns [@OCED2008].
+
+The framework integrates stable biological traits, current population trends, and dynamic future development pressures to provide a comprehensive assessment of risk. In addition to supporting timely and evidence-based decision-making, the composite indicator is designed to facilitate meaningful stakeholder engagement. This systematic and reproducible approach ensures that species with high intrinsic sensitivity or those subject to the greatest pressures are consistently identified in an analytically sound approach.
+
+```{r, echo=FALSE}
+library(envReport)
+```
+
+#### Term definitions {#definitions} {-}
+
+Term definitions refers to the specific glossaries that are used to define specific words used in this report.
+
+-   **index** are spatial locations. They may be defined by latitude and longitude, raster cell ID and/or some other geographical area. These are likely to be duplicated before exclusive application of context.
+-   **sub-index** are sites plus a temporal location (time stamp), such as date or year.
+-   **sub-groups** are visits plus any taxa observation(s).
+-   **indicator** refers to some form of biological entity 
+-   **trait** refers to some form of biological entity 
 
 
-#### Context {#context}
-
-Context refers to the attributes of the data that are used to define unique records, and is defined by site, visit, record and taxa. The definition and precision of these can change throughout the cleaning process, according to the use of binning. For example, at the start of the cleaning process, the 'site' context is usually defined by exact latitude and longitude, and 'visit' by a specific date. Later in the cleaning process, data is binned and these contexts could be defined by cell IDs (or cell coordinates) and year, respectively.
-
--   **sites** are spatial locations. They may be defined by latitude and longitude, raster cell ID and/or some other geographical area. These are likely to be duplicated before exclusive application of context.
-    -   earlier in the data cleaning process these are defined by latitude and longitude
-    -   later in the data cleaning process these are defined by raster grid cells of resolution `r settings$context$grain$res_x` metres
--   **visits** are sites plus a temporal location (time stamp), such as date or year.
-    -   earlier in the data cleaning process these are defined by date
-    -   later in the data cleaning process these are defined by year only
--   **records** are visits plus any taxa observation(s).
--   **taxa** refers to some form of biological entity (here `r settings$context$grain$taxonomic`, but may refer to some other classification level like family or class).
-    -   earlier in the cleaning process these are taxonomic names as they are recorded in the raw data
-    -   later in the cleaning process taxa names are defined by aligned taxonomy
-
-### Scripting
+#### Reproducibility {-}
 
 All analyses were conducted in a scripted workflow using the statistical computing environment ['R'](https://www.r-project.org/) `r cite_package("base")`. R is free and open-source software, commonly used by researchers from a range of fields for analyses and graphics. It can be extended by a range of open-source packages designed for specific analyses or other tasks, built by a large and active development community. The packages used in this project are listed in Appendix Table \@ref(tab:packages). R was used within the [R-studio](https://www.rstudio.com/) IDE (integrated development environment), which provides a range of user-friendly features to facilitate interaction with R such as a graphical user interface, project organisation, and integration with [git](https://git-scm.com/) and other version control systems.
 
@@ -175,26 +162,7 @@ The production of this report is part of this scripted and `targets`-wrapped wor
 
 In addition to existing packages, several purpose-built packages were created to facilitate this workflow:
 
--   `r bib2df::bib2df("packages.bib") %>% dplyr::filter(grepl("^R-env", BIBTEXKEY)) %>% dplyr::select(BIBTEXKEY,TITLE) %>% dplyr::pull(TITLE) %>% paste0(collapse = "\n* ")`
+-   `r bib2df::bib2df("report/packages.bib") %>% dplyr::filter(grepl("^R-env", BIBTEXKEY)) %>% dplyr::select(BIBTEXKEY,TITLE) %>% dplyr::pull(TITLE) %>% paste0(collapse = "\n* ")`
 
-All code is stored in a version control system (GitHub) at `r repo_link` (repository is currently private, so link will probably not work).
+All code is stored in a version control system (GitHub) at [https://github.com/dew-landscapes](https://github.com/dew-landscapes).
 
-```{r packages}
-
-knitr::kable(tibble::tibble(package = sort(unique(yaml::read_yaml("../settings/packages.yaml")$packages))) |>
-               dplyr::mutate(citation = purrr::map_chr(package
-                                                       , envReport::cite_package
-                                                       , brack = FALSE
-                                                       )
-                             ) |>
-               dplyr::left_join(tibble::as_tibble(sessioninfo::session_info(include_base = TRUE)$packages)) |>
-               dplyr::select(package, citation, loadedversion, date, source)
-             , caption = paste0("R "
-                                , envReport::cite_package("base")
-                                , " packages used in the production of this report"
-                                )
-             , format = "html"
-             ) |>
-  kableExtra::kable_styling("striped")
-
-```

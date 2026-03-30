@@ -1,0 +1,35 @@
+# References {-}
+
+<div id="all_refs"></div>
+
+# R packages {-}
+
+```{r packages}
+
+pkg_info <- purrr::map_dfr(pkgs, function(pkg) {
+  
+  # Package description
+  desc <- tryCatch(utils::packageDescription(pkg), error = function(e) NULL)
+  source <- if (!is.null(desc) && !is.null(desc$RemoteType)) {
+    if (desc$RemoteType == "github") {
+      paste0("GitHub (", desc$RemoteUsername, "/", desc$RemoteRepo, ")")
+    } else {
+      desc$RemoteType
+    }
+  } else {
+    desc$Repository
+  }
+  
+  tibble::tibble(
+    Package = pkg,
+    LoadedVersion = desc$Version %||% NA_character_,
+    Date = as.Date(sub(";.*", "", desc$Packaged)),
+    Source = paste(source,sub(";.*", "", desc$Built))
+  )
+})
+
+kableExtra::kbl(pkg_info, 
+                caption = "Packages information") %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "bordered"), full_width = FALSE)
+
+```

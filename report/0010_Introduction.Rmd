@@ -1,28 +1,104 @@
 # Introduction
 
-## Trait-based species risk assessment
+## Background
 
-1. traits were used to do meta-analysis across large amount of species to get general trends
-2. risk assessment using trait data: A trait-based framework for assessing the vulnerability of marine species to human impacts (Butt2022)
-3. meta-analysis using traits on birds
+### Renewable energy transition in South Australia
+
+South Australia is a global leader in the renewable energy transition, having increased the share of net renewable electricity generation from approximately 1% to 74% over just 16 years [@DEW2024]. The state has set ambitious targets, including achieving 100% net renewable electricity generation by 2027 and net zero emissions by 2050, supported by a legislated interim goal of reducing net greenhouse gas emissions by at least 60% by 2030.
+
+This transition is underpinned by abundant wind and solar resources. As of 2021–22, 24 operational wind farms supplied more than 44% of the state’s electricity, while six large-scale solar farms, together with world-leading uptake of rooftop solar (installed on approximately 40% of homes), contributed over 24% [@DEW2024; @DCCEEW2025].
+
+To facilitate further expansion, the state has identified key regions as pilot areas for renewable energy development in the semi-arid zone of South Australia, including the Upper Spencer Gulf (in the Gawler Ranges) and the Braemar region (\@ref(pilotarea_map)).
+
+*LINK TO THE DESCRIPTIONS OF THESE TWO AOI!!!*
+
+```{r pilotarea_map, echo=FALSE, fig.cap = "Location of the two pilot areas used in the species risk assessment framework: Upper Spencer Gulf/Gawler Ranges (400–500 km northwest of Adelaide) and Braemar Province (300–400 km northeast of Adelaide). Both are situated in the semi-arid zone of South Australia. Map produced by the GIS team, DEW (2025)."}
+
+knitr::include_graphics("report/images/SA_PilotBioregionalAreas_Map_July2025_Rev.jpg")
+
+```
+
+### Ecological impacts of wind and solar energy developments
+
+While renewable energy developments generally have substantially lower environmental impacts than fossil fuel–based energy production [@McCombie2016], poorly sited wind and solar projects can still cause significant ecological threats. In particular, inappropriate siting may lead to habitat loss and degradation in already threatened ecological communities, as well as indirect impacts such as increased human access to previously remote areas [@Bennun2021]. Habitat loss and fragmentation are primarily driven by vegetation clearing and the construction of associated infrastructure, including access roads and transmission lines. These disturbances can also facilitate the spread of invasive species and alter fire regimes by transforming vegetation structure [@Brooks2004; @Wilcox2012]. For example, through the conversion of native woodlands and shrublands into more flammable grass-dominated systems [@Wilcox2012]. In addition to habitat-level impacts, wind and solar facilities can directly affect fauna. Wind turbines pose collision risks to flying species, particularly large soaring birds and bats. Solar panels also attract flying fauna by mimicking water bodies (the “lake effect”), increasing the likelihood of collision with infrastructure [@Bennun2021; @Smallwood2022]. Additional risks associated with certain solar technologies include electrocution, burns from concentrated solar flux, and drowning in evaporation ponds [@Kagan2014; @Jeal2019; @Bennun2021].
+
+### Development activities and associated impacts to the semi-arid ecosystems
+
+#### Ecosystem context
+
+The Upper Spencer Gulf region is dominated by chenopod and samphire shrublands and Acacia shrublands, interspersed with patches of Acacia woodland, Casuarina woodland, and Eucalyptus mallee forest and woodland mosaics ([envMap](http://spatialwebapps.environment.sa.gov.au/envmaps/?locale=en-us&viewer=envmaps#)). These semi-arid ecosystems are inherently fragile, with ecological processes strongly constrained by highly variable rainfall in space, time, and intensity. Vegetation regeneration is episodic and typically dependent on prolonged rainfall events, resulting in slow recovery following disturbance [@Lambers2018].
+
+These shrublands are also largely fire-sensitive, and even moderate alterations to fire regimes can substantially affect their composition, distribution, and extent [@Lambers2018]. Disturbances associated with wind and solar energy developments—including vegetation clearing, infrastructure construction, and ongoing site maintenance—have the potential to disrupt these finely balanced processess.
+
+Despite this vulnerability, systematic biodiversity monitoring in chenopod and Acacia shrublands remains extremely limited, with most existing programs focused on the impacts of pastoral production rather than baseline ecosystem dynamics [@Recio2014]. Consequently, the ecological effects of large-scale vegetation removal and landscape modification in these systems remain poorly understood but are likely to result in long-term and irreversible changes.
+
+---
+
+#### Native vegetation removal and ecosystem transformation
+
+Permanent vegetation removal disrupts the ecological functions of semi-arid shrublands by preventing natural regeneration and reducing habitat availability for species reliant on shrubland structure. Wind and solar developments often remove or suppress woody and deep-rooted perennial species, which are critical for ecosystem stability. Their reduction favors short-lived annual plants, simplifying vegetation structure, altering community composition, and increasing fire susceptibility [@Facelli2002; @Weedon2008].
+
+**Carbon storage**
+
+Desert and semi-desert ecosystems cover ~22% of Earth’s land surface and store ~8% of global terrestrial carbon [@Meyer2011]. Most carbon in shrublands is stable soil organic carbon (SOC), with extensive belowground biomass contributing to slow turnover and long-term storage. Loss of woody and perennial vegetation reduces carbon sequestration capacity, shifting these systems toward more transient, less stable carbon pools. Desert shrublands function as net carbon sinks, whereas grasslands may act as net carbon sources under certain conditions [@Taylor2017].
+
+**Invasive grasses and altered fire regimes**
+
+Disturbance and vegetation clearing facilitate exotic grass invasion [@Wilcox2012]. Grass-dominated systems create continuous, highly flammable fuel layers, promoting more frequent and intense fires. This feedback loop favors fire-tolerant invasive grasses over native, fire-sensitive shrubs, driving ecosystem transformation and native plant loss [@Brooks2004; @Wilcox2012].
+
+Wind and solar developments accelerate these dynamics through soil disturbance, vegetation clearing, and ongoing maintenance, while localised temperature increases from solar infrastructure may further elevate fire risk [@Snchez-Zapata2016]. Buffel grass (*Cenchrus ciliaris*) exemplifies these impacts in Australia, outcompeting native species for water and nutrients, increasing fire frequency, and reducing regeneration capacity of native flora [@Smyth2009; @McDonald2011; @Schlesinger2013]. Invasive grasses thus represent a key mechanism linking human disturbance to long-term ecosystem degradation in semi-arid landscapes.
+
+**Soil degradation and wind erosion**
+
+Vegetation cover in semi-arid systems stabilizes soils and limits wind-driven erosion. Loss of cover from development or maintenance activities increases susceptibility to horizontal sediment transport and dust emissions. Once ground cover falls below ~75%, dust flux rises sharply, with complete vegetation removal potentially increasing vertical dust flux up to twelvefold (~12 g m⁻² day⁻¹) during windy periods [@Li2007]. Wind and solar development activities can therefore substantially exacerbate soil erosion and land degradation [@Meyer2011; @Duniway2019].
+
+---
+
+#### Additional pressure
+
+**Roads and infrastructure**
+
+Road construction and maintenance directly remove vegetation and create edges that increase exposure to invasive species, disease transmission, and ecological traps, as these transitional zones are often preferred by generalist and invasive species [@Ewers2006]. Physical barriers such as fences and culverts restrict animal movement, while open roads can deter or fragment populations. Road networks have been linked to significant population declines, including 22.6% in birds and 97.9% in mammals [@Torres2016]. Vehicle collisions alone are estimated to remove over 10% of kangaroo and koala populations, and more than 25% of quolls and Tasmanian devils, with demographic impacts exacerbated by sex- and age-biased mortality in carnivorous mammals [@Moore2023]. Species with limited dispersal, sedentary habits, specialised habitats, or restricted distributions are particularly vulnerable to isolation and local extinction [@May1996].
+
+Roads also facilitate the spread of invasive species. For example, invasive foxes use roads as dispersal corridors [@May1996; @Burrows2018], while vehicle tyres and human activity transport invasive plant seeds [@Burrows2018; @Friedel2020]. In semi-arid landscapes, roads increase exotic plant richness and cover, while reducing native species diversity in adjacent habitats [@Gelbard2003]. By creating disturbed environments that favour weeds, road networks act as long-term drivers of ecosystem transformation. Effective planning and maintenance must explicitly account for these risks to minimise cumulative ecological impacts.
+
+**Livestock grazing**
+
+Grazing beneath and around solar infrastructure, often promoted as agrivoltaics [@CleanEnergyCouncil2021], can exacerbate disturbance in semi-arid ecosystems. Livestock grazing is a well-documented driver of vegetation and soil degradation in Australia, with slow recovery in low-productivity, relatively intact ecosystems [@Lunt2007]. In mulga and other semi-arid shrublands, grazing reduces herbaceous cover and biodiversity, lowers water infiltration, and diminishes soil moisture retention [@Witt2011]. Biological soil crusts, which stabilise soils and retain moisture, are particularly vulnerable to trampling and damage, impacting a range of species including threatened fauna [@Belnap2001].
+
+Grazing also promotes weed invasion through seed dispersal, selective removal of palatable native species, soil disturbance, and crust breakdown [@Belsky2000; @Gelbard2003]. Exotic annual plants, more tolerant of grazing and fire, often outcompete native perennials for limited water, while sustained grazing can lead to long-term declines in native shrub and woodland species [@Dorrough2004]. Even low-intensity grazing may therefore conflict with the conservation of sensitive native plant communities in semi-arid landscapes.
+
+### Bioregional planning for renewable energy development
+
+Bioregional planning is a critical strategic initiative designed to facilitate better, faster decision-making by establishing clear conservation priorities and identifying areas where these development can proceed with minimal environmental harm [@West2025]. It is essential for ensuring that the rapid expansion of renewable energy required for net-zero targets does not result in an unacceptable cost to nature, specifically by identifying high-risk areas early to address cumulative impacts that individual project assessments might miss. The framework prioritises siting wind and solar farms on previously modified or degraded landscapes, including agricultural lands, brownfields, and disused industrial sites, while avoiding fragile arid ecosystems and terrain features that concentrate bird or bat movements, such as ridges and important migratory routes. Ultimately, this proactive approach provides greater certainty for stakeholders and developers by streamlining approvals in low-risk areas and fostering outcomes where sustainable energy production and biodiversity restoration can coexist.
 
 
-## Environmental impact of renewable energy
+## Species Risk Assessment
 
-1. compared to fossil fuel the impact is lower
-2. however, there is still significant impact of renewable energy farm that needs to be mitigate, otherwise it's not as "sustainable" as it advertises
-3. Impact identified: CSIRO causal network and IUCN renewable energy planning.
-
-## Renewable energy in South Australia
-
-1. the 100% renewable energy goal
-2. introduce the pilot areas
-3. the impact of solar and wind farms in the arid zone
-
-## Combining species risk assessment with species distribution models
+### Integration with species distribution models
 
 At the current stage of bioregional planning, biodiversity is represented using the sum of a species distribution model (SDM) prediction stack, where species presence and absence are expressed as binary values (1 and 0). This approach enables biodiversity value to be mapped by visualising the number of concerned species predicted to occur within each spatial unit (e.g., pixel). In this context, concerned species include those that are nationally or state-listed, may be listed in the future, or have a high level of regional contribution (e.g., >30% of their distribution occurring within South Australia).
 
 A key next step is the development of a consequence map, which moves beyond species presence to explicitly represent the risks faced by species under development pressures. Trait-based risk assessment is used to quantify the potential impacts of proposed activities on affected species. These quantified composite indicator is then integrated with SDMs to spatially represent risk, with the highest value across species summarised for each spatial unit. The resulting consequence map is classified using defined thresholds to delineate development zones, which are intended to guide decisions on the siting of proposed developments and land uses. In addition, the assessment can identify species-specific risks, enabling targeted avoidance measures and the design of appropriate mitigation strategies to be addressed within development applications.
 
+### Trait-based approaches
+
+Species traits are the measurable biological characteristics of organisms, including morphology, physiology, behaviour, and phenology, that shape their ecological performance and reveal the complex processes driving extinction risk [@Gallagher2021]. The large-scale integration of this information allows researchers to conduct meta-analyses across vast numbers of species to identify general trends in how biodiversity responds to human pressures. For instance, trait-based models have been successfully used to predict species sensitivity to habitat fragmentation [@Keinath2017], assess vulnerability to invasive predators such as feral cats [@Woinarski2017], and model responses to fire disturbances [@Pocknee2023].
+
+The rapid expansion of international and national trait databases has been critical to these efforts. Key resources include EltonTraits for the foraging attributes of birds and mammals [@Hamish2014], TRY for global plant traits [@Kattge2020], and AusTraits for the Australian flora [@Falster2021], alongside many others curated through the [Open Traits Network](https://opentraits.org/).
+
+Incorporating trait data into species risk assessments provides several important advantages. First, it enables more transparent and mechanistic evaluation of how different species respond to specific threats by explicitly considering intrinsic characteristics, rather than relying solely on conservation status. Traditional assessments often focus on metrics such as population size or extent of occurrence, which do not fully capture a species’ vulnerability to particular stressors. In contrast, trait-based approaches allow risk to be decomposed into key components, including sensitivity (the degree to which a species is affected by a stressor) and adaptive capacity (its ability to persist, adapt, or recover) [@Pacifici2015; @Butt2022].
+
+Second, trait-based frameworks support predictive assessments by enabling the estimation of species-specific responses prior to the implementation of new developments or emerging threats. This is particularly valuable in data-limited contexts, where empirical impact data are unavailable. Increasingly, such approaches are being applied at broad taxonomic scales; for example, global analyses have used trait data to assess the vulnerability of tens of thousands of marine species to multiple stressors [@Butt2022], and to predict species’ susceptibility to climate change [@Pacifici2015].
+
+$$
+
+
+$$
+
+By explicitly linking biological traits to threat responses, trait-based risk assessments provide a more nuanced and generalisable framework for evaluating biodiversity impacts. This approach supports a shift from reactive to proactive conservation planning, enabling more informed decision-making in the context of rapid environmental change.
+
+### Scope of this report {-}
+
 In this report, the Upper Spencer Gulf and Braemar Province are used as pilot study areas, with renewable energy developments (wind and solar farms) as the focal development types. A total of 143 concerned bird species predicted to occur in these two pilot areas were utilised to develop the framework, as bird data is relatively rich for analysis. These case studies are used to design, implement, and demonstrate the proposed risk assessment framework and workflow.
+

@@ -5,7 +5,8 @@ author:
 - Department for Environment and Water
 
 output:
-  bookdown::word_document2:
+  bookdown::html_document2:
+    number_sections: true
     toc: no
     toc_depth: 3
     fig_caption: yes
@@ -17,8 +18,7 @@ always_allow_html: yes
 csl: "bib_style.csl"
 
 bibliography:
-  - "dew_refs.bib"
-  - "packages.bib"
+  - "all_refs.bib"
 
 ---
 

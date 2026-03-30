@@ -2,7 +2,8 @@ library(targets)
 library(geotargets)
 library(tarchetypes)
 library(crew)
-
+library(dplyr)
+tar_source()
 
 # tars -------
 tars <- yaml::read_yaml("_targets.yaml")
@@ -10,11 +11,34 @@ tars <- yaml::read_yaml("_targets.yaml")
 # from other scripts ---------
 
 # targets --------
-list(
+tar_plan(
   
   ### repo link -------
   tar_target(repo_link, 
              gsub("\\.git$", "", usethis::git_remotes()$origin)
+  ),
+  
+  ### reference bib ------
+  tarchetypes::tar_file_read(dew_reference, 
+                             fs::path("common/dew_refs.bib"),
+                             RefManageR::ReadBib(!!.x, check = "error")
+  ),
+  
+  tarchetypes::tar_file_read(reference, 
+                             fs::path("common/refs.bib"),
+                             RefManageR::ReadBib(!!.x, check = "error")
+  ),
+  
+  ### packages bib -------
+  pkg_bib = make_pkg_bib(),
+  
+  ## merge bibs -------
+  tar_target(
+    all_bib,
+    reference %>% 
+      merge(dew_reference, "all") %>% 
+      merge(pkg_bib, "all") %>% 
+      RefManageR::WriteBib(file = "report/all_refs.bib")
   ),
   
   ### bib style --------
@@ -23,30 +47,13 @@ list(
                             paths = here::here("report", "bib_style.csl")
   ),
   
-  ### reference ------
-  tarchetypes::tar_file_read(dew_reference, 
-                             fs::path("common/dew_refs.bib"),
-                             fs::file_copy(!!.x,
-                                           here::here("report", "dew_refs.bib"),
-                                           overwrite = TRUE)
-  ),
-  
-  ### reference ------
+  ### render style ------
   tarchetypes::tar_file_read(style_docx, 
                              fs::path("common/Styles.docx"),
                              fs::file_copy(!!.x,
                                            here::here("report", "Styles.docx"),
                                            overwrite = TRUE)
   ),
-  
-  ### packages bib -------
-  tarchetypes::tar_file_read(packages_bib,
-                             here::here("settings", "packages.yaml"),
-                             knitr::write_bib(c(yaml::read_yaml(!!.x)$packages),
-                                              file = here::here("report", "packages.bib"),
-                                              tweak = TRUE)
-  ),
-  
   ## yamls --------
   tar_target(bookdown_yaml,
              envTargets::prepare_bookdown_yaml(),
