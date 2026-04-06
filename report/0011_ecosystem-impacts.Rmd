@@ -1,0 +1,62 @@
+## Ecosystem Impacts
+
+### The semi-arid ecosystem of SA
+
+*THIS NEEDS TO BE MORE SPECIFIC*
+
+The Upper Spencer Gulf and Braemar Province are dominated by chenopod and samphire shrublands and Acacia shrublands, interspersed with patches of Acacia woodland, Casuarina woodland, and Eucalyptus mallee forest mosaics ([envMap](http://spatialwebapps.environment.sa.gov.au/envmaps/?locale=en-us&viewer=envmaps#)). 
+
+These semi-arid ecosystems are inherently fragile, with ecological processes strongly constrained by highly variable rainfall in space, time, and intensity. Vegetation regeneration is episodic and typically dependent on prolonged rainfall events, resulting in slow recovery following disturbance.
+
+These shrublands are also largely **fire-sensitive** [@Lambers2018], and even moderate alterations to fire regimes can substantially affect their composition, distribution, and extent. Disturbances associated with wind and solar energy developments—including vegetation clearing, infrastructure construction, and ongoing site maintenance—have the potential to disrupt these finely balanced processes.
+
+Despite this vulnerability, systematic biodiversity monitoring in chenopod and Acacia shrublands remains extremely limited, with most existing programs focused on the impacts of pastoral production rather than baseline ecosystem dynamics [@Recio2014]. Consequently, the ecological effects of large-scale vegetation removal and landscape modification in these systems remain poorly understood but are likely to result in long-term, and potentially irreversible, changes.
+
+*R CHILD*
+
+---
+
+### Ecological impacts of wind and solar energy developments
+
+### Native vegetation removal and ecosystem transformation {-}
+
+Biodiversity in desert shrublands is broadly comparable to that of grasslands, with these systems providing similar ecological functions and services, albeit with lower capacity for flood mitigation and livestock production [@Turney2011]. However, permanent vegetation removal disrupts these functions by preventing the regeneration of native plants within their natural habitats, leading to **habitat loss** for species that depend on shrubland structure and resources.
+
+Vegetation clearing and ongoing site maintenance associated with wind and solar energy developments often involve the removal or suppression of woody and deep-rooted perennial species. In semi-arid environments, these species play a critical role in maintaining ecosystem stability. Their reduction tends to favour short-lived annual plants, resulting in shifts in community composition, simplified vegetation structure, and altered **fire regimes** [@Facelli2002; @Weedon2008]. Such transformations can have cascading effects on ecosystem processes and services.
+
+#### Carbon storage {-}
+
+Desert and semi-desert ecosystems cover approximately 22% of the Earth’s land surface and store around 8% of global terrestrial carbon [@Meyer2011]. A key feature of these systems is the dominance of stable soil organic carbon (SOC), which accounts for approximately 95% of total carbon storage in shrublands [@Meyer2011]. Unlike grasslands—where most root biomass is concentrated in the upper soil layers—desert shrublands allocate a substantial proportion of biomass belowground, contributing to slow carbon turnover and long-term carbon storage. Consequently, the loss of woody and perennial vegetation can reduce carbon sequestration capacity and shift these systems toward more transient, less stable carbon pools. Empirical estimates reflect this contrast, with desert woodlands and shrublands functioning as net carbon sinks, whereas desert grasslands may act as net carbon sources under certain conditions [@Taylor2017].
+
+#### Invasive grasses and altered fire regimes {-}
+
+Evidence from arid ecosystems, including the Great Basin cold deserts, indicates that disturbance and vegetation clearing can facilitate the **invasion of exotic grasses** [@Wilcox2012]. The replacement of native shrublands with grass-dominated systems substantially alters **fire regimes**, as invasive grasses typically form continuous, highly flammable fuel layers that increase fuel loads and connectivity. This shift promotes more frequent and intense fires, initiating a positive feedback loop in which fire-tolerant invasive grasses are favoured over native, fire-sensitive shrub species [@Brooks2004; @Wilcox2012]. Over time, this process can drive irreversible ecosystem transformation and the loss of native plant communities.
+
+Disturbances associated with wind and solar energy developments—such as vegetation clearing, soil disturbance, and ongoing maintenance—can accelerate these dynamics by creating conditions favourable for invasive species establishment. In addition, localised increases in temperature associated with some solar infrastructure may further exacerbate fire risk in already dry environments [@Snchez-Zapata2016].
+
+In Australia, buffel grass (*Cenchrus ciliaris*) exemplifies these processes. Widely introduced as a pasture species, buffel grass has spread extensively across arid and semi-arid regions, where it can alter biodiversity and community composition even at low levels of cover [@Smyth2009]. It outcompetes native species for limited water and nutrients and significantly increases **fire frequency and intensity** [@McDonald2011]. These changes lead to declines in woody vegetation and reduced regeneration capacity of native flora, with persistence increasingly restricted to species capable of rapid post-fire recruitment [@Schlesinger2013]. In this way, invasive grasses act as a key mechanism linking disturbance to long-term ecosystem degradation in semi-arid landscapes.
+
+#### Soil degradation and wind erosion {-}
+
+Wind is a key abiotic driver of ecosystem dynamics in arid and semi-arid environments. As a result, wind erosion is one of the principal processes underlying **land degradation** in drylands and represents a major concern for land managers and policymakers worldwide [@Meyer2011; @Duniway2019]. The stability of these systems is highly dependent on vegetation cover, which protects soil surfaces and reduces aeolian transport.
+
+Experimental studies demonstrate a strong, non-linear relationship between vegetation loss and both horizontal sediment transport and dust emissions. When ground cover loss exceeds approximately 75%, dust flux increases sharply, and complete vegetation removal can elevate vertical dust flux by up to twelvefold (reaching ~12 g m⁻² day⁻¹) during windy periods [@Li2007]. Disturbances associated with wind and solar energy developments—including vegetation clearing, construction activities, and ongoing maintenance—can therefore substantially increase susceptibility to erosion.
+
+Additional disturbances such as fire and livestock grazing can further amplify these effects, increasing horizontal aeolian flux by up to an order of magnitude, and in some cases as much as fortyfold [@Duniway2019]. The resulting soil loss not only degrades site productivity but can also have broader environmental consequences, including reduced air quality and the redistribution of nutrients across the landscape.
+
+### Additional pressure
+
+#### Grazing {-}
+
+The use of livestock grazing to manage vegetation beneath and around solar infrastructure is increasingly promoted in agricultural systems as *agrivoltaics*. However, its application in semi-arid environments raises significant ecological concerns. Grazing by domestic livestock is widely recognised as a major driver of **ecosystem degradation** in Australia, with long-lasting impacts on both vegetation structure and soil processes [@Lunt2007]. These impacts are often most pronounced in relatively intact ecosystems on low-productivity soils, where recovery from disturbance is slow.
+
+In semi-arid mulga systems, increased grazing pressure has been shown to significantly reduce herbaceous cover and biodiversity compared to ungrazed areas, while also decreasing water infiltration and soil moisture retention [@Witt2011]. Grazing can also damage biological soil crusts, which play a critical role in stabilising soils, retaining moisture, and providing habitat for a range of organisms, including threatened species [@Belnap2001].
+
+At the community scale, livestock grazing is also a major driver of **weed invasion** in arid landscapes [@Belsky2000]. Livestock facilitate invasion through multiple pathways, including seed dispersal, selective removal of palatable native species, soil disturbance, and the breakdown of protective soil crusts. These processes favour the establishment of exotic annual species, which are typically more tolerant of grazing and fire and can outcompete native vegetation for limited water resources [@Gelbard2003]. While annual species may proliferate under grazing, **native perennial species often decline**, particularly under sustained grazing pressure [@Dorrough2004]. Consequently, even low levels of grazing may be incompatible with the conservation of some native plant communities.
+
+
+#### Roads and infrastructure {-}
+
+Road construction and maintenance directly remove vegetation and create edges that increase exposure to invasive species, disease transmission, and ecological traps, as these transitional zones are often preferred by generalist and invasive species [@Ewers2006]. Physical barriers such as fences and culverts restrict animal movement, while open roads can deter or fragment populations. Road networks have been linked to significant population declines, including 22.6% in birds and 97.9% in mammals [@Torres2016]. Vehicle collisions alone are estimated to remove over 10% of kangaroo and koala populations, and more than 25% of quolls and Tasmanian devils, with demographic impacts exacerbated by sex- and age-biased mortality in carnivorous mammals [@Moore2023]. Species with limited dispersal, sedentary habits, specialised habitats, or restricted distributions are particularly vulnerable to isolation and local extinction [@May1996].
+
+Roads also facilitate the spread of invasive species. For example, invasive foxes use roads as dispersal corridors [@May1996; @Burrows2018], while vehicle tyres and human activity transport invasive plant seeds [@Burrows2018; @Friedel2020]. In semi-arid landscapes, roads increase exotic plant richness and cover, while reducing native species diversity in adjacent habitats [@Gelbard2003]. By creating disturbed environments that favour weeds, road networks act as long-term drivers of ecosystem transformation. Effective planning and maintenance must explicitly account for these risks to minimise cumulative ecological impacts.

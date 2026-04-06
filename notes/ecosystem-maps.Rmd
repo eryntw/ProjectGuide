@@ -1,0 +1,59 @@
+
+```{r croprasters, echo=FALSE, cache=TRUE}
+
+library(terra)
+library(dplyr)
+
+## Read Rasters ------
+
+dir = "H:/dev/eryn/RecExtract/SpatialData"
+
+# 1. MVG
+mvg <- terra::rast(fs::path(dir, 
+                            "NVIS_AusVegetationGroup_v7", 
+                            "NVIS_V7_0_AUST_RASTERS_EXT_ALL",
+                            "NVIS_V7_0_AUST_EXT.gdb")) %>% 
+  terra::subset("NVIS7_0_AUST_EXT_MVG_ALB")
+
+# 2. SA_VEG_ID
+saveg <- terra::rast(fs::path(dir, "VEG_SAVegetation_shp", "sa_veg_FirstDominant.tif"))
+
+# 3. SA VEG CONDITION
+vegcon <- terra::rast(fs::path(dir, "VEG_SAVegetation_shp", "sa_veg_condition.tif"))
+
+# 4. Temperature max/min TXX TXI & Precipitation max/min PTX PTI
+
+clim_stack <- list.files(
+  fs::path(dir, "Climatology1976-2005_adj_9s"),
+  pattern = "^(TXX|TXI|PTX|PTI)\\.flt$",
+  recursive = TRUE,
+  full.names = TRUE
+) %>% 
+  terra::rast()
+
+r_list <- list(mvg, saveg, vegcon, as.list(clim_stack)) %>% 
+  unlist(recursive = TRUE, use.names = FALSE)
+
+# Read vectors and crop ------
+
+ft <- sfarrow::st_read_parquet("H:/data/vector/pia.parquet") %>% 
+  terra::vect()
+
+# function to process one raster
+
+process_raster <- function(v, r, out_crs = "+init=EPSG:4326", res = 0.001) {
+  v_rast_crs <- terra::project(v, terra::crs(r))
+  r_crop <- terra::crop(r, v_rast_crs)
+  r_mask <- terra::mask(r_crop, v_rast_crs)
+  r_out <- terra::project(r_mask, out_crs, res = res)
+  return(r_out)
+}
+
+# USG
+usg_ls <- lapply(r_list, function(r) process_raster(ft[1], r, out_crs = "EPSG:4326", res = 0.001))
+usg_plots <- lapply(usg_ls, plot_raster_summary)
+
+# BP
+bp_ls <- lapply(r_list, function(r) process_raster(ft[2], r, out_crs = "EPSG:4326", res = 0.001))
+bp_plots <- lapply(bp_ls, plot_raster_summary)
+```

@@ -1,10 +1,6 @@
-# References {-}
+## R packages
 
-<div id="all_refs"></div>
-
-# R packages {-}
-
-```{r packages}
+```{r packages, echo=FALSE, message=FALSE}
 
 pkg_info <- purrr::map_dfr(pkgs, function(pkg) {
   
@@ -28,8 +24,8 @@ pkg_info <- purrr::map_dfr(pkgs, function(pkg) {
   )
 })
 
-kableExtra::kbl(pkg_info, 
-                caption = "Packages information") %>%
+kableExtra::kbl(pkg_info %>% arrange(Package), 
+                caption = "List of packages used in this analysis and report.") %>%
   kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "bordered"), full_width = FALSE)
 
 ```

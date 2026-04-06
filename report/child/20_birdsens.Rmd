@@ -1,0 +1,67 @@
+
+### Avian
+
+#### Candidate trait/indicator table {-}
+
+```{r candidates, echo=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(stringr)
+
+candi <- readxl::read_excel(fs::path(here::here(), "..", "TraitsMeta",
+                                     "SensitivityTraits.xlsx"),
+                            sheet = "BirdVariableSelection")
+
+candi %>%
+  mutate(
+    Lv2_Indicator = tidyr::replace_na(Lv2_Indicator, ""),
+    Source = str_wrap(Source, 20),
+    Calculation = str_wrap(Calculation, 25)
+  ) %>%
+  kbl(
+    caption = "Summary of candidate trait-based indicators used to assess the intrinsic sensitivity. The table outlines each variable, its data source, measurement type, spatial coverage, and calculation method, along with the expected direction of association with risk and whether the relationship has been empirically supported."
+  ) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 12
+  ) %>%
+  collapse_rows(columns = 1, valign = "top") ## merge the Lv 2 indicator col
+
+```
+
+Here’s a polished and more professional revision of your **Scoring system** section:
+
+---
+
+#### Scoring system
+
+Numeric variables, such as extent of occurrence and generation length, were log-transformed to reduce skew and improve comparability across species. Proportional variables were summarised using both Shannon and Simpson diversity indices. While these indices are highly correlated (cor = 0.97), the Simpson index was preferred because it emphasizes evenness, is bounded between 0 and 1, and is more robust to small outlying proportions. Accordingly, all proportional traits are reported using the Simpson index.
+
+Categorical variables were scored based on the ecological criteria summarised in Table X below. This scoring ensures that trait values are translated into a consistent numeric scale suitable for integration into composite indicators.
+
+```{r scoretable, echo=FALSE}
+
+score <- readxl::read_excel(fs::path(here::here(), "..", "TraitsMeta",
+                                     "SensitivityTraits.xlsx"),
+                            sheet = "BirdScore")
+
+score %>%
+  mutate(
+    SubIndex = tidyr::replace_na(SubIndex, ""),
+    Trait = str_wrap(Trait, 20),
+    Value = str_wrap(Value, 25)
+  ) %>%
+  kbl(
+    caption = "Summary of traits, definitions, and scoring criteria for the sensitivity sub-index. Numeric traits are transformed or scaled as indicated; categorical and binary traits are assigned scores according to ecological criteria.",
+    escape = TRUE
+  ) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 12
+  ) %>%
+  collapse_rows(columns = 1, valign = "top")
+
+```

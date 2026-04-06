@@ -1,0 +1,34 @@
+
+```{r, echo = FALSE, fig.height = 10}
+
+library(ggplot2)
+library(dplyr)
+library(targets)
+
+# coverage
+df <- df
+coverage <- data.frame(
+  column = names(df),
+  percent = colSums(
+    df != "" &
+    df != " " &
+    df != "NA" &
+    !is.na(df)
+  ) / nrow(df),
+  stringsAsFactors = FALSE
+)
+
+# summary
+summary_vals <- summary(coverage$percent)
+
+# barplot
+coverage %>%
+  arrange(percent) %>%
+  mutate(column = factor(column, levels = column)) %>%
+  ggplot(aes(x = percent, y = column)) +
+  geom_col() +
+  labs(x = "Coverage", y = "Trait", title = "Data coverage of each trait") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 8))
+
+```

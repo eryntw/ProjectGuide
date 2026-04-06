@@ -2,6 +2,15 @@ delete_merged_file: yes
 edit: https =//github.com/dew-landscapes/RiskMap/edit/master/%s
 rmd_files:
 - index.Rmd
-- 0010_test.Rmd
+- 0010_Introduction.Rmd
+- 0011_ecosystem-impacts.Rmd
+- 0012_species-risks.Rmd
+- 0020_Methods.Rmd
+- 0021_sensitivity-framework.Rmd
+- 0022_exposure-framework.Rmd
+- 0040_References.Rmd
+- 0050_Appendices.Rmd
+- 0051_bird-database.Rmd
+- 0052_r-packages.Rmd
 output_dir: ../../../../dev/out/RiskMap/_targets/report/compiled_report
 repo: https://github.com/eryntw/RiskMap.git

@@ -30,7 +30,11 @@ tar_plan(
   ),
   
   ### packages bib -------
-  pkg_bib = make_pkg_bib(),
+  pkgs = unique(renv::dependencies()$Package),
+  tar_target(pkg_bib,
+             {knitr::write_bib(pkgs, file = "common/pkgs.bib")
+               RefManageR::ReadBib("common/pkgs.bib", check = "error")}
+  ),
   
   ## merge bibs -------
   tar_target(

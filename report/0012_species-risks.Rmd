@@ -1,0 +1,44 @@
+## Species Risk Assessment
+
+### Integration with species distribution models
+
+At the current stage of bioregional planning, biodiversity is represented using the sum of a species distribution model (SDM) prediction stack, where species presence and absence are expressed as binary values (1 and 0). This approach enables biodiversity value to be mapped by visualising the number of concerned species predicted to occur within each spatial unit (e.g., pixel). In this context, concerned species include those that are nationally or state-listed, may be listed in the future, or have a high level of regional contribution (e.g., >30% of their distribution occurring within South Australia).
+
+A key next step is the development of a consequence map, which moves beyond species presence to explicitly represent the risks faced by species under development pressures. Trait-based risk assessment is used to quantify the potential impacts of proposed activities on affected species. These quantified composite indicator is then integrated with SDMs to spatially represent risk, with the highest value across species summarised for each spatial unit. The resulting consequence map is classified using defined thresholds to delineate development zones, which are intended to guide decisions on the siting of proposed developments and land uses. In addition, the assessment can identify species-specific risks, enabling targeted avoidance measures and the design of appropriate mitigation strategies to be addressed within development applications.
+
+### Trait-based approaches
+
+Species traits are the measurable biological characteristics of organisms, including morphology, physiology, behaviour, and phenology, that shape their ecological performance and reveal the complex processes driving extinction risk [@Gallagher2021]. The large-scale integration of this information allows researchers to conduct meta-analyses across vast numbers of species to identify general trends in how biodiversity responds to human pressures. For instance, trait-based models have been successfully used to predict species sensitivity to habitat fragmentation [@Keinath2017], assess vulnerability to invasive predators such as feral cats [@Woinarski2017], and model responses to fire disturbances [@Pocknee2023].
+
+The rapid expansion of international and national trait databases has been critical to these efforts. Key resources include EltonTraits for the foraging attributes of birds and mammals [@Hamish2014], TRY for global plant traits [@Kattge2020], and AusTraits for the Australian flora [@Falster2021], alongside many others curated through the [Open Traits Network](https://opentraits.org/).
+
+Incorporating trait data into species risk assessments provides several important advantages. First, it enables more transparent and mechanistic evaluation of how different species respond to specific threats by explicitly considering intrinsic characteristics, rather than relying solely on conservation status. Traditional assessments often focus on metrics such as population size or extent of occurrence, which do not fully capture a species’ vulnerability to particular stressors. In contrast, trait-based approaches allow risk to be decomposed into key components, including sensitivity (the degree to which a species is affected by a stressor) and adaptive capacity (its ability to persist, adapt, or recover) [@Pacifici2015; @Butt2022].
+
+Second, trait-based frameworks support predictive assessments by enabling the estimation of species-specific responses prior to the implementation of new developments or emerging threats. This is particularly valuable in data-limited contexts, where empirical impact data are unavailable [@Galic2024]. Increasingly, such approaches are being applied at broad taxonomic scales; for example, global analyses have used trait data to assess the vulnerability of tens of thousands of marine species to multiple stressors [@Butt2022], and to predict species’ susceptibility to climate change [@Pacifici2015].
+
+By explicitly linking biological traits to threat responses, trait-based risk assessments provide a more nuanced and generalisable framework for evaluating biodiversity impacts. This approach supports a shift from reactive to proactive conservation planning, enabling more informed decision-making in the context of rapid environmental change.
+
+### Limitations
+
+Trait-based data are powerful tools for large-scale analyses and predictive modeling, but several limitations should be acknowledged when interpreting results:
+
+1. **Simplification of organisms**
+
+Traits are simplified, quantifiable representations of an organism’s characteristics. By focusing on measurable attributes across species, some information is inevitably lost, and only certain aspects of an organism are emphasised. Consequently, traits cannot fully capture the complexity of a species.
+
+2. **Subjectivity in scoring systems**
+
+To incorporate traits into a composite indicator framework, scoring systems are required. These systems are often tailored to the specific analysis and research questions, introducing subjectivity. Traits combined with scoring systems function like a model: while scoring involves judgment, transparency in methodology allows for proper interpretation and reproducibility.
+
+3. **Knowledge gaps and data limitations**
+
+Trait information relies on existing knowledge of a species. For poorly studied species, trait data may be incomplete or of limited use. If imputation is applied to fill gaps, it must be transparent, reproducible, and interpreted with caution to avoid overconfidence in the results.
+
+4. **Lack of population and demographic information**
+
+Trait data do not capture population size or demographic dynamics. However, these data are essential for species risk assessment and are sourced separately from spatial datasets such as IUCN, BirdLife Data Zone, or published studies.
+
+### Scope of this report
+
+In this report, the Upper Spencer Gulf and Braemar Province are used as pilot study areas, with renewable energy developments (wind and solar farms) as the focal development types. A total of 143 concerned bird species predicted to occur in these two pilot areas were utilised to develop the framework, as bird data is relatively rich for analysis. These case studies are used to design, implement, and demonstrate the proposed risk assessment framework and workflow.
+

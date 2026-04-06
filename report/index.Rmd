@@ -1,25 +1,19 @@
 ---
-title: "Using composite indicators for species risk assessment"
-subtitle: "A pilot study on bird species in USG and BP areas"
+title: "Developing composite indicators for species risk assessment"
+subtitle: "A pilot study of avian risk in Gawler Range and Braemar"
 author:
 - Department for Environment and Water
-
 output:
-  bookdown::html_document2:
-    number_sections: true
-    toc: no
+  bookdown::gitbook:
+    split_bib: false
     toc_depth: 3
-    fig_caption: yes
+    fig_caption: true
     reference_docx: "Styles.docx"
-
 link-citations: yes
 always_allow_html: yes
-
 csl: "bib_style.csl"
-
 bibliography:
-  - "all_refs.bib"
-
+- "all_refs.bib"
 ---
 
 ```{r tars, echo = FALSE, warning = FALSE, error = FALSE, message = FALSE}
@@ -52,7 +46,7 @@ knitr::opts_chunk$set(echo = FALSE
                       , output_dir = here::here("report")
                       , progress = FALSE
                       # , dpi = 150
-                      # , fig.width = 6.5
+                      , fig.width = 6.5
 )
 
 #--------book options-------
