@@ -1,9 +1,152 @@
 # Exposure
 
-Definition: the rate, magnitude, or intensity of environmental change, stressors, or human-driven disturbances that an individual, species, or population experiences
+**Definition:** Exposure is defined as the rate, magnitude, or intensity of environmental change, stressors, or human-driven disturbances experienced by a species or population.
 
-# Manually filling the blank
+---
 
-Although overall trait coverage is high, some fields remain incomplete. In these cases, additional information from the BirdLife DataZone—where coverage is often more comprehensive—was used to manually fill missing values. Only those cells absent from the basic trait table were supplemented, and the updated values were then rejoined to the main dataset.
+## Identification of Exposure Pathways
 
-Automated approaches such as machine-learning–based imputation (e.g., [TDIP, Trait Data Imputation with Phylogeny](https://github.com/Matgend/TDIP?tab=readme-ov-file)) can also be used. However, caution is required: imputed values may sometimes be biologically unrealistic, and relying on them without scrutiny can bias downstream indices.
+The broad impacts of renewable energy developments on semi-arid ecosystems in Australia are outlined in the Introduction-[Ecosystem Impacts](#ecosystemimpacts).
+
+This exposure analysis focuses on species-level responses to key stressors associated with renewable energy infrastructure, including photovoltaic (PV) solar farms, concentrated solar power (CSP) facilities, and onshore wind farms. A comprehensive overview of these impact pathways is provided in *IUCN—Mitigating biodiversity impacts associated with solar and wind energy development: guidelines for project developers* [@Bennun2021].
+
+### Impact Pathway Diagram
+
+The impacts associated with the project footprint can be visualised using an impact pathway diagram (IPD). Grounded in conceptual modelling approaches, an IPD provides a systematic visual framework for integrating diverse sources of scientific evidence and illustrating how stressors originating from project activities propagate through the environment to affect ecological receptors [@IESC2024].
+
+```{r ipd, echo=FALSE, results='asis'}
+
+ipd <- knitr::knit_child("child/20_exposure-ipd.Rmd", quiet = TRUE)
+cat(ipd, sep = '\n')
+
+```
+
+Drawing on the above framework, the following stressors were identified and synthesised for inclusion in the analysis.
+
+---
+
+## The Stressors
+
+To ensure the index remains both ecologically meaningful and analytically tractable, only a subset of exposure pathways was included, based on their ecological significance, data availability, and relevance to species-level risk.
+
+Global evidence identifies habitat loss, invasive species, and exploitation as the primary drivers of recent extinctions across 615 species [@Saban2025]. While invasive species contribute the largest proportion of extinctions globally (38.0%), habitat loss is the dominant driver in mainland systems (51.1%), with invasive species (16.5%) and exploitation (15.5%) playing secondary roles.
+
+Within the scope of this assessment, exploitation is not considered a relevant pressure, as none of the focal species are subject to harvesting. Pollution, although recognised as an additional driver of biodiversity loss, contributes relatively little to extinction risk (5.1% globally; 11.4% for mainland extinctions) and is therefore not prioritised here.
+
+Accordingly, the index focuses on the two most influential and context-relevant pressures: habitat loss and invasive species. These pressures form the basis of the thematic subgroups included in the exposure analysis.
+
+Below section outlines literature review and justification for each selected stressor.
+
+---
+
+```{r habitatloss, echo=FALSE, results='asis'}
+knitr::knit_child("child/20_exposure-habitatloss.Rmd", quiet = TRUE) %>% 
+  cat(sep = '\n')
+```
+
+---
+
+```{r invasive, echo=FALSE, results='asis'}
+knitr::knit_child("child/20_exposure-invasive.Rmd", quiet = TRUE) %>% 
+  cat(sep = '\n')
+```
+
+---
+
+```{r fragmentation, echo=FALSE, results='asis'}
+knitr::knit_child("child/20_exposure-fragmentation.Rmd", quiet = TRUE) %>% 
+  cat(sep = '\n')
+```
+
+---
+
+```{r fire, echo=FALSE, results='asis'}
+knitr::knit_child("child/20_exposure-fire.Rmd", quiet = TRUE) %>% 
+  cat(sep = '\n')
+```
+
+---
+
+```{r collision, echo=FALSE, results='asis'}
+knitr::knit_child("child/20_exposure-collision.Rmd", quiet = TRUE) %>% 
+  cat(sep = '\n')
+```
+
+---
+
+## Trait–Stressor Matrix
+
+In contrast to sensitivity, which reflects intrinsic properties of a species, exposure can be assessed across species using a common scoring framework. This enables comparative analysis with all species evaluated within a unified structure. Such an approach has been applied in [@Butt2022], where approximately 44,000 marine species were assessed for exposure and sensitivity across 22 anthropogenic stressors (see Fig. 1 in [@Butt2022] for the methodological framework). While that framework integrates both expert elicitation and literature review, this study relies solely on evidence derived from the literature.
+
+The analysis is based on the construction of two matrices:
+
+1. **Trait–species matrix**
+Rows represent traits and columns represent species. Each cell contains the value of a given trait for a species, which may be binary (e.g., presence/absence) or continuous.
+
+2. **Trait–stressor matrix**
+Rows represent traits and columns represent stressors (or thematic sub-groups). Each cell contains a score representing the relevance or influence of a given trait under a specific stressor.
+
+These matrices are combined through matrix multiplication to derive species-level exposure scores for each stressor. The resulting values can then be summed or aggregated to produce an overall exposure score per species per stressor.
+
+Where trait data are unavailable for a species, or where a trait is not applicable to a given stressor, values are treated as missing (NA) and excluded from the calculation.
+
+```{r buttfig1, echo=FALSE, fig.cap="The trait–stressor matrix framework used for exposure–sensitivity analysis, reproduced from Fig. 1 in Butt et al. (2022)."}
+
+knitr::include_graphics("images/butt2022_fig1_adapted.png")
+
+```
+
+---
+
+## Thematic Sub-groups
+
+The identified stressors were consolidated into a set of thematic sub-groups for the trait–stressor matrix analysis. These sub-groups represent distinct and ecologically meaningful impact pathways:
+
+1. Habitat loss
+2. Invasive predators (cats)
+3. Invasive herbivores (rabbits and goats)
+4. Increased fire frequency
+5. Collision (solar panels)
+6. Collision (wind turbines)
+
+These thematic sub-groups were derived from the literature review of individual stressors and the impact pathway diagram (IPD). They provide a flexible framework that can be refined as new information becomes available, allowing for the modification, addition, or removal of sub-groups as needed. Importantly, each sub-group can also serve as a basis for targeted mitigation strategies if needed.
+
+```{r expmatrix, echo=FALSE}
+
+m <- readxl::read_excel(fs::path(here::here(), "..", "TraitsMeta",
+                                     "ExposureTraits.xlsx"),
+                            sheet = "StressorTraitMapping")
+
+m %>%
+  mutate(
+    Trait = str_wrap(Trait, 20),
+    birdcol_original = str_wrap(birdcol_original, 20),
+    birdcol_new = str_wrap(birdcol_new, 20),
+  ) %>%
+  kbl(
+    caption = "Trait–stressor matrix linking traits and variables to the identified stressors (thematic sub-groups) across plant and animal species. Trait categories are scored, and non-applicable entries are treated as NA."
+  ) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 12
+  ) %>% 
+  scroll_box(height = "500px")
+
+```
+
+## Potential Stressors Not Included
+
+### Habitat degradation
+
+Habitat degradation encompasses a range of indirect effects that alter environmental conditions, in addition to altered fire regime and habitat fragmentation:
+
+* **Hydrological change:** Alterations to water availability, with largely unknown species-level responses
+
+* **Microclimate change:** Localised changes in temperature, shading, and humidity, which are difficult to quantify directly
+
+* **Pollution:** Potential impacts from dust, chemicals, and other contaminants
+
+* **Ecosystem services:** Broad system-level changes that are complex and difficult to attribute at the species level
+
+Nevertheless, these processes are challenging to quantify explicitly and are partially captured through the sensitivity component of the framework.

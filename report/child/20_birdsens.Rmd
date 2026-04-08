@@ -1,5 +1,5 @@
 
-### Avian
+### Bird
 
 #### Candidate trait/indicator table {-}
 
@@ -31,15 +31,11 @@ candi %>%
 
 ```
 
-Here’s a polished and more professional revision of your **Scoring system** section:
-
----
-
 #### Scoring system
 
-Numeric variables, such as extent of occurrence and generation length, were log-transformed to reduce skew and improve comparability across species. Proportional variables were summarised using both Shannon and Simpson diversity indices. While these indices are highly correlated (cor = 0.97), the Simpson index was preferred because it emphasizes evenness, is bounded between 0 and 1, and is more robust to small outlying proportions. Accordingly, all proportional traits are reported using the Simpson index.
+Numeric variables, such as extent of occurrence and generation length, were log-transformed to reduce skew and improve comparability across species. Proportional variables were summarised using both Shannon and Simpson diversity indices. While these indices are highly correlated (cor = 0.97), the Simpson index was preferred because it emphasizes evenness and is bounded between 0 and 1. Accordingly, all proportional traits are reported using the Simpson index.
 
-Categorical variables were scored based on the ecological criteria summarised in Table X below. This scoring ensures that trait values are translated into a consistent numeric scale suitable for integration into composite indicators.
+Categorical variables were scored based on the ecological criteria summarised in the table below. This scoring ensures that the usage of traits were documented for transparancy and consistency.
 
 ```{r scoretable, echo=FALSE}
 

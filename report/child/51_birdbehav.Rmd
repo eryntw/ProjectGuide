@@ -1,0 +1,9 @@
+## Bird Behaviour {#birdbehav}
+
+**Link to the database: ** [http://dx.doi.org/10.6084/m9.figshare.1499292](http://dx.doi.org/10.6084/m9.figshare.1499292)
+
+The database can also be accessed programmatically through the [`traitdata` R package](https://github.com/RS-eco/traitdata).
+
+**Link to the publication: ** [https://doi.org/10.1038/sdata.2015.61](https://doi.org/10.1038/sdata.2015.61)
+
+The data below is obtained from `traitdata` R package.

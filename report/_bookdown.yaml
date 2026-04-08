@@ -8,9 +8,9 @@ rmd_files:
 - 0020_Methods.Rmd
 - 0021_sensitivity-framework.Rmd
 - 0022_exposure-framework.Rmd
+- 0023_process-data.Rmd
 - 0040_References.Rmd
 - 0050_Appendices.Rmd
 - 0051_bird-database.Rmd
 - 0052_r-packages.Rmd
-output_dir: ../../../../dev/out/RiskMap/_targets/report/compiled_report
 repo: https://github.com/eryntw/RiskMap.git

@@ -1,0 +1,17 @@
+
+### Habitat fragmentation
+
+species responses to habitat fragmentation is primarily driven by species’ dispersal capacity. Dispersal limitation provides the most consistent and general explanation for species responses to fragmented landscapes. In birds, morphological proxies of dispersal ability, such as the inverse hand-wing index (HWI), outperform other predictors (e.g., body mass, latitude, and historical disturbance) in explaining vulnerability [@Weeks2023]. Species with low dispersal capacity are therefore less able to move between habitat patches and are more susceptible to local extinction.
+
+Habitat specialisation further amplifies fragmentation effects. Specialist species exhibit stronger population structuring and reduced persistence compared with generalists, even at relatively small spatial scales [@Khimoun2016]. At broader taxonomic scales, fragmentation sensitivity is also influenced by habitat type and landscape context, with higher vulnerability observed in forest and shrubland species relative to grassland taxa, as well as in larger-bodied species, carnivores, and reptiles [@Keinath2017]. In contrast, reproductive life-history traits (e.g., clutch or brood size) show little consistent relationship with fragmentation responses [@Vargas2012].
+
+Based on the evidence, three key variables were selected to represent sensitivity to habitat degradation:
+
+1. **Dispersal capacity (Hand-Wing Index; HWI)** [@Weeks2023]
+   HWI is a morphological proxy for flight efficiency and dispersal ability. Higher HWI values are associated with more dispersive, migratory, or aerial species, whereas lower values indicate limited dispersal capacity and increased sensitivity to fragmentation.
+
+2. **Habitat specialisation and habitat type vulnerability** [@Khimoun2016; @Keinath2017]
+   Species with narrower habitat breadth are more sensitive to fragmentation. This is further modulated by habitat type, with vulnerability weighted such that forest > shrubland > grassland systems, reflecting differences in fragmentation sensitivity.
+
+3. **Extent of occurrence (EOO)** [@Keinath2017]
+   Species with smaller geographic ranges are more vulnerable to habitat loss and fragmentation due to limited spatial redundancy. EOO is incorporated using the same scoring framework applied in the sensitivity component.

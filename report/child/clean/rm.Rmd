@@ -1,5 +1,0 @@
-### `bio_rm`: Spatial reliability
-
-Duplicate spatial reliability values within each context (`r envFunc::vec_to_sentence(c(settings_clean$context, "taxa"))`) were summarised by taking the minimum non-NA value. For example, if a context had reliability values of 1000, 100 & NA, they would be reduced to 100. Records with adjusted reliability values greater (i.e. worse reliability) than the specified setting (`r settings_clean$max_rel_metres`) were removed.
-
-Some data sources and specific surveys either don't include a spatial reliability concept, or are known to have a different reliability value than what is recorded. These cases are overcome using manually created overrides that return a specified value instead of the context minimum.

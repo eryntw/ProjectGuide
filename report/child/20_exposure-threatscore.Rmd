@@ -1,0 +1,63 @@
+
+
+```{r threatscore}
+
+ # ---- Modified scoring ----
+  iucn_timing_mod <- c(
+    "Past, Unlikely to Return" = 0,
+    "Past, Likely to Return"   = 0,
+    "Ongoing"                  = 3,
+    "Future"                   = 1,
+    "Unknown"                  = 1
+  )
+  
+  iucn_scope_mod <- c(
+    "Whole (>90%)"      = 3,
+    "Majority (50-90%)" = 2,
+    "Minority (<50%)"   = 1,
+    "Unknown"           = 1
+  )
+  
+  iucn_severity_mod <- c(
+    "Very Rapid Declines"              = 3,
+    "Rapid Declines"                   = 3,
+    "Slow, Significant Declines"       = 2,
+    "Causing/Could cause fluctuations" = 1,
+    "Negligible declines"              = 0,
+    "No decline"                       = 0,
+    "Unknown"                          = 1
+  )
+
+iucn_scoring <- bind_rows(
+  
+  tibble(
+    Criteria = "Timing",
+    Category = names(iucn_timing_mod),
+    Score = unname(iucn_timing_mod)
+  ),
+  
+  tibble(
+    Criteria = "Scope",
+    Category = names(iucn_scope_mod),
+    Score = unname(iucn_scope_mod)
+  ),
+  
+  tibble(
+    Criteria = "Severity",
+    Category = names(iucn_severity_mod),
+    Score = unname(iucn_severity_mod)
+  )
+)
+
+iucn_scoring %>% 
+  kbl(
+    caption = "Modified scoring scheme for IUCN threat criteria, including timing, scope, and severity categories and their assigned scores. Adapted from Ward et al. (2020)."
+  ) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE,
+    font_size = 12
+  ) %>% 
+  collapse_rows(columns = 1, valign = "middle")
+```
+

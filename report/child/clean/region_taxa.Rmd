@@ -1,5 +1,0 @@
-### `bio_region_taxa`: Taxa that occur in the region of interest {#region-taxa}
-
-The list of taxa is reduced to only those found within the region specified (`r settings$context$extent$region_taxa`; Figure \@ref(fig:extentmap)), using the `envClean` function `filter_geo_range`. For example, the original data may contain records of all taxa across Australia. If ‘region taxa’ is limited to, say, South Australian taxa, records of taxa without a record in South Australia are removed, while records outside of South Australia for taxa any records inside South Australia remain.
-
-This step also removes any taxa with `NA` in the `taxa` column (i.e. records where the `original_name` could not be matched to the standardised taxonomy; see [Taxonomy]).

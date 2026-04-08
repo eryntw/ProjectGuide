@@ -1,9 +1,0 @@
-### `bio_att`: Attributes
-
-Important attribute columns within each context are collected or created. Attributes gathered are `pa` (presence/absence), `obs` (observer), `sens_survey` and `sens_taxa` (sensitive survey/taxa), `data_name`, and `survey`. Contexts with multiple entries for these attributes are concatenated to a single string separated by commas (except pa which remains as 1 or 0). 
-
-Each column is processed individually, by reducing the data from `bio_fst` to distinct records per context (`r envFunc::vec_to_sentence(c(settings_clean$context, "taxa"))`). 
-
-Common names, status under NPW and EPBC Acts, and indigenous status attributes are also created using the `make-attribute` function from `envClean`, which uses `clean_start` and the [taxonomy lookup][Final taxonomy].
-
-Each attribute is joined to `bio_fbd` to produce `bio_att`.

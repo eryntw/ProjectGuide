@@ -1,3 +1,0 @@
-### `clean_start`: Prepare bio_all
-
-The first step of the cleaning process is reduce `bio_all` to the records that have the minimum data requirements. Records with `NA` in any of the coordinate or `original_name` (i.e. taxa name) columns are removed, and the dataset is filtered to the required temporal extent (i.e. `r settings$context$extent$ext_time`). Absences may also be removed here, though they are kept by default.

@@ -1,0 +1,162 @@
+### Exposure analysis diagram
+
+The following narrative provides a comprehensive explanation of the IPD_main diagram, functioning as an "evidence scaffold" to organise and synthesise predicted impacts from the development source down to terminal biodiversity outcomes. The model is structured as a 10 tier hierarchy incorporating seven distinct node types to distinguish between anthropogenic drivers, sources, environmental and ecological stressors, additional steps in causal pathway (source to stressor, stressor to receptor), and biological responses.
+
+#### High-Level Driver and Sources (Levels 1–2) {-}
+
+The primary Driver initiating this impact pathway is *Renewable Energy Development*. This driver focuses on two primary Tier 1 Sources: *Solar farms* and *Wind farms*. These projects are further decomposed into Tier 2 Infrastructure categories: *Solar infrastructure*, *Wind infrastructure*, and *Shared infrastructure* (elements required by both, such as access tracks and grid connections).
+
+#### Development Activities (Levels 3–4) {-}
+
+- Tier 3 Assets (Level 3): The physical entities established on-site include *PV panels* and *Evaporation ponds* (Solar), *Wind towers & turbines* (Wind), and *Roads* and *Powerline* (Shared). These sources can also act as stressors (threat/ impact variables).
+
+- *Vegetation Clearance* (Level 4): A critical additional step in the causal chain is the physical removal of native flora to facilitate construction. This activity acts as a major precursor to *Habitat Loss* and *Fragmentation*, altering *Fire frequency and intensity* and opening niches for *Invasive species*.
+
+#### Direct Processes and Maintenance (Level 5) {-}
+
+- Biological Traps: Physical assets create direct hazards such as *Collision* (turbines/panels), *Drowning* (evaporation ponds), and *Electrocution* (powerlines).
+
+- Ongoing Actions: *Maintenance* of PV panels and *Vegetation maintenance* for the infrastructure ensure long-term operational viability but reinforce persistent stressors.
+
+#### Proximate Stressors and Processes (Levels 6–8) {-}
+
+- Infrastructure leads to change in *Hydrology* and *Microclimate*,  increase in *Pollutants* and *Fragmentation*. These changes further alter *Soil dynamics* and transform *Woodland & Shrubland* into grassland or dessert.
+
+- The introduction of *Invasive species* (facilitated by roads and clearing) triggers a secondary cascade of biological stressors, including increase in *Fire frequency & intensity* (i.e., Buffel grass), *Trampling* (i.e., goats), *Competition* (i.e., goats and rabbits), *Predation* (i.e., cats), and *Grazing* (i.e., goats and rabbits).
+
+- The cumulative effect of physical stressors (soil, fragmentation) and biological pressures (fire, trampling) results in *Habitat degradation*, representing a decline in environmental quality.
+
+5. Receptors and Assessment Endpoints (Levels 10–11)
+
+- Responses (Level 10): The convergence of impact pathways leads to three primary negative outcomes: *Direct Mortality* (from infrastructure hazards), *Habitat Loss* (from clearing and grazing), and *Population decline* (resulting from predation, degradation and competition).
+
+```{r IPDmain, fig.align='center', fig.fullwidth=TRUE, fig.cap="Impact pathway diagram illustrating the exposure analysis. The information is derived from *IUCN-Mitigating biodiversity impacts associated with solar and wind energy development: guidelines for project developers* [@Bennun2021]"}
+
+library(DiagrammeR)
+
+grViz("
+digraph ipd_main_11levels {
+  graph [rankdir = TB, nodesep = 0.5, ranksep = 1, fontname = Helvetica, splines = polyline]
+
+  # --- Style 1: Driver (Green Hexagon) ---
+  node [shape = hexagon, style = filled, fillcolor = '#D1F2EB', color = '#1ABC9C', fontname = Helvetica, fontsize = 17]
+
+  driver [label = 'Renewable \\nEnergy \\nDevelopment']
+
+  # --- Style 2: Yellow Box ---
+  node [shape = box, style = filled, fillcolor = '#FFF59D', color = '#FBC02D']
+
+  # --- Tier 1: High-Level Sources ---
+  solar_f [label = 'Solar farm']; 
+  wind_f [label = 'Wind farm']
+
+  # --- Tier 2: Infrastructure (Yellow Box) ---
+  solar_i [label = 'Solar infrastructure']; 
+  shared_i [label = 'Shared infrastructure']; 
+  wind_i [label = 'Wind infrastructure']
+
+  # --- Tier 3: Assets ---
+  evap [label = 'Evaporation pond']; 
+  pv [label = 'PV panels']; 
+  roads [label = 'Roads']; 
+  power [label = 'Powerline']; 
+  wind_t [label = 'Wind towers & turbines']
+
+  # --- Style 3: Activities (Peach Rounded Box) ---
+  node [shape = box, style = 'filled,rounded', fillcolor = '#FFE0B2', color = '#FB8C00']
+
+  veg_c [label = 'Vegetation clearance'];
+  maint [label = 'maintenance']; 
+  veg_m [label = 'Vegetation \\nmaintenance'];
+   
+  # --- Style 4: Stressors (Blue Box) ---
+  node [shape = box, style = filled, fillcolor = '#BBDEFB', color = '#1976D2', rounded = FALSE]
+  
+  poll [label = '&uarr; Pollutant']; 
+  frag [label = '&uarr; Fragmentation'];
+  invasive [label = '&uarr; Invasive species']; 
+  fire [label = '&uarr; Fire frequency \\n& intensity'];
+
+  # --- Style 5: Processes (White Box) ---
+  node [shape = box, style = 'filled, rounded', fillcolor = 'White', color = '#FB8C00']
+
+  drown [label = 'Drowning']; 
+  electro [label = 'Electrocution']; 
+  collision [label = 'Collision'];
+  woodland [label = '&darr; Woodland & \\nshrubland'];
+  soil [label = '&Delta; Soil dynamics']; 
+  hydro [label = '&Delta; Hydrology']; 
+  micro [label = '&Delta; Microclimate'];
+  pred [label = '&uarr; Predation']; 
+  comp [label = '&uarr; Competition']; 
+  graze [label = '&uarr; Grazing']; 
+  tramp [label = '&uarr; Trampling'];
+  degradation [label = '&uarr; Habitat degradation']
+
+  # --- Style 7: Receptors & Value (Pink/Grey Ovals) ---
+  node [shape = oval, style = filled, fillcolor = '#F8D7DA', color = '#C0392B']
+
+  mortality [label = '&uarr; Direct \\nMortality']; 
+  population [label = '&darr; Population']; 
+  hab_loss [label = '&uarr; Habitat Loss']
+  
+  node [fillcolor = '#F2F3F4', color = '#7F8C8D']
+  biodiversity [label = '&darr; Biodiversity value']
+
+  # --- Alignment: 11 Levels ---
+  {rank = same; driver}             # Level 1
+  {rank = same; solar_f; wind_f}    # Level 2
+  {rank = same; solar_i; shared_i; wind_i} # Level 3
+  {rank = same; evap; pv; roads; power; wind_t} # Level 4
+  {rank = same; veg_c; maint; veg_m; drown; electro; collision} # Level 5
+  {rank = same; poll; frag; invasive; fire} # Level 6
+  {rank = same; hydro; micro; soil; tramp; comp; pred; graze; woodland} # Level 7
+  {rank = same; degradation}        # Level 8
+  {rank = same; mortality; hab_loss; population} # Level 9
+  {rank = same; biodiversity}       # Level 10
+
+  # --- Connections ---
+  driver -> {solar_f wind_f}
+  solar_f -> {solar_i shared_i}
+  wind_f -> {wind_i shared_i}
+  
+  wind_i -> wind_t
+  shared_i -> {power, roads}
+  solar_i -> {pv evap}
+  
+  {wind_t power roads pv} -> veg_c
+  
+  veg_c -> {frag hab_loss invasive fire}
+  evap -> {drown hydro poll}
+  pv -> {micro poll frag maint}
+  roads -> {veg_m invasive frag}
+  power -> {veg_m electro invasive}
+  wind_t -> collision
+  
+  maint -> hydro
+  hydro -> soil
+  micro -> soil
+  poll -> soil
+  frag -> degradation
+  veg_m -> {invasive woodland}
+  invasive -> {fire tramp comp pred graze}
+  fire -> woodland
+  
+  soil -> degradation
+  tramp -> {degradation mortality}
+  
+  drown -> mortality
+  electro -> mortality
+  collision -> mortality
+  pred -> population
+  
+  degradation -> population
+  comp -> population
+  graze -> hab_loss
+  woodland -> hab_loss
+  
+  {mortality hab_loss population} -> biodiversity
+}
+",  width = "100%", height = "600px")
+
+```

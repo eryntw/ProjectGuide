@@ -1,0 +1,33 @@
+
+### Collisions
+
+Direct collision mortality is one of the most visible impacts of renewable energy infrastructure and often receives disproportionate attention from decision makers and the public. This is partly because collisions occur continuously during operation and carcasses provide tangible evidence of impact. However, relative to other anthropogenic threats (e.g., buildings, vehicles, and power lines), wind turbines typically cause fewer bird deaths overall [@Marques2014].
+
+Reported mortality rates vary widely, ranging from near zero to almost 40 birds per turbine per year [@Marques2014]. Median estimates are approximately 1.8 birds per MW in the United States, with mean values of 4.6 and 8.2 birds per turbine per year reported in South Africa and Canada, respectively. Poorly sited wind farms can experience substantially higher mortality, highlighting the importance of local context ([@Bennun2021], p. 63). Fatalities are often dominated by small, abundant passerines ([@Bennun2021], p. 66), and for most species, collision mortality is considered to have relatively minor population-level effects compared with broader pressures such as habitat loss and degradation.
+
+Despite this, collision risk is highly site- and species-specific. A small number of wind farms have recorded disproportionately high mortality of conservation-significant species, including large raptors (e.g., Altamont Pass, USA; Smøla, Norway) and vultures (Tarifa, Spain). These cases demonstrate that collision risk is strongly shaped by site characteristics, species composition, and behaviour [@Marques2014].
+
+Accurate estimation of collision mortality is inherently challenging and often biased by carcass detection probability, scavenger removal, turbine size, and delayed mortality (i.e., individuals dying outside search areas) [@Smallwood2007]. Turbine size is also positively associated with fatality rates [@Thaxter2017]. In contrast, collision risk in bats remains poorly understood, particularly in arid and tropical regions, due to limited research outside the northern temperate zone.
+
+#### Wind farm collisions {-}
+
+Collision risk at wind farms is primarily determined by the overlap between species’ flight behaviour and turbine rotor-swept zones. Two broad groups are consistently identified as high risk:
+
+* **Migratory species**, particularly those undertaking long-distance or nocturnal movements, are frequently exposed to turbine arrays. Their wing morphology, optimised for energy-efficient flight, may reduce manoeuvrability and limit their ability to avoid turbine blades. Given that many migratory species are already in decline, even small increases in mortality may have disproportionate impacts.
+
+* **Raptors**, especially large soaring species, are also highly susceptible due to their reliance on thermal and wind uplift within the same airspace as turbines [@Jana2008]. Unlike many other bird groups, raptor mortality does not consistently decline following turbine installation [@Smallwood2007]. This is reflected in documented cases such as Wedge-tailed Eagle fatalities in Tasmania [@Hull2013] and population-level impacts in species such as the Red Kite (*Milvus milvus*) in Europe [@Bellebaum2013].
+
+#### Solar farm collisions {-}
+
+Collision risk at solar facilities is driven by different mechanisms. Waterbirds appear particularly vulnerable due to the “lake effect,” where reflective photovoltaic panels are mistaken for water bodies. Species that landing on or dive into water surfaces are therefore more likely to approach and collide with solar infrastructure. These impacts are largely restricted to aquatic or semi-aquatic species and differ fundamentally from the risks observed at wind farms.
+
+#### Trait-based representation of collision risk {-}
+
+Based on the available evidence, collision risk can be conceptualised as a function of two primary components:
+
+1. The likelihood that a species operates within collision risk zones (e.g., flight height, migratory behaviour, foraging strategy)
+
+2. The ability of a species to detect and evade infrastructure (e.g., manoeuvrability, body size, wing morphology)
+
+Model outputs may assign higher collision risk to migratory species relative to raptors. However, this result should be interpreted with caution. Empirical evidence suggests that large raptors may experience equal or greater impacts in some contexts, particularly where local abundance and site characteristics increase exposure. As such, relative risk among groups is likely to be context dependent and not fully captured by trait-based models alone.
+

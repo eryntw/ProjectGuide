@@ -1,0 +1,19 @@
+### Altered fire regime
+
+The potential for altered fire regimes has been introduced in the [Ecosystem Impacts](#ecosystemimpacts) section, where a general trend towards increased fire frequency is associated with vegetation shifts from woodland to grassland.
+
+However, predicting changes in fire regimes at fine scales remains highly uncertain. Fire frequency and intensity are influenced by complex interactions among vegetation structure, climate variability, and species-specific responses, many of which are poorly understood or lack trait-based data. As a result, species-level responses to altered fire regimes are difficult to quantify with precision.
+
+At a broad scale, some general patterns can be inferred. While vegetation clearance at development sites reduces local fuel loads, it can promote longer-term shifts in surrounding areas. In particular, the suppression of woody vegetation and the expansion of grasses—often dominated by flammable invasive species such as Buffel grass—are likely to increase fire frequency in the landscape surrounding developments. Repeated fire events can further reinforce this transition, accelerating the conversion of fire-sensitive woodlands into more flammable grass-dominated systems.
+
+To approximate exposure, baseline fire regimes for major arid-zone vegetation types were used as a reference [@vanEtten2018]. These values, derived from western Australian systems, provide indicative fire-return intervals:
+
+* **Eucalyptus woodland** – very infrequent fire (>100 years; possibly following exceptional rainfall)
+* **Mulga woodland** – infrequent fire (>50 years; following exceptional rainfall)
+* **Acacia shrubland** – infrequent fire (>50 years; 20–30 years when dense)
+* **Mallee** – infrequent fire (20–30 years; rainfall-dependent)
+* **Hummock grassland** – relatively frequent fire (5–15 years; rainfall-dependent)
+* **Chenopod shrubland** – largely fire-independent (non-flammable)
+
+These vegetation-specific fire regimes provide a proxy for assessing relative exposure to altered fire frequency. However, further data, particularly on species-specific fire responses, are required to improve predictions of species vulnerability under changing fire regimes.
+

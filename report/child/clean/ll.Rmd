@@ -1,3 +1,0 @@
-### `bio_ll`: Filter to geographic extent
-
-Records that did not fall on a valid cell created in the `bio_bin` step were assigned `NA` in the new cell coordinate columns. These records were removed, thus limiting the data to the geographic extent polygon.

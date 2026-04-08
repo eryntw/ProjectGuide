@@ -1,0 +1,33 @@
+### Invasive Species
+
+Invasive species encompass both plants and animals, but their mechanisms of impact differ. Invasive plants primarily alter ecosystem structure and resource availability, whereas invasive animals exert direct pressures through predation and competition. In arid systems, invasive plants are likely to pose substantial risks due to their capacity to transform vegetation structure and ecosystem processes at broad spatial scales.
+
+#### Invasive plants: trait-based vulnerability framework
+
+In arid ecosystems, the establishment success of alien plant species is mediated by resource availability and functional similarity to native species. Specifically, alien species that are functionally dissimilar to native communities tend to establish more successfully in resource-rich environments, whereas establishment success declines for species that are functionally similar in resource-limited systems [@El-Barougy2021].
+
+Building on this framework, vulnerability to plant invasion can be quantified using functional trait approaches. A set of ecologically relevant traits can be used to calculate the Alien–Native Mean Functional Distance (ANMFD), which provides a proxy for the susceptibility of native communities to invasion.
+
+Applying this approach to Australian arid-zone ecosystems would enable the prediction of native species vulnerability within a trait-based framework. While robust, this method requires extensive trait data and is therefore beyond the immediate scope of this assessment. Nevertheless, it represents a promising direction for future work and could form the basis of a standalone analysis (e.g., *“Predicting native species vulnerability to invasive plants in the Australian arid zone”*).
+
+#### Invasive predators and herbivores:
+
+Although invasive plants can indirectly influence fauna—by filtering bird assemblages, facilitating further invasion, and reducing phylogenetic and functional diversity [@Izquierdo-Palma2025; @Grzdzicka2024]—these interactions are highly context dependent and typically require detailed field-based studies. As a result, the present analysis focuses on invasive animal species that exert more direct and generalisable impacts on native fauna.
+
+Specifically, four widespread invasive mammals are considered: the predators cats (*Felis catus*) and foxes (*Vulpes vulpes*), and the herbivore competitors rabbits (*Oryctolagus cuniculus*) and camels (*Camelus dromedarius*). These species are well established in arid Australia and have documented, system-wide impacts on native vertebrates.
+
+#### Invasive predators {-}
+
+Both foxes and cats exhibit size-selective predation on mammals, with peak predation occurring at approximately 280 g for foxes and 130 g for cats [@Stobo-Wilson2021]. In birds, susceptibility is also mediated by body size: larger species (≥3.4 kg) are more vulnerable to fox predation, whereas smaller species (<3.4 kg) are more susceptible to cats [@Woinarski2022]. Additional traits further modify risk, with cat predation highest among bird species that are island-restricted, of intermediate body mass (ca. 60–300 g), and that nest or forage on the ground [@Woinarski2017].
+
+In arid ecosystems, cats are likely to represent the dominant invasive predator threat to birds. This is due to their higher predicted densities and greater rates of avian predation relative to foxes [@Stobo-Wilson2022]. In contrast, fox diets are more heavily dominated by mammals (approximately 70%) [@Stobo-Wilson2021], and their abundance tends to be higher in more mesic or coastal environments [@Stobo-Wilson2022].
+
+#### Invasive Herbivores {-}
+
+A range of native and introduced herbivores occur within the pilot areas, including kangaroos, rabbits, goats, horses (northern South Australia), donkeys (northern South Australia), and camels (northern South Australia). Empirical evidence indicates that introduced herbivores—particularly livestock, rabbits, and goats—have substantial negative impacts on native plant communities, whereas kangaroo grazing is comparatively benign [@Travers2018]. Increasing kangaroo grazing pressure does not significantly affect plant occurrence across species origin, life span, or growth form. In contrast, livestock and rabbit grazing are associated with marked declines in native vegetation, occurring at densities of approximately 1000 kg dung/ha and 100 kg dung/ha, respectively [@Travers2018].
+
+Rabbits strongly influence vegetation dynamics by suppressing recruitment and maintaining ecosystems in early successional states. Even at low densities (1–2 individuals per hectare), they can eliminate seedlings of palatable native trees and shrubs, thereby intensifying competition with invasive plants [@Finlayson2022]. This impact is taxonomically selective, disproportionately affecting genera such as *Allocasuarina*, *Acacia*, *Bursaria*, and *Senna*, while less palatable species (e.g., eucalypts) may persist [@Cooke2007]. Although seedling loss is often difficult to detect, chronic recruitment failure leads to long-term declines in plant diversity as mature individuals are not replaced [@Cooke2007]. Functionally, rabbit herbivory resembles vegetation clearance, but operates through sustained suppression of regeneration rather than removal of established plants, typically affecting vegetation up to ~50 cm in height.
+
+Goats represent an emerging and potentially dominant threat within the pilot areas. Recent surveys report very high abundances and extensive overgrazing, including mustering rates of ~10,000 individuals per day and an estimated regional increase of ~600,000 goats in the Braemar Province (SA Bioregional Planning Pilot Project Interim Report, Deliverable 11). Goats selectively remove palatable vegetation, inhibit recruitment, facilitate invasive plant spread, and cause substantial trampling damage, compounding impacts from rabbits. Field observations indicate severe degradation of habitats supporting multiple priority species, including *Swainsona fuscoviridis*, *Swainsona murrayana*, *Brachyscome muelleri*, endemic orchids, Yellow-footed Rock-wallaby, and Plains Rat.
+
+Unlike rabbits, goats can exploit rugged terrain and browse at greater heights (~1–2 m), resulting in impacts across multiple vegetation strata. Under high grazing pressure, vegetation across all growth forms may be removed, producing ecosystem effects functionally equivalent to vegetation clearance.

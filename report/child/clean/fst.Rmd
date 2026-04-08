@@ -1,5 +1,0 @@
-### `bio_fst`: Fix spatial taxonomy
-
-Where duplicate accepted taxonomy for the same species were identified, but not as a straight name change and is geographic area dependent (e.g. a taxa was split geographically, or related taxa were erroneously recorded out of their known range), taxa names were updated using the `fix_spatial_taxonomy` function from the `envDistribution` package `r cite_package("envDistribution")`. This function uses distributions sourced from IUCN Red List (https://www.iucnredlist.org/resources/spatial-data-download) and BirdLife International (https://datazone.birdlife.org/species/requestdis) to reassign records geographically from one taxa to another.
-
-For example, the grasswren species *Amytornis striatus* has been split into three different species: *A. striatus* in the Murray Mallee, *A. whitei* from the Eyre Peninsula to the Pilbara, and *A. rowleyi* in central Queensland. Records of *Amytornis striatus* are reassigned these names according to their respective geographic locations.

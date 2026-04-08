@@ -2,7 +2,7 @@
 
 **Definition:** The degree to which a species is affected, either adversely or beneficially, by environmental disturbances or climatic variability. It is an inherent, intrinsic characteristic determined by the species’ biology, physiology, and ecological traits. Here, it is combined with adaptability, or adaptive capacity to include all the relative intrinsic traits. Adaptive capacity refers to the ability of a species to adjust, cope with, or respond to changing conditions to moderate potential damage, take advantage of opportunities, or survive in new environments.
 
-## Traits and indicator selection
+## Thematic Sub-groups
 
 Traits were selected following a comprehensive review of available trait databases and relevant literature on large-scale, cross-species meta-analyses. Selected traits were subsequently grouped into thematic subcategories to reflect key dimensions of species sensitivity.
 
@@ -66,7 +66,7 @@ Migratory species rely on seasonal movements and, in many cases, social cues to 
 
 ---
 
-## Traits or indicators not included
+## Traits or Indicators Not Included
 
 The following traits were considered but ultimately excluded from the sensitivity index due to conceptual, methodological, or data-related limitations. In each case, the potential value of the trait was outweighed by issues of interpretation, bias, or inconsistency.
 
@@ -80,7 +80,7 @@ Second, the ecological interpretation of elevational range is context-dependent.
 
 Potential solutions, such as categorising elevation into discrete bands, introduce further issues related to arbitrary thresholds and misclassification. Given these conceptual and methodological challenges, elevational range was excluded, as it is likely to introduce more bias than informative signal.
 
-### Trophic level
+### Trophic level {-}
 
 Trophic level is often associated with sensitivity, as apex predators (e.g., raptors) are typically more vulnerable to environmental change due to their position in the food web. However, incorporating trophic level introduces several complications.
 
@@ -88,7 +88,7 @@ While high trophic levels may indicate increased sensitivity, including this var
 
 Given these inconsistencies and the risk of misrepresenting dietary specialisation, trophic level was excluded from the index.
 
-### Population trend and conservation status
+### Population trend and conservation status {-}
 
 Population trend and conservation status may appear to be useful indicators of sensitivity, as they reflect current species performance. However, these metrics primarily capture realised outcomes driven by external pressures (e.g., habitat loss, threats) rather than intrinsic biological traits.
 
@@ -96,7 +96,7 @@ Furthermore, these variables are dynamic and may change over time, reducing thei
 
 For these reasons, population trend and conservation status were excluded to maintain a focus on intrinsic, trait-based sensitivity. However, these indicators were used to buid the sub-index "cumulative pressure".
 
-### Body mass
+### Body mass {-}
 
 Body mass has been identified as a significant predictor in multiple studies, showing associations with breeding success [@Smart2024], establishment success [@Blackburn2009], and extinction risk [@Tobias2019]. However, these relationships are often inconsistent and context-dependent.
 
@@ -104,13 +104,13 @@ As a composite trait, body mass is correlated with multiple aspects of species b
 
 To capture life-history pace more directly and with greater interpretability, generation length [@Bird2020] was selected as a more appropriate proxy. Consequently, body mass was excluded.
 
-### Nest type
+### Nest type {-}
 
 Nest architecture has been shown to influence breeding success, with enclosed nests generally associated with higher survival rates than open nests [@Smart2024]. However, nest type represents only one component of reproductive strategy.
 
 Reproductive success is shaped by a broader suite of life-history traits, and the influence of nest type alone may be limited or context-dependent. Given its partial representation of reproductive dynamics, nest type was not included in the index. However, it is used in stressor-specific analysis when building the "exposure" sub-index.
 
-### Mating system
+### Mating system {-}
 
 Mating system has been linked to both extinction risk [@Tobias2019] and establishment success [@Blackburn2009], with polygynous systems potentially increasing sensitivity through mechanisms such as Allee effects. Available datasets categorise mating systems into discrete classes (e.g., monogamy, polygyny, lekking).
 
@@ -120,13 +120,10 @@ Given these challenges in classification and interpretation, mating system was e
 
 ---
 
-## Candidate traits and indicators of each species group
+## Mapping Traits and Indicators - Bird
 
-```{r avian, results='asis', echo=FALSE}
-
+```{r bird, results='asis', echo=FALSE}
 avian <- knitr::knit_child("child/20_birdsens.Rmd", quiet = TRUE)
 cat(avian, sep = '\n')
-
 ```
-
 

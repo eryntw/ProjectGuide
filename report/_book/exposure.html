@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Exposure | Developing composite indicators for species risk assessment</title>
+  <meta name="description" content="4 Exposure | Developing composite indicators for species risk assessment" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Exposure | Developing composite indicators for species risk assessment" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Exposure | Developing composite indicators for species risk assessment" />
+  
+  
+  
+
+<meta name="author" content="Department for Environment and Water" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sensitivity.html"/>
+<link rel="next" href="manually-filling-the-blank.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Aim</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#renewable-energy-transition-in-south-australia"><i class="fa fa-check"></i><b>1.1.1</b> Renewable energy transition in South Australia</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#ecological-impacts-of-wind-and-solar-energy-developments"><i class="fa fa-check"></i><b>1.1.2</b> Ecological impacts of wind and solar energy developments</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#bioregional-planning-for-renewable-energy-development"><i class="fa fa-check"></i><b>1.1.3</b> Bioregional planning for renewable energy development</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#ecosystemimpacts"><i class="fa fa-check"></i><b>1.2</b> Ecosystem Impacts</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#the-semi-arid-ecosystem-of-sa"><i class="fa fa-check"></i><b>1.2.1</b> The semi-arid ecosystem of SA</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#ecological-impacts-of-wind-and-solar-energy-developments-1"><i class="fa fa-check"></i><b>1.2.2</b> Ecological impacts of wind and solar energy developments</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#additional-pressure"><i class="fa fa-check"></i><b>1.2.3</b> Additional pressure</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#species-risk-assessment"><i class="fa fa-check"></i><b>1.3</b> Species Risk Assessment</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#integration-with-species-distribution-models"><i class="fa fa-check"></i><b>1.3.1</b> Integration with species distribution models</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#trait-based-approaches"><i class="fa fa-check"></i><b>1.3.2</b> Trait-based approaches</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#limitations"><i class="fa fa-check"></i><b>1.3.3</b> Limitations</a></li>
+<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#scope-of-this-report"><i class="fa fa-check"></i><b>1.3.4</b> Scope of this report</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="general-methods.html"><a href="general-methods.html"><i class="fa fa-check"></i><b>2</b> General Methods</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="general-methods.html"><a href="general-methods.html#trait-and-indicator-selection"><i class="fa fa-check"></i><b>2.1</b> Trait and Indicator Selection</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="general-methods.html"><a href="general-methods.html#existing-database"><i class="fa fa-check"></i><b>2.1.1</b> Existing database</a></li>
+<li class="chapter" data-level="2.1.2" data-path="general-methods.html"><a href="general-methods.html#recextract"><i class="fa fa-check"></i><b>2.1.2</b> Extraction from observation records</a></li>
+<li class="chapter" data-level="2.1.3" data-path="general-methods.html"><a href="general-methods.html#literature-based-coding"><i class="fa fa-check"></i><b>2.1.3</b> Literature-based coding</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="general-methods.html"><a href="general-methods.html#theoretical-framework"><i class="fa fa-check"></i><b>2.2</b> Theoretical Framework</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="general-methods.html"><a href="general-methods.html#steps-of-compressing-information"><i class="fa fa-check"></i><b>2.2.1</b> Steps of compressing information</a></li>
+<li class="chapter" data-level="2.2.2" data-path="general-methods.html"><a href="general-methods.html#mapping-vulnerability"><i class="fa fa-check"></i><b>2.2.2</b> Mapping vulnerability</a></li>
+<li class="chapter" data-level="" data-path="general-methods.html"><a href="general-methods.html#definition"><i class="fa fa-check"></i>Term definitions</a></li>
+<li class="chapter" data-level="" data-path="general-methods.html"><a href="general-methods.html#reproducibility"><i class="fa fa-check"></i>Reproducibility</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sensitivity.html"><a href="sensitivity.html"><i class="fa fa-check"></i><b>3</b> Sensitivity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sensitivity.html"><a href="sensitivity.html#thematic-sub-groups"><i class="fa fa-check"></i><b>3.1</b> Thematic Sub-groups</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sensitivity.html"><a href="sensitivity.html#climate-specialisation"><i class="fa fa-check"></i><b>3.1.1</b> Climate specialisation</a></li>
+<li class="chapter" data-level="3.1.2" data-path="sensitivity.html"><a href="sensitivity.html#habitat-specialisation"><i class="fa fa-check"></i><b>3.1.2</b> Habitat specialisation</a></li>
+<li class="chapter" data-level="3.1.3" data-path="sensitivity.html"><a href="sensitivity.html#diet-specialisation"><i class="fa fa-check"></i><b>3.1.3</b> Diet specialisation</a></li>
+<li class="chapter" data-level="3.1.4" data-path="sensitivity.html"><a href="sensitivity.html#adaptability"><i class="fa fa-check"></i><b>3.1.4</b> Adaptability</a></li>
+<li class="chapter" data-level="3.1.5" data-path="sensitivity.html"><a href="sensitivity.html#constraints"><i class="fa fa-check"></i><b>3.1.5</b> Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sensitivity.html"><a href="sensitivity.html#traits-or-indicators-not-included"><i class="fa fa-check"></i><b>3.2</b> Traits or Indicators Not Included</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#trophic-level"><i class="fa fa-check"></i>Trophic level</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#population-trend-and-conservation-status"><i class="fa fa-check"></i>Population trend and conservation status</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#body-mass"><i class="fa fa-check"></i>Body mass</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#nest-type"><i class="fa fa-check"></i>Nest type</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#mating-system"><i class="fa fa-check"></i>Mating system</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sensitivity.html"><a href="sensitivity.html#mapping-traits-and-indicators---bird"><i class="fa fa-check"></i><b>3.3</b> Mapping Traits and Indicators - Bird</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sensitivity.html"><a href="sensitivity.html#bird"><i class="fa fa-check"></i><b>3.3.1</b> Bird</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exposure.html"><a href="exposure.html"><i class="fa fa-check"></i><b>4</b> Exposure</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="exposure.html"><a href="exposure.html#identification-of-exposure-pathways"><i class="fa fa-check"></i><b>4.1</b> Identification of Exposure Pathways</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="exposure.html"><a href="exposure.html#impact-pathway-diagram"><i class="fa fa-check"></i><b>4.1.1</b> Impact Pathway Diagram</a></li>
+<li class="chapter" data-level="4.1.2" data-path="exposure.html"><a href="exposure.html#exposure-analysis-diagram"><i class="fa fa-check"></i><b>4.1.2</b> Exposure analysis diagram</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="exposure.html"><a href="exposure.html#the-stressors"><i class="fa fa-check"></i><b>4.2</b> The Stressors</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="exposure.html"><a href="exposure.html#invasive-species"><i class="fa fa-check"></i><b>4.2.1</b> Invasive Species</a></li>
+<li class="chapter" data-level="4.2.2" data-path="exposure.html"><a href="exposure.html#habitat-fragmentation"><i class="fa fa-check"></i><b>4.2.2</b> Habitat fragmentation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="exposure.html"><a href="exposure.html#trait-stressor-matrix"><i class="fa fa-check"></i><b>4.3</b> Trait-Stressor Matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="exposure.html"><a href="exposure.html#thematic-sub-groups-1"><i class="fa fa-check"></i><b>4.4</b> Thematic Sub-groups</a></li>
+<li class="chapter" data-level="4.5" data-path="exposure.html"><a href="exposure.html#potential-stressors-not-included"><i class="fa fa-check"></i><b>4.5</b> Potential Stressors Not Included</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="exposure.html"><a href="exposure.html#habitat-degradation"><i class="fa fa-check"></i><b>4.5.1</b> Habitat degradation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="exposure.html"><a href="exposure.html#process-data"><i class="fa fa-check"></i><b>4.6</b> Process Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manually-filling-the-blank.html"><a href="manually-filling-the-blank.html"><i class="fa fa-check"></i><b>5</b> Manually filling the blank</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="bird-database.html"><a href="bird-database.html"><i class="fa fa-check"></i><b>A</b> Bird Database</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="bird-database.html"><a href="bird-database.html#ausbird"><i class="fa fa-check"></i><b>A.1</b> Australian Bird</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="bird-database.html"><a href="bird-database.html#summary"><i class="fa fa-check"></i><b>A.1.1</b> Summary</a></li>
+<li class="chapter" data-level="A.1.2" data-path="bird-database.html"><a href="bird-database.html#strengths"><i class="fa fa-check"></i><b>A.1.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.1.3" data-path="bird-database.html"><a href="bird-database.html#limitations-1"><i class="fa fa-check"></i><b>A.1.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.1.4" data-path="bird-database.html"><a href="bird-database.html#metadata"><i class="fa fa-check"></i><b>A.1.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.1.5" data-path="bird-database.html"><a href="bird-database.html#data-type"><i class="fa fa-check"></i><b>A.1.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="bird-database.html"><a href="bird-database.html#avonet"><i class="fa fa-check"></i><b>A.2</b> AVONET</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="bird-database.html"><a href="bird-database.html#summary-1"><i class="fa fa-check"></i><b>A.2.1</b> Summary</a></li>
+<li class="chapter" data-level="A.2.2" data-path="bird-database.html"><a href="bird-database.html#strengths-1"><i class="fa fa-check"></i><b>A.2.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.2.3" data-path="bird-database.html"><a href="bird-database.html#limitations-2"><i class="fa fa-check"></i><b>A.2.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.2.4" data-path="bird-database.html"><a href="bird-database.html#metadata-1"><i class="fa fa-check"></i><b>A.2.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.2.5" data-path="bird-database.html"><a href="bird-database.html#data-type-1"><i class="fa fa-check"></i><b>A.2.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="bird-database.html"><a href="bird-database.html#birdbase"><i class="fa fa-check"></i><b>A.3</b> BirdBase</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="bird-database.html"><a href="bird-database.html#summary-2"><i class="fa fa-check"></i><b>A.3.1</b> Summary</a></li>
+<li class="chapter" data-level="A.3.2" data-path="bird-database.html"><a href="bird-database.html#strengths-2"><i class="fa fa-check"></i><b>A.3.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.3.3" data-path="bird-database.html"><a href="bird-database.html#limitations-3"><i class="fa fa-check"></i><b>A.3.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.3.4" data-path="bird-database.html"><a href="bird-database.html#metadata-2"><i class="fa fa-check"></i><b>A.3.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.3.5" data-path="bird-database.html"><a href="bird-database.html#data-type-2"><i class="fa fa-check"></i><b>A.3.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="bird-database.html"><a href="bird-database.html#birdbehav"><i class="fa fa-check"></i><b>A.4</b> Bird Behaviour</a></li>
+<li class="chapter" data-level="A.5" data-path="bird-database.html"><a href="bird-database.html#birdlife"><i class="fa fa-check"></i><b>A.5</b> BirdLife Data</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="bird-database.html"><a href="bird-database.html#summary-3"><i class="fa fa-check"></i><b>A.5.1</b> Summary</a></li>
+<li class="chapter" data-level="A.5.2" data-path="bird-database.html"><a href="bird-database.html#strengths-3"><i class="fa fa-check"></i><b>A.5.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.5.3" data-path="bird-database.html"><a href="bird-database.html#limitations-4"><i class="fa fa-check"></i><b>A.5.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.5.4" data-path="bird-database.html"><a href="bird-database.html#metadata-3"><i class="fa fa-check"></i><b>A.5.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.5.5" data-path="bird-database.html"><a href="bird-database.html#data-type-3"><i class="fa fa-check"></i><b>A.5.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="bird-database.html"><a href="bird-database.html#r-packages"><i class="fa fa-check"></i><b>A.6</b> R packages</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Developing composite indicators for species risk assessment</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exposure" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Exposure<a href="exposure.html#exposure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Definition:</strong> Exposure is defined as the rate, magnitude, or intensity of environmental change, stressors, or human-driven disturbances experienced by a species or population.</p>
+<hr />
+<div id="identification-of-exposure-pathways" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Identification of Exposure Pathways<a href="exposure.html#identification-of-exposure-pathways" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The broad impacts of renewable energy developments on semi-arid ecosystems in Australia are outlined in the Introduction-<a href="introduction.html#ecosystemimpacts">Ecosystem Impacts</a>.</p>
+<p>This exposure analysis focuses on species-level responses to key stressors associated with renewable energy infrastructure, including photovoltaic (PV) solar farms, concentrated solar power (CSP) facilities, and onshore wind farms. A comprehensive overview of these impact pathways is provided in <em>IUCN—Mitigating biodiversity impacts associated with solar and wind energy development: guidelines for project developers</em> <span class="citation">(<a href="#ref-Bennun2021"><strong>Bennun2021?</strong></a>)</span>.</p>
+<div id="impact-pathway-diagram" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Impact Pathway Diagram<a href="exposure.html#impact-pathway-diagram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The impacts associated with the project footprint can be visualised using an impact pathway diagram (IPD). Grounded in conceptual modelling approaches, an IPD provides a systematic visual framework for integrating diverse sources of scientific evidence and illustrating how stressors originating from project activities propagate through the environment to affect ecological receptors <span class="citation">(<a href="#ref-IESC2024"><strong>IESC2024?</strong></a>)</span>.</p>
+</div>
+<div id="exposure-analysis-diagram" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Exposure analysis diagram<a href="exposure.html#exposure-analysis-diagram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following narrative provides a comprehensive explanation of the IPD_main diagram, functioning as an “evidence scaffold” to organise and synthesise predicted impacts from the development source down to terminal biodiversity outcomes. The model is structured as a 10 tier hierarchy incorporating seven distinct node types to distinguish between anthropogenic drivers, sources, environmental and ecological stressors, additional steps in causal pathway (source to stressor, stressor to receptor), and biological responses.</p>
+<div id="high-level-driver-and-sources-levels-12" class="section level4 unnumbered hasAnchor">
+<h4>High-Level Driver and Sources (Levels 1–2)<a href="exposure.html#high-level-driver-and-sources-levels-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The primary Driver initiating this impact pathway is <em>Renewable Energy Development</em>. This driver focuses on two primary Tier 1 Sources: <em>Solar farms</em> and <em>Wind farms</em>. These projects are further decomposed into Tier 2 Infrastructure categories: <em>Solar infrastructure</em>, <em>Wind infrastructure</em>, and <em>Shared infrastructure</em> (elements required by both, such as access tracks and grid connections).</p>
+</div>
+<div id="development-activities-levels-34" class="section level4 unnumbered hasAnchor">
+<h4>Development Activities (Levels 3–4)<a href="exposure.html#development-activities-levels-34" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>Tier 3 Assets (Level 3): The physical entities established on-site include <em>PV panels</em> and <em>Evaporation ponds</em> (Solar), <em>Wind towers &amp; turbines</em> (Wind), and <em>Roads</em> and <em>Powerline</em> (Shared). These sources can also act as stressors (threat/ impact variables).</p></li>
+<li><p><em>Vegetation Clearance</em> (Level 4): A critical additional step in the causal chain is the physical removal of native flora to facilitate construction. This activity acts as a major precursor to <em>Habitat Loss</em> and <em>Fragmentation</em>, altering <em>Fire frequency and intensity</em> and opening niches for <em>Invasive species</em>.</p></li>
+</ul>
+</div>
+<div id="direct-processes-and-maintenance-level-5" class="section level4 unnumbered hasAnchor">
+<h4>Direct Processes and Maintenance (Level 5)<a href="exposure.html#direct-processes-and-maintenance-level-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>Biological Traps: Physical assets create direct hazards such as <em>Collision</em> (turbines/panels), <em>Drowning</em> (evaporation ponds), and <em>Electrocution</em> (powerlines).</p></li>
+<li><p>Ongoing Actions: <em>Maintenance</em> of PV panels and <em>Vegetation maintenance</em> for the infrastructure ensure long-term operational viability but reinforce persistent stressors.</p></li>
+</ul>
+</div>
+<div id="proximate-stressors-and-processes-levels-68" class="section level4 unnumbered hasAnchor">
+<h4>Proximate Stressors and Processes (Levels 6–8)<a href="exposure.html#proximate-stressors-and-processes-levels-68" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>Infrastructure leads to change in <em>Hydrology</em> and <em>Microclimate</em>, increase in <em>Pollutants</em> and <em>Fragmentation</em>. These changes further alter <em>Soil dynamics</em> and transform <em>Woodland &amp; Shrubland</em> into grassland or dessert.</p></li>
+<li><p>The introduction of <em>Invasive species</em> (facilitated by roads and clearing) triggers a secondary cascade of biological stressors, including increase in <em>Fire frequency &amp; intensity</em> (i.e., Buffel grass), <em>Trampling</em> (i.e., goats), <em>Competition</em> (i.e., goats and rabbits), <em>Predation</em> (i.e., cats), and <em>Grazing</em> (i.e., goats and rabbits).</p></li>
+<li><p>The cumulative effect of physical stressors (soil, fragmentation) and biological pressures (fire, trampling) results in <em>Habitat degradation</em>, representing a decline in environmental quality.</p></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Receptors and Assessment Endpoints (Levels 10–11)</li>
+</ol>
+<ul>
+<li>Responses (Level 10): The convergence of impact pathways leads to three primary negative outcomes: <em>Direct Mortality</em> (from infrastructure hazards), <em>Habitat Loss</em> (from clearing and grazing), and <em>Population decline</em> (resulting from predation, degradation and competition).</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:IPDmain"></span>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-654c558985605cd9f421" style="width:624px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-654c558985605cd9f421">{"x":{"diagram":"\ndigraph ipd_main_11levels {\n  graph [rankdir = TB, nodesep = 0.5, ranksep = 1, fontname = Helvetica, splines = polyline]\n\n  # --- Style 1: Driver (Green Hexagon) ---\n  node [shape = hexagon, style = filled, fillcolor = \"#D1F2EB\", color = \"#1ABC9C\", fontname = Helvetica]\n\n  driver [label = \"Renewable \\nEnergy \\nDevelopment\"]\n\n  # --- Style 2: Yellow Box ---\n  node [shape = box, style = filled, fillcolor = \"#FFF59D\", color = \"#FBC02D\"]\n\n  # --- Tier 1: High-Level Sources ---\n  solar_f [label = \"Solar farm\"]; \n  wind_f [label = \"Wind farm\"]\n\n  # --- Tier 2: Infrastructure (Yellow Box) ---\n  solar_i [label = \"Solar infrastructure\"]; \n  shared_i [label = \"Shared infrastructure\"]; \n  wind_i [label = \"Wind infrastructure\"]\n\n  # --- Tier 3: Assets ---\n  evap [label = \"Evaporation pond\"]; \n  pv [label = \"PV panels\"]; \n  roads [label = \"Roads\"]; \n  power [label = \"Powerline\"]; \n  wind_t [label = \"Wind towers & turbines\"]\n\n  # --- Style 3: Activities (Peach Rounded Box) ---\n  node [shape = box, style = \"filled,rounded\", fillcolor = \"#FFE0B2\", color = \"#FB8C00\"]\n\n  veg_c [label = \"Vegetation clearance\"];\n  maint [label = \"maintenance\"]; \n  veg_m [label = \"Vegetation \\nmaintenance\"];\n   \n  # --- Style 4: Stressors (Blue Box) ---\n  node [shape = box, style = filled, fillcolor = \"#BBDEFB\", color = \"#1976D2\", rounded = FALSE]\n  \n  poll [label = \"&uarr; Pollutant\"]; \n  frag [label = \"&uarr; Fragmentation\"];\n  invasive [label = \"&uarr; Invasive species\"]; \n  fire [label = \"&uarr; Fire frequency \\n& intensity\"];\n\n  # --- Style 5: Processes (White Box) ---\n  node [shape = box, style = \"filled, rounded\", fillcolor = \"White\", color = \"#FB8C00\"]\n\n  drown [label = \"Drowning\"]; \n  electro [label = \"Electrocution\"]; \n  collision [label = \"Collision\"];\n  woodland [label = \"&darr; Woodland & \\nshrubland\"];\n  soil [label = \"&Delta; Soil dynamics\"]; \n  hydro [label = \"&Delta; Hydrology\"]; \n  micro [label = \"&Delta; Microclimate\"];\n  pred [label = \"&uarr; Predation\"]; \n  comp [label = \"&uarr; Competition\"]; \n  graze [label = \"&uarr; Grazing\"]; \n  tramp [label = \"&uarr; Trampling\"];\n  degradation [label = \"&uarr; Habitat degradation\"]\n\n  # --- Style 7: Receptors & Value (Pink/Grey Ovals) ---\n  node [shape = oval, style = filled, fillcolor = \"#F8D7DA\", color = \"#C0392B\"]\n\n  mortality [label = \"&uarr; Direct \\nMortality\"]; \n  population [label = \"&darr; Population\"]; \n  hab_loss [label = \"&uarr; Habitat Loss\"]\n  \n  node [fillcolor = \"#F2F3F4\", color = \"#7F8C8D\"]\n  biodiversity [label = \"&darr; Biodiversity value\"]\n\n  # --- Alignment: 11 Levels ---\n  {rank = same; driver}             # Level 1\n  {rank = same; solar_f; wind_f}    # Level 2\n  {rank = same; solar_i; shared_i; wind_i} # Level 3\n  {rank = same; evap; pv; roads; power; wind_t} # Level 4\n  {rank = same; veg_c; maint; veg_m; drown; electro; collision} # Level 5\n  {rank = same; poll; frag; invasive; fire} # Level 6\n  {rank = same; hydro; micro; soil; tramp; comp; pred; graze; woodland} # Level 7\n  {rank = same; degradation}        # Level 8\n  {rank = same; mortality; hab_loss; population} # Level 9\n  {rank = same; biodiversity}       # Level 10\n\n  # --- Connections ---\n  driver -> {solar_f wind_f}\n  solar_f -> {solar_i shared_i}\n  wind_f -> {wind_i shared_i}\n  \n  wind_i -> wind_t\n  shared_i -> {power, roads}\n  solar_i -> {pv evap}\n  \n  {wind_t power roads pv} -> veg_c\n  \n  veg_c -> {frag hab_loss invasive fire}\n  evap -> {drown hydro poll}\n  pv -> {micro poll frag maint}\n  roads -> {veg_m invasive frag}\n  power -> {veg_m electro invasive}\n  wind_t -> collision\n  \n  maint -> hydro\n  hydro -> soil\n  micro -> soil\n  poll -> soil\n  frag -> degradation\n  veg_m -> {invasive woodland}\n  invasive -> {fire tramp comp pred graze}\n  fire -> woodland\n  \n  soil -> degradation\n  tramp -> {degradation mortality}\n  \n  drown -> mortality\n  electro -> mortality\n  collision -> mortality\n  pred -> population\n  \n  degradation -> population\n  comp -> population\n  graze -> hab_loss\n  woodland -> hab_loss\n  \n  {mortality hab_loss population} -> biodiversity\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 4.1: Impact pathway diagram illustrating the exposure analysis. The information is derived from <em>IUCN-Mitigating biodiversity impacts associated with solar and wind energy development: guidelines for project developers</em> <span class="citation">(<a href="#ref-Bennun2021"><strong>Bennun2021?</strong></a>)</span>
+</p>
+</div>
+<p>Drawing on the above framework, the following stressors were identified and synthesised for inclusion in the analysis.</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="the-stressors" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> The Stressors<a href="exposure.html#the-stressors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To ensure the index remains both ecologically meaningful and analytically tractable, only a subset of exposure pathways was included, based on their ecological significance, data availability, and relevance to species-level risk.</p>
+<p>Global evidence identifies habitat loss, invasive species, and exploitation as the primary drivers of recent extinctions across 615 species <span class="citation">(<a href="bird-database.html#ref-Saban2025">Saban and Wiens 2025</a>)</span>. While invasive species contribute the largest proportion of extinctions globally (38.0%), habitat loss is the dominant driver in mainland systems (51.1%), with invasive species (16.5%) and exploitation (15.5%) playing secondary roles.</p>
+<p>Within the scope of this assessment, exploitation is not considered a relevant pressure, as none of the focal species are subject to harvesting. Pollution, although recognised as an additional driver of biodiversity loss, contributes relatively little to extinction risk (5.1% globally; 11.4% for mainland extinctions) and is therefore not prioritised here.</p>
+<p>Accordingly, the index focuses on the two most influential and context-relevant pressures: habitat loss and invasive species. These pressures form the basis of the thematic subgroups included in the exposure analysis.</p>
+<p>Below section outlines literature review and justification for each selected stressor.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>``</td>
+<td>`r</td>
+<td align="right">cat(knitr::knit_child(“child/20_exposure-habitatloss.Rmd”, quiet = TRUE), sep = ‘’)```</td>
+</tr>
+</tbody>
+</table>
+<div id="invasive-species" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Invasive Species<a href="exposure.html#invasive-species" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Invasive species encompass both plants and animals, but their mechanisms of impact differ. Invasive plants primarily alter ecosystem structure and resource availability, whereas invasive animals exert direct pressures through predation and competition. In arid systems, invasive plants are likely to pose substantial risks due to their capacity to transform vegetation structure and ecosystem processes at broad spatial scales.</p>
+<div id="invasive-plants-trait-based-vulnerability-framework" class="section level4 unnumbered hasAnchor">
+<h4>Invasive plants: trait-based vulnerability framework<a href="exposure.html#invasive-plants-trait-based-vulnerability-framework" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In arid ecosystems, the establishment success of alien plant species is mediated by resource availability and functional similarity to native species. Specifically, alien species that are functionally dissimilar to native communities tend to establish more successfully in resource-rich environments, whereas establishment success declines for species that are functionally similar in resource-limited systems <span class="citation">(<a href="bird-database.html#ref-El-Barougy2021">El-Barougy <em>et al.</em> 2021</a>)</span>.</p>
+<p>Building on this framework, vulnerability to plant invasion can be quantified using functional trait approaches. A set of ecologically relevant traits can be used to calculate the Alien–Native Mean Functional Distance (ANMFD), which provides a proxy for the susceptibility of native communities to invasion.</p>
+<p>Applying this approach to Australian arid-zone ecosystems would enable the prediction of native species vulnerability within a trait-based framework. While robust, this method requires extensive trait data and is therefore beyond the immediate scope of this assessment. Nevertheless, it represents a promising direction for future work and could form the basis of a standalone analysis (e.g., <em>“Predicting native species vulnerability to invasive plants in the Australian arid zone”</em>).</p>
+</div>
+<div id="invasive-predators-and-herbivores-affecting-native-animals" class="section level4 unnumbered hasAnchor">
+<h4>Invasive predators and herbivores affecting native animals<a href="exposure.html#invasive-predators-and-herbivores-affecting-native-animals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Although invasive plants can indirectly influence fauna—by filtering bird assemblages, facilitating further invasion, and reducing phylogenetic and functional diversity <span class="citation">(<a href="bird-database.html#ref-Grzdzicka2024">Grzędzicka <em>et al.</em> 2024</a>; <a href="bird-database.html#ref-Izquierdo-Palma2025">Izquierdo-Palma <em>et al.</em> 2025</a>)</span>—these interactions are highly context dependent and typically require detailed field-based studies. As a result, the present analysis focuses on invasive animal species that exert more direct and generalisable impacts on native fauna.</p>
+<p>Specifically, four widespread invasive mammals are considered: the predators cats (<em>Felis catus</em>) and foxes (<em>Vulpes vulpes</em>), and the herbivore competitors rabbits (<em>Oryctolagus cuniculus</em>) and camels (<em>Camelus dromedarius</em>). These species are well established in arid Australia and have documented, system-wide impacts on native vertebrates.</p>
+</div>
+<div id="invasive-predators" class="section level4 unnumbered hasAnchor">
+<h4>Invasive predators<a href="exposure.html#invasive-predators" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Both foxes and cats exhibit size-selective predation on mammals, with peak predation occurring at approximately 280 g for foxes and 130 g for cats <span class="citation">(<a href="bird-database.html#ref-Stobo-Wilson2021">Stobo-Wilson <em>et al.</em> 2021</a>)</span>. In birds, susceptibility is also mediated by body size: larger species (≥3.4 kg) are more vulnerable to fox predation, whereas smaller species (&lt;3.4 kg) are more susceptible to cats <span class="citation">(<a href="bird-database.html#ref-Woinarski2022">Woinarski <em>et al.</em> 2022</a>)</span>. Additional traits further modify risk, with cat predation highest among bird species that are island-restricted, of intermediate body mass (ca. 60–300 g), and that nest or forage on the ground <span class="citation">(<a href="bird-database.html#ref-Woinarski2017">Woinarski <em>et al.</em> 2017</a>)</span>.</p>
+<p>In arid ecosystems, cats are likely to represent the dominant invasive predator threat to birds. This is due to their higher predicted densities and greater rates of avian predation relative to foxes <span class="citation">(<a href="bird-database.html#ref-Stobo-Wilson2022">Stobo-Wilson <em>et al.</em> 2022</a>)</span>. In contrast, fox diets are more heavily dominated by mammals (approximately 70%) <span class="citation">(<a href="bird-database.html#ref-Stobo-Wilson2021">Stobo-Wilson <em>et al.</em> 2021</a>)</span>, and their abundance tends to be higher in more mesic or coastal environments <span class="citation">(<a href="bird-database.html#ref-Stobo-Wilson2022">Stobo-Wilson <em>et al.</em> 2022</a>)</span>.</p>
+</div>
+<div id="invasive-herbivores" class="section level4 unnumbered hasAnchor">
+<h4>Invasive Herbivores<a href="exposure.html#invasive-herbivores" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A range of native and introduced herbivores occur within the pilot areas, including kangaroos, rabbits, goats, horses (northern South Australia), donkeys (northern South Australia), and camels (northern South Australia). Empirical evidence indicates that introduced herbivores—particularly livestock, rabbits, and goats—have substantial negative impacts on native plant communities, whereas kangaroo grazing is comparatively benign <span class="citation">(<a href="bird-database.html#ref-Travers2018">Travers <em>et al.</em> 2018</a>)</span>. Increasing kangaroo grazing pressure does not significantly affect plant occurrence across species origin, life span, or growth form. In contrast, livestock and rabbit grazing are associated with marked declines in native vegetation, occurring at densities of approximately 1000 kg dung/ha and 100 kg dung/ha, respectively <span class="citation">(<a href="bird-database.html#ref-Travers2018">Travers <em>et al.</em> 2018</a>)</span>.</p>
+<p>Rabbits strongly influence vegetation dynamics by suppressing recruitment and maintaining ecosystems in early successional states. Even at low densities (1–2 individuals per hectare), they can eliminate seedlings of palatable native trees and shrubs, thereby intensifying competition with invasive plants <span class="citation">(<a href="bird-database.html#ref-Finlayson2022">Finlayson <em>et al.</em> 2022</a>)</span>. This impact is taxonomically selective, disproportionately affecting genera such as <em>Allocasuarina</em>, <em>Acacia</em>, <em>Bursaria</em>, and <em>Senna</em>, while less palatable species (e.g., eucalypts) may persist <span class="citation">(<a href="#ref-Cooke2007"><strong>Cooke2007?</strong></a>)</span>. Although seedling loss is often difficult to detect, chronic recruitment failure leads to long-term declines in plant diversity as mature individuals are not replaced <span class="citation">(<a href="#ref-Cooke2007"><strong>Cooke2007?</strong></a>)</span>. Functionally, rabbit herbivory resembles vegetation clearance, but operates through sustained suppression of regeneration rather than removal of established plants, typically affecting vegetation up to ~50 cm in height.</p>
+<p>Goats represent an emerging and potentially dominant threat within the pilot areas. Recent surveys report very high abundances and extensive overgrazing, including mustering rates of ~10,000 individuals per day and an estimated regional increase of ~600,000 goats in the Braemar Province (SA Bioregional Planning Pilot Project Interim Report, Deliverable 11). Goats selectively remove palatable vegetation, inhibit recruitment, facilitate invasive plant spread, and cause substantial trampling damage, compounding impacts from rabbits. Field observations indicate severe degradation of habitats supporting multiple priority species, including <em>Swainsona fuscoviridis</em>, <em>Swainsona murrayana</em>, <em>Brachyscome muelleri</em>, endemic orchids, Yellow-footed Rock-wallaby, and Plains Rat.</p>
+<p>Unlike rabbits, goats can exploit rugged terrain and browse at greater heights (~1–2 m), resulting in impacts across multiple vegetation strata. Under high grazing pressure, vegetation across all growth forms may be removed, producing ecosystem effects functionally equivalent to vegetation clearance.</p>
+<hr />
+</div>
+</div>
+<div id="habitat-fragmentation" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Habitat fragmentation<a href="exposure.html#habitat-fragmentation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>species responses to habitat fragmentation is primarily driven by species’ dispersal capacity. Dispersal limitation provides the most consistent and general explanation for species responses to fragmented landscapes. In birds, morphological proxies of dispersal ability, such as the inverse hand-wing index (HWI), outperform other predictors (e.g., body mass, latitude, and historical disturbance) in explaining vulnerability <span class="citation">(<a href="bird-database.html#ref-Weeks2023">Weeks <em>et al.</em> 2023</a>)</span>. Species with low dispersal capacity are therefore less able to move between habitat patches and are more susceptible to local extinction.</p>
+<p>Habitat specialisation further amplifies fragmentation effects. Specialist species exhibit stronger population structuring and reduced persistence compared with generalists, even at relatively small spatial scales <span class="citation">(<a href="bird-database.html#ref-Khimoun2016">Khimoun <em>et al.</em> 2016</a>)</span>. At broader taxonomic scales, fragmentation sensitivity is also influenced by habitat type and landscape context, with higher vulnerability observed in forest and shrubland species relative to grassland taxa, as well as in larger-bodied species, carnivores, and reptiles <span class="citation">(<a href="bird-database.html#ref-Keinath2017">Keinath <em>et al.</em> 2017</a>)</span>. In contrast, reproductive life-history traits (e.g., clutch or brood size) show little consistent relationship with fragmentation responses <span class="citation">(<a href="bird-database.html#ref-Vargas2012">Vargas <em>et al.</em> 2012</a>)</span>.</p>
+<p>Based on the evidence, three key variables were selected to represent sensitivity to habitat degradation:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Dispersal capacity (Hand-Wing Index; HWI)</strong> <span class="citation">(<a href="bird-database.html#ref-Weeks2023">Weeks <em>et al.</em> 2023</a>)</span>
+HWI is a morphological proxy for flight efficiency and dispersal ability. Higher HWI values are associated with more dispersive, migratory, or aerial species, whereas lower values indicate limited dispersal capacity and increased sensitivity to fragmentation.</p></li>
+<li><p><strong>Habitat specialisation and habitat type vulnerability</strong> <span class="citation">(<a href="bird-database.html#ref-Khimoun2016">Khimoun <em>et al.</em> 2016</a>; <a href="bird-database.html#ref-Keinath2017">Keinath <em>et al.</em> 2017</a>)</span>
+Species with narrower habitat breadth are more sensitive to fragmentation. This is further modulated by habitat type, with vulnerability weighted such that forest &gt; shrubland &gt; grassland systems, reflecting differences in fragmentation sensitivity.</p></li>
+<li><p><strong>Extent of occurrence (EOO)</strong> <span class="citation">(<a href="bird-database.html#ref-Keinath2017">Keinath <em>et al.</em> 2017</a>)</span>
+Species with smaller geographic ranges are more vulnerable to habitat loss and fragmentation due to limited spatial redundancy. EOO is incorporated using the same scoring framework applied in the sensitivity component.</p></li>
+</ol>
+<hr />
+<p>FIRE</p>
+<hr />
+<p><code>r cat(knitr::knit_child("child/20_exposure-collision.Rmd", quiet = TRUE), sep = '\n')</code></p>
+<hr />
+</div>
+</div>
+<div id="trait-stressor-matrix" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Trait-Stressor Matrix<a href="exposure.html#trait-stressor-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="thematic-sub-groups-1" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Thematic Sub-groups<a href="exposure.html#thematic-sub-groups-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="potential-stressors-not-included" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Potential Stressors Not Included<a href="exposure.html#potential-stressors-not-included" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="habitat-degradation" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Habitat degradation<a href="exposure.html#habitat-degradation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Habitat degradation encompasses a range of indirect effects that alter environmental conditions, in addition to altered fire regime and habitat fragmentation:</p>
+<ul>
+<li><p><strong>Hydrological change:</strong> Alterations to water availability, with largely unknown species-level responses</p></li>
+<li><p><strong>Microclimate change:</strong> Localised changes in temperature, shading, and humidity, which are difficult to quantify directly</p></li>
+<li><p><strong>Pollution:</strong> Potential impacts from dust, chemicals, and other contaminants</p></li>
+<li><p><strong>Ecosystem services:</strong> Broad system-level changes that are complex and difficult to attribute at the species level</p></li>
+</ul>
+<p>Nevertheless, these processes are challenging to quantify explicitly and are partially captured through the sensitivity component of the framework.</p>
+
+</div>
+</div>
+<div id="process-data" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Process Data<a href="exposure.html#process-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sensitivity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manually-filling-the-blank.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https =//github.com/dew-landscapes/RiskMap/edit/master/0022_exposure-framework.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

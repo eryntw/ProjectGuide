@@ -1,0 +1,7 @@
+## Process Data
+
+# Manually filling the blank
+
+Although overall trait coverage is high, some fields remain incomplete. In these cases, additional information from the BirdLife DataZone—where coverage is often more comprehensive—was used to manually fill missing values. Only those cells absent from the basic trait table were supplemented, and the updated values were then rejoined to the main dataset.
+
+Automated approaches such as machine-learning–based imputation (e.g., [TDIP, Trait Data Imputation with Phylogeny](https://github.com/Matgend/TDIP?tab=readme-ov-file)) can also be used. However, caution is required: imputed values may sometimes be biologically unrealistic, and relying on them without scrutiny can bias downstream indices.

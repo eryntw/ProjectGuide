@@ -1,0 +1,71 @@
+## AVONET {#avonet}
+
+AVONET [@Tobias2022] provides a globally standardised dataset of avian morphological traits, including measurements of the wing, bill, legs, and tail, alongside associated ecological and geographic information. The dataset also summarised measurements to the species-level using multiple taxonomic formats, including BirdLife, eBird, and BirdTree.
+
+The data used here were obtained from the supplementary materials of the original publication. While the `traitdata` R package provides the full set of raw measurement data, a summarised dataset was considered more suitable for analysis and was therefore used in this study. AVONET is particularly valuable for analyses of flight-related ecology, as it enables the use of traits linked to flight efficiency, dispersal capacity, and manoeuvrability, such as the Hand-Wing Index (HWI):
+
+$$
+HWI = 100 \times \frac{WL - SL}{WL}
+$$
+where:
+
+- $WL$ = wing length: distance from the carpal joint (bend of the wing) to the tip of the longest primary feather
+
+- $SL$ = secondary length: distance from the carpal joint to the tip of the first (most distal) secondary feather.
+
+Hand-Wing Index is widely used proxy for wing aspect ratio when wing area is unavailable. HWI strongly correlates with dispersal ability and is easier to measure consistently.
+
+**Link to the database: ** [https://figshare.com/s/b990722d72a26b5bfead](https://figshare.com/s/b990722d72a26b5bfead)
+
+The database can also be accessed programmatically through the [`traitdata` R package](https://github.com/RS-eco/traitdata).
+
+**Link to the publication: **[https://doi.org/10.1111/ele.13898](https://doi.org/10.1111/ele.13898)
+
+```{r avonet, results='asis', echo=FALSE}
+
+# database
+df <- avonet[, -c(1:7)]
+cov <- knitr::knit_child("50_DbCovTp.Rmd", quiet = TRUE)
+cat(cov, sep = '\n')
+
+# metadata
+meta <- readxl::read_excel(fs::path(here::here(), "..", "envBird", "database", 
+                            "AVONET Supplementary dataset 1.xlsx"),
+                   sheet = "Metadata")
+
+```
+
+### Summary
+
+* **Scope:** Global
+* **Total number of species:** `r nrow(distinct(traitdata::avonet, Genus, Species))`
+* **Total number of traits:** `r nrow(coverage)`
+* **Year of release:** 2022
+* **Missing data:** Trait coverage ranged from `r round(summary_vals["Min."], 2)` to `r round(summary_vals["Max."], 2)`, with a median of `r round(summary_vals["Median"], 2)` (IQR: `r round(summary_vals["1st Qu."], 2)`–`r round(summary_vals["3rd Qu."], 2)`).
+* **Imputation approach:** Missing values retained as `NA`
+
+### Strengths
+
+* Provides a globally standardised and taxonomically harmonised dataset of avian morphological traits
+* Includes measurements from multiple individuals per species, improving representation of intraspecific variation
+* Offers the most comprehensive coverage currently available for the Hand-Wing Index (HWI), a key proxy for dispersal ability and flight efficiency
+* Enables comparative analyses of flight-related traits across a broad range of species
+
+### Limitations
+
+* Primarily limited to basic morphological measurements; advanced metrics such as wing loading and total wing area cannot be directly derived from the available variables [@Howard2018; @Fu2023]
+
+### Metadata
+
+```{r avonetmeta, echo=FALSE}
+knitr::kable(meta) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  ) %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+```
+
+### Data type
+
+`r summarise_column_types(df)`

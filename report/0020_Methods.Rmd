@@ -1,6 +1,6 @@
 # General Methods
 
-## Trait and indicator selection
+## Trait and Indicator Selection
 
 Species traits (e.g., migratory status, habitat use) and ecological indicators (e.g., extent of occurrence) were used to develop the scoring framework for quantifying species vulnerability. These variables were sourced using three complementary approaches: (1) existing trait databases, (2) extraction from species observation records, and (3) manual coding from published literature and online resources. Combining these approaches allows for broader trait coverage while balancing data availability and quality across species groups.
 
@@ -34,7 +34,7 @@ This approach allows the inclusion of important ecological and life-history trai
 **Limitations:**
 Manual coding can be time-intensive and may introduce subjectivity, particularly when translating qualitative descriptions into quantitative scores. Consistency in interpretation and documentation is therefore critical.
 
-## Theoretical framework
+## Theoretical Framework
 
 Designing the framework for constructing a composite indicator is a critical step, as it provides the theoretical foundation for selecting, structuring, and combining variables. This ensures that the resulting indicator appropriately captures and represents the complex, multidimensional phenomenon of interest [@OECD2008].
 
@@ -159,13 +159,9 @@ Term definitions provide clear explanations of specific words and concepts used 
 
 * **Trait** – A quantifiable characteristic of a species representing a specific biological or ecological attribute. Traits are used to assess intrinsic sensitivity or vulnerability to environmental and anthropogenic pressures. By definition, traits are directly observed and objective; they are not synthesized, processed, or derived information. For example, the extent of occurrence of a species is not considered a trait.
 
+* **Variable** – A specific data field within a dataset used to represent or quantify a trait or indicator.
+
 * **Database** – A curated collection of species traits, population metrics, distribution models, or environmental data sourced and organised by experts of a specific species group.
-
-* **Cumulative pressure** – The aggregated effect of past and current human or environmental stressors on a species, used to account for existing vulnerabilities beyond intrinsic sensitivity.
-
-* **Exposure** – The likelihood that a species will encounter environmental or anthropogenic stressors in a defined habitat or range.
-
-* **Sensitivity** – The intrinsic degree to which a species is affected by stressors, incorporating biological traits and adaptive capacity.
 
 * **Vulnerability** – A species’ overall susceptibility to a specific development type, integrating its sensitivity, exposure, and cumulative pressures. Vulnerability serves as the core construct for spatial representation of species risk.
 

@@ -1,0 +1,50 @@
+## BirdBase {#birdbase}
+
+BirdBase [@Sekercioglu2025] is the most recent and one of the most comprehensive global bird trait datasets, incorporating up-to-date species taxonomy alongside a wide range of behavioural, ecological, and morphological traits. The database integrates multiple taxonomic backbones and provides harmonised species-level information across a large number of variables.
+
+While the dataset offers extensive global coverage, some traits (e.g., wingspan) are incomplete or missing for many species. In the Australian context, certain traits may be more comprehensively represented in regional datasets such as [@Garnett2015].
+
+**Link to the database: ** [https://doi.org/10.6084/m9.figshare.27051040](https://doi.org/10.6084/m9.figshare.27051040)
+
+**Link to the publication: **[https://www.nature.com/articles/s41597-025-05615-3#Sec4](https://www.nature.com/articles/s41597-025-05615-3#Sec4)
+
+```{r birbase, results='asis', echo=FALSE}
+library(ggplot2)
+library(dplyr)
+
+df <- birdbase[, -c(1:16)]
+cov <- knitr::knit_child("50_DbCovTp.Rmd", quiet = TRUE)
+cat(cov, sep = '\n')
+```
+
+### Summary
+
+* **Scope:** Global
+* **Total number of species:** `r nrow(distinct(birdbase, Genus, Species))`
+* **Total number of traits:** `r nrow(coverage)`
+* **Year of release:** 2025
+* **Missing data:** Trait coverage ranged from `r round(summary_vals["Min."], 2)` to `r round(summary_vals["Max."], 2)`, with a median of `r round(summary_vals["Median"], 2)` (IQR: `r round(summary_vals["1st Qu."], 2)`–`r round(summary_vals["3rd Qu."], 2)`).
+* **Imputation approach:** Missing values retained as `NA`
+
+### Strengths
+
+* Includes a broad suite of traits spanning morphology, ecology, behaviour, and reproduction
+* Provides detailed breeding and nesting attributes (e.g., clutch size, incubation, nesting structure)
+* Encodes habitat use using ranked values rather than simple binary indicators
+* Represents diet composition as proportional weights rather than simple binary indicators
+* Derived metrics (e.g., habitat breadth, diet diversity) are pre-calculated and readily usable
+
+### Limitations
+
+* Trait variable names are highly abbreviated, reducing interpretability without external documentation
+* Coding schemes are not standardised across variables (e.g., mixture of numeric codes and text values)
+* Some variables require additional processing or lookup tables to be analysis-ready
+* Data completeness varies substantially among traits, particularly for the "expensive traits" (e.g., number of fledglings per year)
+
+### Metadata
+
+**Link to the database: ** [https://doi.org/10.6084/m9.figshare.27051040](https://doi.org/10.6084/m9.figshare.27051040)
+
+### Data type
+
+`r summarise_column_types(df)`

@@ -1,0 +1,56 @@
+## BirdLife Data {#birdlife}
+
+The BirdLife Data Zone provides a comprehensive and standardised compilation of global avian data, integrating information from multiple sources including trait databases, spatial datasets, and IUCN Red List assessments. The platform aggregates species-level data on distribution, ecology, threats, and conservation status, and is widely used in global biodiversity and conservation analyses.
+
+In this project, selected trait and spatial data were obtained through the BirdLife Australia team for cross-referencing and to evaluate the performance of composite indicators.
+
+**Link to the BirdLife Data Zone: ** [https://datazone.birdlife.org/](https://datazone.birdlife.org/)
+
+**Link to the publication of Generation Length and Extent of Occurrence [@Bird2020]: ** [https://doi.org/10.1111/cobi.13486](https://doi.org/10.1111/cobi.13486)
+
+This paper provides modeled generation length estimates for all bird species, an essential metric in Red List assessments and extinction-risk modelling. In the modelling process, range size (extent of occurance, EOO) was included. Both metrics are valuable indicators for sensitivity. These two metrics were also displayed on Birdlife Datazone, although some discrepancy exist.
+
+The data below is acquired from BirdLife Australia and only the attributes dataset is shown.
+
+```{r birdlife, results='asis', echo=FALSE}
+
+df <- birdlife_attr %>% 
+  inner_join(genlength %>% select(SpeciesName2024, GenerationLength), 
+             by = c("ScientificName"="SpeciesName2024")) %>%
+  dplyr::select(-1:-5)
+  
+cov <- knitr::knit_child("50_DbCovTp.Rmd", quiet = TRUE)
+cat(cov, sep = '\n')
+
+```
+
+### Summary
+
+* **Scope:** Australia (subset of the Global data)
+* **Total number of species:** `r nrow(distinct(df))`
+* **Total number of traits:** `r nrow(coverage)`
+* **Year of access:** 2026
+* **Missing data:** Trait coverage ranged from `r round(summary_vals["Min."], 2)` to `r round(summary_vals["Max."], 2)`, with a median of `r round(summary_vals["Median"], 2)` (IQR: `r round(summary_vals["1st Qu."], 2)`–`r round(summary_vals["3rd Qu."], 2)`).
+* **Imputation approach:** Missing values retained as `NA`
+
+### Strengths
+
+* Provides a highly standardised and curated dataset with global coverage
+* Integrates multiple data types, including traits, spatial distributions, conservation status and text description (on the website only)
+* Includes authoritative and regularly updated IUCN Red List information
+* Useful for validation and cross-referencing against other trait databases and web information
+
+### Limitations
+
+* Trait data are standardised at a global scale and may not fully capture regional or local ecological variation
+* Some variables are derived or aggregated, with limited transparency in underlying methods
+* Access to certain datasets may be restricted or require collaboration
+* Spatial and trait data may differ in resolution or update frequency across sources
+
+### Metadata
+
+**Link to the BirdLife Terms and Metadata: ** [https://datazone.birdlife.org/about-our-science/terms-and-definitions](https://datazone.birdlife.org/about-our-science/terms-and-definitions)
+
+### Data type
+
+`r summarise_column_types(df)`

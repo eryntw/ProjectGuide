@@ -1,0 +1,76 @@
+## Australian Bird {#ausbird}
+
+Australian Bird dataset [@Garnett2015] dataset provides a comprehensive and authoritative compilation of biological, ecological, conservation, and legal information for all Australian bird species and subspecies. It includes approximately 230 variables spanning taxonomy, population status, behaviour, breeding, mobility, and climate-related traits, and was developed with cross-referencing to HANZAB (Handbook of Australian, New Zealand & Antarctic Birds).
+
+The dataset covers all species and subspecies recorded in Australia (including mainland, islands, and fishing zones) since European settlement, incorporating extinct and introduced taxa. It is particularly valuable for regional analyses, as habitat classifications are tailored to the Australian context, enabling more ecologically relevant interpretations.
+
+Originally developed as an open-access synthesis of ecological data, the dataset is widely used in studies of species traits and extinction risk. However, data availability remains limited for some subspecies, and completeness varies across trait categories.
+
+**Link to the database: ** [http://dx.doi.org/10.6084/m9.figshare.1499292](http://dx.doi.org/10.6084/m9.figshare.1499292)
+
+The database can also be accessed programmatically through the [`traitdata` R package](https://github.com/RS-eco/traitdata).
+
+**Link to the publication: ** [https://doi.org/10.1038/sdata.2015.61](https://doi.org/10.1038/sdata.2015.61)
+
+The data below is obtained from `traitdata` R package.
+
+```{r ausbird, results='asis', echo=FALSE, fig.height=30}
+
+# database
+df <- traitdata::australian_birds %>% 
+  rename_with(~ gsub("^X\\d+_", "", .x)) %>%
+  janitor::clean_names(case = "snake") %>% 
+  dplyr::filter(is.na(subspecies_name_2) | extinct_4 == 0) %>% 
+  dplyr::select(-1:-18, -231)
+  
+cov <- knitr::knit_child("50_DbCovTp.Rmd", quiet = TRUE)
+cat(cov, sep = '\n')
+
+# metadata
+meta <- readxl::read_excel(fs::path(here::here(), "..", "envBird", "database", 
+                            "Australian_Bird_Data_Version_1.xlsx"),
+                   sheet = "Metadata")
+
+```
+
+### Summary
+
+* **Scope:** Australia
+* **Total number of species:** `r nrow(distinct(df))`
+* **Total number of traits:** `r nrow(coverage)`
+* **Year of release:** 2015
+* **Missing data:** Trait coverage ranged from `r round(summary_vals["Min."], 2)` to `r round(summary_vals["Max."], 2)`, with a median of `r round(summary_vals["Median"], 2)` (IQR: `r round(summary_vals["1st Qu."], 2)`–`r round(summary_vals["3rd Qu."], 2)`).
+* **Imputation approach:** Missing values retained as `NA`
+
+### Strengths
+
+* Includes subspecies-level records, extending taxonomic resolution beyond species (although data coverage for many subspecies is limited)
+* Incorporates phylogenetic information, enabling evolutionary and comparative analyses
+* Uses standardised and analysis-ready coding schemes, making the dataset programmatically accessible
+* Provides clear and descriptive variable names, improving interpretability and usability
+
+### Limitations
+
+* Some traits (e.g., specialisation indices and climate-related metrics) are only available for core or mainland taxa, limiting completeness across all records
+* These derived traits are model-based or processed variables and are therefore difficult to impute for missing taxa
+* The dataset is over a decade old and may not reflect recent taxonomic updates or changes in species status and distributions
+* Most trait are coded in binary format
+
+### Metadata
+
+Metadata were obtained from the original publication.
+
+```{r ausbirdmeta, echo=FALSE}
+knitr::kable(meta) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  ) %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+```
+
+### Data type
+
+The data below is obtained from `traitdata` R package.
+
+`r summarise_column_types(df)`

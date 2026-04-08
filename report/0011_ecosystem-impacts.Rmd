@@ -1,4 +1,4 @@
-## Ecosystem Impacts
+## Ecosystem Impacts {#ecosystemimpacts}
 
 ### The semi-arid ecosystem of SA
 
@@ -18,7 +18,7 @@ Despite this vulnerability, systematic biodiversity monitoring in chenopod and A
 
 ### Ecological impacts of wind and solar energy developments
 
-### Native vegetation removal and ecosystem transformation {-}
+#### Native vegetation removal and ecosystem transformation {-}
 
 Biodiversity in desert shrublands is broadly comparable to that of grasslands, with these systems providing similar ecological functions and services, albeit with lower capacity for flood mitigation and livestock production [@Turney2011]. However, permanent vegetation removal disrupts these functions by preventing the regeneration of native plants within their natural habitats, leading to **habitat loss** for species that depend on shrubland structure and resources.
 
@@ -53,7 +53,6 @@ The use of livestock grazing to manage vegetation beneath and around solar infra
 In semi-arid mulga systems, increased grazing pressure has been shown to significantly reduce herbaceous cover and biodiversity compared to ungrazed areas, while also decreasing water infiltration and soil moisture retention [@Witt2011]. Grazing can also damage biological soil crusts, which play a critical role in stabilising soils, retaining moisture, and providing habitat for a range of organisms, including threatened species [@Belnap2001].
 
 At the community scale, livestock grazing is also a major driver of **weed invasion** in arid landscapes [@Belsky2000]. Livestock facilitate invasion through multiple pathways, including seed dispersal, selective removal of palatable native species, soil disturbance, and the breakdown of protective soil crusts. These processes favour the establishment of exotic annual species, which are typically more tolerant of grazing and fire and can outcompete native vegetation for limited water resources [@Gelbard2003]. While annual species may proliferate under grazing, **native perennial species often decline**, particularly under sustained grazing pressure [@Dorrough2004]. Consequently, even low levels of grazing may be incompatible with the conservation of some native plant communities.
-
 
 #### Roads and infrastructure {-}
 

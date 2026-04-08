@@ -1,7 +1,0 @@
-### `bio_bin`: Spatial and taxonomic bins
-
-Spatial bins were defined using `r settings$context$grain$res_x`-m raster cells, per the [grain][Data grain]. A raster covering the extent (i.e. `r envFunc::name_env_out(list(extent = settings$context$extent[1:4]))$extent`; Figure \@ref(fig:extentmap)) was created using the `make_base_grid` function from the `envRaster` package `r cite_package("envRaster")`. Records within each cell had their coordinates reassigned (i.e. 'binned') to the coordinates of the centroid of their respective cell using `add_raster_cell` from `envRaster` (which calls the `cellFromXY` and `xyFromCell` functions in the `terra` package; `r cite_package("terra", brack = FALSE)`). New coordinates were stored in `cell_lat` and `cell_long` columns.
-
-Taxa names were binned to a consistent taxonomy by matching the `original_name` in the data to the aligned `taxa` name from the taxonomy lookup table, at the finest available taxonomic level up to the taxonomic grain set by the clean settings (i.e. `r settings$context$grain$taxonomic`). 
-
-The [Taxonomy] chapter of this report covers how the taxonomy lookup is created and used throughout the cleaning process.

@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Sensitivity | Developing composite indicators for species risk assessment</title>
+  <meta name="description" content="3 Sensitivity | Developing composite indicators for species risk assessment" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Sensitivity | Developing composite indicators for species risk assessment" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Sensitivity | Developing composite indicators for species risk assessment" />
+  
+  
+  
+
+<meta name="author" content="Department for Environment and Water" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="general-methods.html"/>
+<link rel="next" href="exposure.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Aim</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#renewable-energy-transition-in-south-australia"><i class="fa fa-check"></i><b>1.1.1</b> Renewable energy transition in South Australia</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#ecological-impacts-of-wind-and-solar-energy-developments"><i class="fa fa-check"></i><b>1.1.2</b> Ecological impacts of wind and solar energy developments</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#bioregional-planning-for-renewable-energy-development"><i class="fa fa-check"></i><b>1.1.3</b> Bioregional planning for renewable energy development</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#ecosystemimpacts"><i class="fa fa-check"></i><b>1.2</b> Ecosystem Impacts</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#the-semi-arid-ecosystem-of-sa"><i class="fa fa-check"></i><b>1.2.1</b> The semi-arid ecosystem of SA</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#ecological-impacts-of-wind-and-solar-energy-developments-1"><i class="fa fa-check"></i><b>1.2.2</b> Ecological impacts of wind and solar energy developments</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#additional-pressure"><i class="fa fa-check"></i><b>1.2.3</b> Additional pressure</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#species-risk-assessment"><i class="fa fa-check"></i><b>1.3</b> Species Risk Assessment</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#integration-with-species-distribution-models"><i class="fa fa-check"></i><b>1.3.1</b> Integration with species distribution models</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#trait-based-approaches"><i class="fa fa-check"></i><b>1.3.2</b> Trait-based approaches</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#limitations"><i class="fa fa-check"></i><b>1.3.3</b> Limitations</a></li>
+<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#scope-of-this-report"><i class="fa fa-check"></i><b>1.3.4</b> Scope of this report</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="general-methods.html"><a href="general-methods.html"><i class="fa fa-check"></i><b>2</b> General Methods</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="general-methods.html"><a href="general-methods.html#trait-and-indicator-selection"><i class="fa fa-check"></i><b>2.1</b> Trait and Indicator Selection</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="general-methods.html"><a href="general-methods.html#existing-database"><i class="fa fa-check"></i><b>2.1.1</b> Existing database</a></li>
+<li class="chapter" data-level="2.1.2" data-path="general-methods.html"><a href="general-methods.html#recextract"><i class="fa fa-check"></i><b>2.1.2</b> Extraction from observation records</a></li>
+<li class="chapter" data-level="2.1.3" data-path="general-methods.html"><a href="general-methods.html#literature-based-coding"><i class="fa fa-check"></i><b>2.1.3</b> Literature-based coding</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="general-methods.html"><a href="general-methods.html#theoretical-framework"><i class="fa fa-check"></i><b>2.2</b> Theoretical Framework</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="general-methods.html"><a href="general-methods.html#steps-of-compressing-information"><i class="fa fa-check"></i><b>2.2.1</b> Steps of compressing information</a></li>
+<li class="chapter" data-level="2.2.2" data-path="general-methods.html"><a href="general-methods.html#mapping-vulnerability"><i class="fa fa-check"></i><b>2.2.2</b> Mapping vulnerability</a></li>
+<li class="chapter" data-level="" data-path="general-methods.html"><a href="general-methods.html#definition"><i class="fa fa-check"></i>Term definitions</a></li>
+<li class="chapter" data-level="" data-path="general-methods.html"><a href="general-methods.html#reproducibility"><i class="fa fa-check"></i>Reproducibility</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sensitivity.html"><a href="sensitivity.html"><i class="fa fa-check"></i><b>3</b> Sensitivity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sensitivity.html"><a href="sensitivity.html#thematic-sub-groups"><i class="fa fa-check"></i><b>3.1</b> Thematic Sub-groups</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sensitivity.html"><a href="sensitivity.html#climate-specialisation"><i class="fa fa-check"></i><b>3.1.1</b> Climate specialisation</a></li>
+<li class="chapter" data-level="3.1.2" data-path="sensitivity.html"><a href="sensitivity.html#habitat-specialisation"><i class="fa fa-check"></i><b>3.1.2</b> Habitat specialisation</a></li>
+<li class="chapter" data-level="3.1.3" data-path="sensitivity.html"><a href="sensitivity.html#diet-specialisation"><i class="fa fa-check"></i><b>3.1.3</b> Diet specialisation</a></li>
+<li class="chapter" data-level="3.1.4" data-path="sensitivity.html"><a href="sensitivity.html#adaptability"><i class="fa fa-check"></i><b>3.1.4</b> Adaptability</a></li>
+<li class="chapter" data-level="3.1.5" data-path="sensitivity.html"><a href="sensitivity.html#constraints"><i class="fa fa-check"></i><b>3.1.5</b> Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sensitivity.html"><a href="sensitivity.html#traits-or-indicators-not-included"><i class="fa fa-check"></i><b>3.2</b> Traits or Indicators Not Included</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#trophic-level"><i class="fa fa-check"></i>Trophic level</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#population-trend-and-conservation-status"><i class="fa fa-check"></i>Population trend and conservation status</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#body-mass"><i class="fa fa-check"></i>Body mass</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#nest-type"><i class="fa fa-check"></i>Nest type</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#mating-system"><i class="fa fa-check"></i>Mating system</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sensitivity.html"><a href="sensitivity.html#mapping-traits-and-indicators---bird"><i class="fa fa-check"></i><b>3.3</b> Mapping Traits and Indicators - Bird</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sensitivity.html"><a href="sensitivity.html#bird"><i class="fa fa-check"></i><b>3.3.1</b> Bird</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exposure.html"><a href="exposure.html"><i class="fa fa-check"></i><b>4</b> Exposure</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="exposure.html"><a href="exposure.html#identification-of-exposure-pathways"><i class="fa fa-check"></i><b>4.1</b> Identification of Exposure Pathways</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="exposure.html"><a href="exposure.html#impact-pathway-diagram"><i class="fa fa-check"></i><b>4.1.1</b> Impact Pathway Diagram</a></li>
+<li class="chapter" data-level="4.1.2" data-path="exposure.html"><a href="exposure.html#exposure-analysis-diagram"><i class="fa fa-check"></i><b>4.1.2</b> Exposure analysis diagram</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="exposure.html"><a href="exposure.html#the-stressors"><i class="fa fa-check"></i><b>4.2</b> The Stressors</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="exposure.html"><a href="exposure.html#invasive-species"><i class="fa fa-check"></i><b>4.2.1</b> Invasive Species</a></li>
+<li class="chapter" data-level="4.2.2" data-path="exposure.html"><a href="exposure.html#habitat-fragmentation"><i class="fa fa-check"></i><b>4.2.2</b> Habitat fragmentation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="exposure.html"><a href="exposure.html#trait-stressor-matrix"><i class="fa fa-check"></i><b>4.3</b> Trait-Stressor Matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="exposure.html"><a href="exposure.html#thematic-sub-groups-1"><i class="fa fa-check"></i><b>4.4</b> Thematic Sub-groups</a></li>
+<li class="chapter" data-level="4.5" data-path="exposure.html"><a href="exposure.html#potential-stressors-not-included"><i class="fa fa-check"></i><b>4.5</b> Potential Stressors Not Included</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="exposure.html"><a href="exposure.html#habitat-degradation"><i class="fa fa-check"></i><b>4.5.1</b> Habitat degradation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="exposure.html"><a href="exposure.html#process-data"><i class="fa fa-check"></i><b>4.6</b> Process Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manually-filling-the-blank.html"><a href="manually-filling-the-blank.html"><i class="fa fa-check"></i><b>5</b> Manually filling the blank</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="bird-database.html"><a href="bird-database.html"><i class="fa fa-check"></i><b>A</b> Bird Database</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="bird-database.html"><a href="bird-database.html#ausbird"><i class="fa fa-check"></i><b>A.1</b> Australian Bird</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="bird-database.html"><a href="bird-database.html#summary"><i class="fa fa-check"></i><b>A.1.1</b> Summary</a></li>
+<li class="chapter" data-level="A.1.2" data-path="bird-database.html"><a href="bird-database.html#strengths"><i class="fa fa-check"></i><b>A.1.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.1.3" data-path="bird-database.html"><a href="bird-database.html#limitations-1"><i class="fa fa-check"></i><b>A.1.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.1.4" data-path="bird-database.html"><a href="bird-database.html#metadata"><i class="fa fa-check"></i><b>A.1.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.1.5" data-path="bird-database.html"><a href="bird-database.html#data-type"><i class="fa fa-check"></i><b>A.1.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="bird-database.html"><a href="bird-database.html#avonet"><i class="fa fa-check"></i><b>A.2</b> AVONET</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="bird-database.html"><a href="bird-database.html#summary-1"><i class="fa fa-check"></i><b>A.2.1</b> Summary</a></li>
+<li class="chapter" data-level="A.2.2" data-path="bird-database.html"><a href="bird-database.html#strengths-1"><i class="fa fa-check"></i><b>A.2.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.2.3" data-path="bird-database.html"><a href="bird-database.html#limitations-2"><i class="fa fa-check"></i><b>A.2.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.2.4" data-path="bird-database.html"><a href="bird-database.html#metadata-1"><i class="fa fa-check"></i><b>A.2.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.2.5" data-path="bird-database.html"><a href="bird-database.html#data-type-1"><i class="fa fa-check"></i><b>A.2.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="bird-database.html"><a href="bird-database.html#birdbase"><i class="fa fa-check"></i><b>A.3</b> BirdBase</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="bird-database.html"><a href="bird-database.html#summary-2"><i class="fa fa-check"></i><b>A.3.1</b> Summary</a></li>
+<li class="chapter" data-level="A.3.2" data-path="bird-database.html"><a href="bird-database.html#strengths-2"><i class="fa fa-check"></i><b>A.3.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.3.3" data-path="bird-database.html"><a href="bird-database.html#limitations-3"><i class="fa fa-check"></i><b>A.3.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.3.4" data-path="bird-database.html"><a href="bird-database.html#metadata-2"><i class="fa fa-check"></i><b>A.3.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.3.5" data-path="bird-database.html"><a href="bird-database.html#data-type-2"><i class="fa fa-check"></i><b>A.3.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="bird-database.html"><a href="bird-database.html#birdbehav"><i class="fa fa-check"></i><b>A.4</b> Bird Behaviour</a></li>
+<li class="chapter" data-level="A.5" data-path="bird-database.html"><a href="bird-database.html#birdlife"><i class="fa fa-check"></i><b>A.5</b> BirdLife Data</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="bird-database.html"><a href="bird-database.html#summary-3"><i class="fa fa-check"></i><b>A.5.1</b> Summary</a></li>
+<li class="chapter" data-level="A.5.2" data-path="bird-database.html"><a href="bird-database.html#strengths-3"><i class="fa fa-check"></i><b>A.5.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.5.3" data-path="bird-database.html"><a href="bird-database.html#limitations-4"><i class="fa fa-check"></i><b>A.5.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.5.4" data-path="bird-database.html"><a href="bird-database.html#metadata-3"><i class="fa fa-check"></i><b>A.5.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.5.5" data-path="bird-database.html"><a href="bird-database.html#data-type-3"><i class="fa fa-check"></i><b>A.5.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="bird-database.html"><a href="bird-database.html#r-packages"><i class="fa fa-check"></i><b>A.6</b> R packages</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Developing composite indicators for species risk assessment</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sensitivity" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Sensitivity<a href="sensitivity.html#sensitivity" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Definition:</strong> The degree to which a species is affected, either adversely or beneficially, by environmental disturbances or climatic variability. It is an inherent, intrinsic characteristic determined by the species’ biology, physiology, and ecological traits. Here, it is combined with adaptability, or adaptive capacity to include all the relative intrinsic traits. Adaptive capacity refers to the ability of a species to adjust, cope with, or respond to changing conditions to moderate potential damage, take advantage of opportunities, or survive in new environments.</p>
+<div id="thematic-sub-groups" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Thematic Sub-groups<a href="sensitivity.html#thematic-sub-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Traits were selected following a comprehensive review of available trait databases and relevant literature on large-scale, cross-species meta-analyses. Selected traits were subsequently grouped into thematic subcategories to reflect key dimensions of species sensitivity.</p>
+<p>Trait selection was informed by evidence from studies examining bird breeding success, establishment success, and responses to contemporary threatening processes at both global and Australian scales. While some traits are consistently identified as important predictors, others show variable significance across studies. Such variability is expected in broad-scale comparative analyses, where ecological relationships are influenced by local context, species-specific factors, and data limitations.</p>
+<p>Accordingly, the selection prioritised traits with strong theoretical and empirical support, while acknowledging that no single set of traits can fully capture species sensitivity. As with any modelling approach, reducing complex biological systems to a simplified index involves trade-offs. However, the framework aims to provide evidence-based ecological reasoning and transparent methodology to develop composite indicators that are useful and interpretable of relative species vulnerability.</p>
+<p>It is also important to acknowledge that the available evidence base is taxonomically uneven. Birds are disproportionately represented in trait-based studies and large-scale meta-analyses, and consequently provide the primary basis for trait selection and justification. However, the framework has been developed with generality in mind. In particular, core traits such as ecological specialisation (e.g., habitat, diet, and climate breadth) represent fundamental dimensions of species ecology and are broadly applicable across taxonomic groups. As such, while the current implementation is informed by avian data, the underlying structure of the framework is transferable and can be adapted as additional trait data become available for other taxa.</p>
+<div id="climate-specialisation" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Climate specialisation<a href="sensitivity.html#climate-specialisation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Climate specialisation reflects the degree to which a species is restricted to a narrow range of climatic conditions. Species with limited climatic tolerance are more sensitive to environmental change, as they are less able to persist under shifting temperature and precipitation regimes. In contrast, climatically generalist species are more likely to withstand variability and adapt to novel conditions.</p>
+</div>
+<div id="habitat-specialisation" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Habitat specialisation<a href="sensitivity.html#habitat-specialisation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Habitat breadth is a consistent predictor of species establishment success in novel environments <span class="citation">(<a href="bird-database.html#ref-Blackburn2009">Blackburn <em>et al.</em> 2009</a>; <a href="#ref-Cassey2004"><strong>Cassey2004?</strong></a>)</span>. Species occupying a wide range of habitats within their native distribution are more likely to encounter suitable conditions elsewhere. Broad habitat tolerance reflects ecological generalism, which enhances survival in unfamiliar landscapes and increases the likelihood of successful establishment. Conversely, habitat specialists are more sensitive to environmental change due to their reliance on specific habitat types.</p>
+</div>
+<div id="diet-specialisation" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Diet specialisation<a href="sensitivity.html#diet-specialisation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Diet breadth is another key determinant of establishment success <span class="citation">(<a href="bird-database.html#ref-Blackburn2009">Blackburn <em>et al.</em> 2009</a>; <a href="#ref-Cassey2004"><strong>Cassey2004?</strong></a>)</span>. Dietary generalists can exploit a wider variety of food resources, reducing dependence on specific prey that may be absent in new environments. Broad diets are associated with behavioural flexibility and environmental tolerance, both of which contribute to higher establishment success and lower sensitivity. In contrast, dietary specialists are more vulnerable to changes in resource availability.</p>
+</div>
+<div id="adaptability" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Adaptability<a href="sensitivity.html#adaptability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Adaptability is inherently difficult to quantify, as it encompasses complex behavioural, ecological, and evolutionary processes. It is often context-dependent and may reflect underlying genetic and phenotypic variation. In this study, adaptability is approximated using a species’ ability to utilise human-modified environments.</p>
+<p>The capacity to forage in agricultural or urban landscapes has been shown to be negatively correlated with extinction risk <span class="citation">(<a href="bird-database.html#ref-Olah2024">Olah <em>et al.</em> 2024</a>)</span>. Species that make substantial use of human-modified habitats tend to exhibit greater ecological flexibility, reduced sensitivity to habitat disturbance, and lower overall extinction risk.</p>
+</div>
+<div id="constraints" class="section level3 hasAnchor" number="3.1.5">
+<h3><span class="header-section-number">3.1.5</span> Constraints<a href="sensitivity.html#constraints" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The constraints subgroup comprises traits that may limit a species’ ability to adapt to environmental change or successfully establish in novel environments. These traits capture different biological and ecological dimensions and vary in their relative influence on sensitivity. Below are some candidate traits and indicator that can be included in this subgroup. Traits and indicators can be added to or removed from this subgroup based on data availability and framework design.</p>
+<div id="generation-length" class="section level4 unnumbered hasAnchor">
+<h4>Generation length<a href="sensitivity.html#generation-length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Generation length represents the average age of breeding individuals in a population and reflects the rate of population turnover. It lies between the age at first reproduction and the age of the oldest breeding individuals, except in species that reproduce only once <span class="citation">(<a href="bird-database.html#ref-Bird2020">Bird <em>et al.</em> 2020</a>)</span>.</p>
+<p>As direct estimates of longevity are often difficult to obtain in wild populations, generation length provides a standardised and biologically meaningful proxy for life-history pace. Species with longer generation lengths generally have slower population turnover and reduced capacity to recover from disturbances, increasing their sensitivity to environmental change.</p>
+</div>
+<div id="range-size-indicator" class="section level4 unnumbered hasAnchor">
+<h4>Range size (indicator)<a href="sensitivity.html#range-size-indicator" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Although not a trait per se, range size is a key indicator of a species’ current ecological condition. It is strongly associated with both threat status and establishment success <span class="citation">(<a href="bird-database.html#ref-Blackburn2009">Blackburn <em>et al.</em> 2009</a>; <a href="bird-database.html#ref-Tobias2019">Tobias and Pigot 2019</a>; <a href="bird-database.html#ref-Bird2020">Bird <em>et al.</em> 2020</a>; <a href="#ref-Cassey2004"><strong>Cassey2004?</strong></a>)</span>.</p>
+<p>Species with large native ranges typically exhibit broader ecological tolerance and greater flexibility, increasing their likelihood of successful establishment. In contrast, species with small ranges are often more specialised, have smaller population sizes, and are therefore more vulnerable to environmental change and stochastic threats.</p>
+</div>
+<div id="restricted-range" class="section level4 unnumbered hasAnchor">
+<h4>Restricted range<a href="sensitivity.html#restricted-range" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The restricted range variable in BirdBase 2025 identifies species with a global range size &lt; 50,000 km². Because the continuous range-size variable is log-transformed and scaled in the index, its influence may be diminished. Including a separate restricted-range indicator ensures that species with genuinely small distributions receive appropriate weighting.</p>
+<p>This approach captures both naturally range-restricted species and those whose distributions have been reduced due to historical habitat loss, improving representation of vulnerability associated with limited geographic extent.</p>
+</div>
+<div id="raptor---bird-only" class="section level4 unnumbered hasAnchor">
+<h4>Raptor - Bird Only<a href="sensitivity.html#raptor---bird-only" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Raptors are apex or near-apex predators that typically require large home ranges and are sensitive to changes in prey availability. These ecological characteristics can increase their vulnerability to habitat loss and ecosystem disruption.</p>
+<p>In addition, raptors are often more detectable and preferentially reported in observational datasets, which may introduce biases in data availability and interpretation.</p>
+</div>
+<div id="migratory---bird-only" class="section level4 unnumbered hasAnchor">
+<h4>Migratory - Bird Only<a href="sensitivity.html#migratory---bird-only" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Migratory behaviour is associated with reduced establishment success in novel environments <span class="citation">(<a href="bird-database.html#ref-Blackburn2009">Blackburn <em>et al.</em> 2009</a>; <a href="#ref-Cassey2004"><strong>Cassey2004?</strong></a>)</span> and is a significant predictor of extinction risk <span class="citation">(<a href="bird-database.html#ref-Tobias2019">Tobias and Pigot 2019</a>)</span>.</p>
+<p>Migratory species rely on seasonal movements and, in many cases, social cues to locate suitable habitats, increasing susceptibility to Allee effects. They must also identify and maintain access to both breeding and non-breeding sites, which can be challenging in unfamiliar or fragmented landscapes. Long-distance migrants are particularly vulnerable, as they depend on multiple, spatially separated habitats, increasing exposure to threats across their migratory routes.</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="traits-or-indicators-not-included" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Traits or Indicators Not Included<a href="sensitivity.html#traits-or-indicators-not-included" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The following traits were considered but ultimately excluded from the sensitivity index due to conceptual, methodological, or data-related limitations. In each case, the potential value of the trait was outweighed by issues of interpretation, bias, or inconsistency.</p>
+<div id="elevational-range" class="section level4 unnumbered hasAnchor">
+<h4>Elevational range<a href="sensitivity.html#elevational-range" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Elevational range is often interpreted as a proxy for ecological generalism, as species occupying a wide range of elevations are assumed to tolerate broader climatic and habitat conditions. However, several issues limit its applicability in this study.</p>
+<p>First, elevational data are typically derived from global databases (e.g., BirdBase, <a href="bird-database.html#birdbase">A.3</a>), which may include elevation ranges not relevant to the Australian context. For example, Brown Quail (<em>Synoicus ypsilophorus</em>) are recorded at elevations from 0 to 3700 m asl, far exceeding the highest peak in Australia (~2200 m asl). While locally derived estimates would be preferable, they require occurrence-based extraction methods, which introduce additional sampling biases (<a href="general-methods.html#recextract">2.1.2</a>).</p>
+<p>Second, the ecological interpretation of elevational range is context-dependent. In Australia, where most landscapes are flat, species restricted to high elevations are often specialists with limited distributions. Using raw elevational ranges can therefore produce misleading results. For instance, lowland species (0–100 m) may appear more sensitive than montane species (1500–2000 m), despite having access to a broader extent of suitable habitat.</p>
+<p>Potential solutions, such as categorising elevation into discrete bands, introduce further issues related to arbitrary thresholds and misclassification. Given these conceptual and methodological challenges, elevational range was excluded, as it is likely to introduce more bias than informative signal.</p>
+</div>
+<div id="trophic-level" class="section level3 unnumbered hasAnchor">
+<h3>Trophic level<a href="sensitivity.html#trophic-level" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Trophic level is often associated with sensitivity, as apex predators (e.g., raptors) are typically more vulnerable to environmental change due to their position in the food web. However, incorporating trophic level introduces several complications.</p>
+<p>While high trophic levels may indicate increased sensitivity, including this variable would inadvertently down-weight the vulnerability of specialised primary consumers (e.g., species dependent on specific seeds or fruits). Additionally, intermediate trophic groups such as insectivores and omnivores exhibit considerable dietary flexibility, making them difficult to classify meaningfully along a single gradient.</p>
+<p>Given these inconsistencies and the risk of misrepresenting dietary specialisation, trophic level was excluded from the index.</p>
+</div>
+<div id="population-trend-and-conservation-status" class="section level3 unnumbered hasAnchor">
+<h3>Population trend and conservation status<a href="sensitivity.html#population-trend-and-conservation-status" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Population trend and conservation status may appear to be useful indicators of sensitivity, as they reflect current species performance. However, these metrics primarily capture realised outcomes driven by external pressures (e.g., habitat loss, threats) rather than intrinsic biological traits.</p>
+<p>Furthermore, these variables are dynamic and may change over time, reducing their suitability for comparative analyses. Their inclusion would also introduce taxonomic bias, as such data are widely available for birds but lacking for many other groups (e.g., plants).</p>
+<p>For these reasons, population trend and conservation status were excluded to maintain a focus on intrinsic, trait-based sensitivity. However, these indicators were used to buid the sub-index “cumulative pressure”.</p>
+</div>
+<div id="body-mass" class="section level3 unnumbered hasAnchor">
+<h3>Body mass<a href="sensitivity.html#body-mass" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Body mass has been identified as a significant predictor in multiple studies, showing associations with breeding success <span class="citation">(<a href="#ref-Smart2024"><strong>Smart2024?</strong></a>)</span>, establishment success <span class="citation">(<a href="bird-database.html#ref-Blackburn2009">Blackburn <em>et al.</em> 2009</a>)</span>, and extinction risk <span class="citation">(<a href="bird-database.html#ref-Tobias2019">Tobias and Pigot 2019</a>)</span>. However, these relationships are often inconsistent and context-dependent.</p>
+<p>As a composite trait, body mass is correlated with multiple aspects of species biology, including life-history strategy, metabolism, and ecological interactions. This makes it difficult to interpret within a sensitivity index without confounding multiple underlying processes or over-weighting certain dimensions.</p>
+<p>To capture life-history pace more directly and with greater interpretability, generation length <span class="citation">(<a href="bird-database.html#ref-Bird2020">Bird <em>et al.</em> 2020</a>)</span> was selected as a more appropriate proxy. Consequently, body mass was excluded.</p>
+</div>
+<div id="nest-type" class="section level3 unnumbered hasAnchor">
+<h3>Nest type<a href="sensitivity.html#nest-type" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Nest architecture has been shown to influence breeding success, with enclosed nests generally associated with higher survival rates than open nests <span class="citation">(<a href="#ref-Smart2024"><strong>Smart2024?</strong></a>)</span>. However, nest type represents only one component of reproductive strategy.</p>
+<p>Reproductive success is shaped by a broader suite of life-history traits, and the influence of nest type alone may be limited or context-dependent. Given its partial representation of reproductive dynamics, nest type was not included in the index. However, it is used in stressor-specific analysis when building the “exposure” sub-index.</p>
+</div>
+<div id="mating-system" class="section level3 unnumbered hasAnchor">
+<h3>Mating system<a href="sensitivity.html#mating-system" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Mating system has been linked to both extinction risk <span class="citation">(<a href="bird-database.html#ref-Tobias2019">Tobias and Pigot 2019</a>)</span> and establishment success <span class="citation">(<a href="bird-database.html#ref-Blackburn2009">Blackburn <em>et al.</em> 2009</a>)</span>, with polygynous systems potentially increasing sensitivity through mechanisms such as Allee effects. Available datasets categorise mating systems into discrete classes (e.g., monogamy, polygyny, lekking).</p>
+<p>However, avian mating systems are highly complex and often exist along a continuum, with widespread variation in extra-pair behaviour both within and among species. This complexity makes it difficult to define consistent and biologically meaningful thresholds for sensitivity scoring.</p>
+<p>Given these challenges in classification and interpretation, mating system was excluded from the index.</p>
+<hr />
+</div>
+</div>
+<div id="mapping-traits-and-indicators---bird" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Mapping Traits and Indicators - Bird<a href="sensitivity.html#mapping-traits-and-indicators---bird" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bird" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Bird<a href="sensitivity.html#bird" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="candidate-traitindicator-table" class="section level4 unnumbered hasAnchor">
+<h4>Candidate trait/indicator table<a href="sensitivity.html#candidate-traitindicator-table" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table class="table table-striped table-hover table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:candidates">Table 3.1: </span>Summary of candidate trait-based indicators used to assess the intrinsic sensitivity. The table outlines each variable, its data source, measurement type, spatial coverage, and calculation method, along with the expected direction of association with risk and whether the relationship has been empirically supported.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Lv2_Indicator
+</th>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Source
+</th>
+<th style="text-align:left;">
+N-category
+</th>
+<th style="text-align:left;">
+ScoringRequired
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Coverage
+</th>
+<th style="text-align:left;">
+Unit
+</th>
+<th style="text-align:left;">
+Calculation
+</th>
+<th style="text-align:left;">
+Direction
+</th>
+<th style="text-align:left;">
+Analysis-proved
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Breeding Extent (EOO)
+</td>
+<td style="text-align:left;">
+BirdLife
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Australia*
+</td>
+<td style="text-align:left;">
+sq km
+</td>
+<td style="text-align:left;">
+log(EOO)
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align: top !important;" rowspan="4">
+</td>
+<td style="text-align:left;">
+Climate zones
+</td>
+<td style="text-align:left;">
+Extracted
+stern_dehoedt_2000_minor
+using records
+</td>
+<td style="text-align:left;">
+N = 26
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+percentage
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+simpson index
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Elevation range
+</td>
+<td style="text-align:left;">
+Birdbase
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+International
+</td>
+<td style="text-align:left;">
+meter
+</td>
+<td style="text-align:left;">
+elevation range
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Elevation range
+</td>
+<td style="text-align:left;">
+Extracted dem-9s
+using records
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+meter
+</td>
+<td style="text-align:left;">
+90% elevation range
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other rec extracted SDM stats
+</td>
+<td style="text-align:left;">
+envCleaned
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Potentially
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+meter
+</td>
+<td style="text-align:left;">
+90% percentile
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Habitat breadth - main types
+</td>
+<td style="text-align:left;">
+BirdLife/ IUCN
+</td>
+<td style="text-align:left;">
+N = 17 (AUSN = 10)
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+Australia*
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+sum
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align: top !important;" rowspan="4">
+</td>
+<td style="text-align:left;">
+Habitat breadth - sub types
+</td>
+<td style="text-align:left;">
+BirdLife/ IUCN
+</td>
+<td style="text-align:left;">
+N = 110 (AUSN = 72)
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+Australia*
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+sum
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Breeding Habitat breadth
+</td>
+<td style="text-align:left;">
+Ausbird
+</td>
+<td style="text-align:left;">
+N = 17 (AUSN = 13)
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+sum
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Feeding Habitat breadth
+</td>
+<td style="text-align:left;">
+Ausbird
+</td>
+<td style="text-align:left;">
+N = 31 (AUSN = 20)
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+sum
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat breadth
+</td>
+<td style="text-align:left;">
+Birdbase
+</td>
+<td style="text-align:left;">
+N = 15 (AUSN = 9)
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+rank
+</td>
+<td style="text-align:left;">
+International
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+sum
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:left;">
+Diet diversity
+</td>
+<td style="text-align:left;">
+Birdbase
+</td>
+<td style="text-align:left;">
+N = 10 (AUSN = 7)
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+percentage
+</td>
+<td style="text-align:left;">
+International
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+simpson index
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Adaptability
+</td>
+<td style="text-align:left;">
+Usage of modified environment
+</td>
+<td style="text-align:left;">
+BirdLife/ IUCN
+</td>
+<td style="text-align:left;">
+Lv1N = 3, Lv2N = 20
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+Australia*
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+sum
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Usage of modified environment
+</td>
+<td style="text-align:left;">
+Ausbird
+</td>
+<td style="text-align:left;">
+4 (Feeding/Breeding habitat in Agricultural/Urban landscape)
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+sum
+</td>
+<td style="text-align:left;">
+Negative
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Long-distanced migration
+</td>
+<td style="text-align:left;">
+BirdLife
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+categorical
+</td>
+<td style="text-align:left;">
+International
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1/0
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align: top !important;" rowspan="5">
+</td>
+<td style="text-align:left;">
+Long-distanced migration
+</td>
+<td style="text-align:left;">
+Ausbird
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+International
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1/0
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Long-distanced migration
+</td>
+<td style="text-align:left;">
+Birdbase
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+International
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1/0
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Restricted range
+</td>
+<td style="text-align:left;">
+Birdbase
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+International
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1/0
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Generation length
+</td>
+<td style="text-align:left;">
+BirdLife
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+ln(generation)
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Raptor
+</td>
+<td style="text-align:left;">
+BirdLife
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+International
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+1/0
+</td>
+<td style="text-align:left;">
+Positive
+</td>
+<td style="text-align:left;">
+No
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="scoring-system" class="section level4 hasAnchor" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Scoring system<a href="sensitivity.html#scoring-system" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Numeric variables, such as extent of occurrence and generation length, were log-transformed to reduce skew and improve comparability across species. Proportional variables were summarised using both Shannon and Simpson diversity indices. While these indices are highly correlated (cor = 0.97), the Simpson index was preferred because it emphasizes evenness and is bounded between 0 and 1. Accordingly, all proportional traits are reported using the Simpson index.</p>
+<p>Categorical variables were scored based on the ecological criteria summarised in the table below. This scoring ensures that the usage of traits were documented for transparancy and consistency.</p>
+<table class="table table-striped table-hover table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:scoretable">Table 3.2: </span>Summary of traits, definitions, and scoring criteria for the sensitivity sub-index. Numeric traits are transformed or scaled as indicated; categorical and binary traits are assigned scores according to ecological criteria.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+SubIndex
+</th>
+<th style="text-align:left;">
+Trait
+</th>
+<th style="text-align:left;">
+Condition
+</th>
+<th style="text-align:left;">
+Value
+</th>
+<th style="text-align:left;">
+Score
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Range size
+(indicator)
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Extent of Occurrence
+(EOO; km²)
+</td>
+<td style="text-align:left;">
+log(EOO)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Climate diversity
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Simpson diversity
+index of climate zones
+occupied, based on the
+proportion of occurrence
+records in each zone.
+</td>
+<td style="text-align:left;">
+simpson index
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Breeding habitat
+breadth
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Number of distinct
+habitat types used for
+breeding.
+</td>
+<td style="text-align:left;">
+raw number
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Feeding habitat
+breadth
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Number of distinct
+habitat types used for
+foraging.
+</td>
+<td style="text-align:left;">
+raw number
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:left;">
+Diet diversity
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Simpson diversity index
+of major diet categories,
+based on the proportions.
+</td>
+<td style="text-align:left;">
+simpson index
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Adaptability
+</td>
+<td style="text-align:left;">
+Usage of agriculture
+or urban environment
+</td>
+<td style="text-align:left;">
+categorical
+</td>
+<td style="text-align:left;">
+Breed or feed in &gt; 2
+modified environments
+</td>
+<td style="text-align:left;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align: top !important;" rowspan="3">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Breed in ≥ 1 modified
+environment
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Feed in ≥ 1 modified
+environment
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+No use of modified
+environments
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Migratory status
+</td>
+<td style="text-align:left;">
+categorical
+</td>
+<td style="text-align:left;">
+Long-distance migrant
+</td>
+<td style="text-align:left;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align: top !important;" rowspan="7">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Partial or altitudinal
+migrant
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Nomadic or resident
+(non-migrant)
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Restricted range
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+EOO ≥ 50,000 km² (0)
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+EOO &lt; 50,000 km² (1)
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Generation length
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Mean age of reproducing
+individuals, representing
+life-history pace.
+</td>
+<td style="text-align:left;">
+ln(genlenth)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Raptor
+</td>
+<td style="text-align:left;">
+binary
+</td>
+<td style="text-align:left;">
+Raptor (owls, hawks,
+eagles, kites, falcons,
+caracaras)
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Non-raptor
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="general-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exposure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https =//github.com/dew-landscapes/RiskMap/edit/master/0021_sensitivity-framework.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

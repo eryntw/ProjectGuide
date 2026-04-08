@@ -1,0 +1,66 @@
+# Cumulative Pressure
+
+**Definition:** the combined, interactive effects of multiple environmental stressors—such as habitat fragmentation, climate change, pollution, and invasive species—acting simultaneously or sequentially on a specific species or population over time. 
+
+---
+
+## Thematic Sub-groups
+
+Exposure scores estimate the future pressures a species may face, while sensitivity reflects its intrinsic capacity to cope with environmental change. However, an additional index is needed to capture the cumulative threats already acting on a species. IUCN threat assessments provide this context by incorporating pressures occurring beyond the study area, thereby reflecting the overall population status. This accounts for situations where species with low intrinsic sensitivity may nonetheless be highly threatened due to land-use conflict or overlap with intensive human activities.
+
+### Threats
+
+The IUCN Threat Impact Scoring System provides a structured framework for classifying and ranking the impact of threats on individual species based on the [IUCN threat classification scheme](https://www.iucnredlist.org/resources/threat-classification-scheme) [@Ward2020]. It evaluates threats across three key dimensions: Timing (whether the threat is past, ongoing, or future), Scope (the proportion of the population affected), and Severity (the magnitude of population decline caused). Scores from these components are combined to derive an overall threat impact, which is categorised as high, medium, low, or negligible (Table @ref(tab:threatscore)). This approach enables consistent differentiation between minor and high-impact threats.
+
+In this study, threat scores were assigned following the framework in Table 2 of [@Ward2020], with one modification. The original system assigns a score of 0 to threats classified as “unknown”; here, a non-zero value (1) was used to account for the possibility that such threats may be severe but poorly documented.
+
+```{r threatscore, echo=FALSE, results='asis'}
+
+knitr::knit_child("child/20_exposure-threatscore.Rmd", quiet = TRUE) %>% 
+  cat(sep = '\n')
+
+```
+
+The IUCN threat classification scheme is hierarchical, with Level 1 categories subdivided into more detailed Level 2 and Level 3 threat types. This structure enables the derivation of multiple variables that capture different aspects of threat exposure.
+
+The following variables were defined:
+
+* **t_n_lv1** – Total number of individual Level-1 threat types
+* **t_n_lv2_total** – Total number of individual Level-2 threat subtypes
+* **t_score_max_sp** – Standardised maximum impact score among Level-1 threats
+* **t_score_sum_sp** – Sum of standardised Level-1 threat scores
+
+The variable **t_score_sum_sp** best represents the cumulative impact of all threats affecting a species. It is calculated as the sum of the maximum threat impact scores within each Level-1 category, thereby integrating the effects of severity, scope, and timing into a single metric. High values of of this variable indicate that a species is subject to strong and widespread pressures across its range, even if these pressures arise from a limited number of threat categories.
+
+By standardising scores at the Level-1 category, this approach avoids bias arising from unequal numbers of sub-threats within different IUCN categories. As a result, the metric reflects the overall magnitude of environmental pressure experienced by a species, rather than simply the number of recorded threats.
+
+### Population trend
+
+Population trend was incorporated by assigning ordinal scores based on IUCN trend categories (e.g., increasing, stable, decreasing, unknown), with unknown values treated as stable.
+
+```{r trend}
+trend_scores <- data.frame(
+  Trend = c("Decreasing", "Stable", "Increasing", "unknown"),
+  Score = c(2, 1, 0, 1)
+)
+
+kbl(trend_scores, align = c("l", "c")) %>%
+  kable_styling(full_width = FALSE)
+```
+
+### Popluation status
+
+Population status was incorporated using IUCN Red List categories, with scores assigned based on conservation status. Categories include Critically Endangered (CR), Endangered (EN), Vulnerable (VU), Near Threatened (NT), and Least Concern (LC), ranked from highest to lowest conservation concern.
+
+For species not assessed by the IUCN, population status was inferred from estimates provided by the Department for Environment and Water (DEW) bioregional team, based on spatial analyses aligned with IUCN assessment methodology.
+
+```{r status}
+status_scores <- data.frame(
+  Status = c("CR", "EN", "VU", "NT", "LC"),
+  Score  = c(5, 4, 3, 2, 1)
+)
+
+kbl(status_scores, align = c("l", "c")) %>%
+  kable_styling(full_width = FALSE)
+```
+
