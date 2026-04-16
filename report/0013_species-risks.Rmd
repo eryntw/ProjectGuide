@@ -6,6 +6,8 @@ At the current stage of bioregional planning, biodiversity is represented using 
 
 A key next step is the development of a consequence map, which moves beyond species presence to explicitly represent the risks faced by species under development pressures. Trait-based risk assessment is used to quantify the potential impacts of proposed activities on affected species. These quantified composite indicator is then integrated with SDMs to spatially represent risk, with the highest value across species summarised for each spatial unit. The resulting consequence map is classified using defined thresholds to delineate development zones, which are intended to guide decisions on the siting of proposed developments and land uses. In addition, the assessment can identify species-specific risks, enabling targeted avoidance measures and the design of appropriate mitigation strategies to be addressed within development applications.
 
+---
+
 ### Trait-based approaches
 
 Species traits are the measurable biological characteristics of organisms, including morphology, physiology, behaviour, and phenology, that shape their ecological performance and reveal the complex processes driving extinction risk [@Gallagher2021]. The large-scale integration of this information allows researchers to conduct meta-analyses across vast numbers of species to identify general trends in how biodiversity responds to human pressures. For instance, trait-based models have been successfully used to predict species sensitivity to habitat fragmentation [@Keinath2017], assess vulnerability to invasive predators such as feral cats [@Woinarski2017], and model responses to fire disturbances [@Pocknee2023].
@@ -17,6 +19,8 @@ Incorporating trait data into species risk assessments provides several importan
 Second, trait-based frameworks support predictive assessments by enabling the estimation of species-specific responses prior to the implementation of new developments or emerging threats. This is particularly valuable in data-limited contexts, where empirical impact data are unavailable [@Galic2024]. Increasingly, such approaches are being applied at broad taxonomic scales; for example, global analyses have used trait data to assess the vulnerability of tens of thousands of marine species to multiple stressors [@Butt2022], and to predict species’ susceptibility to climate change [@Pacifici2015].
 
 By explicitly linking biological traits to threat responses, trait-based risk assessments provide a more nuanced and generalisable framework for evaluating biodiversity impacts. This approach supports a shift from reactive to proactive conservation planning, enabling more informed decision-making in the context of rapid environmental change.
+
+---
 
 ### Limitations
 
@@ -37,6 +41,8 @@ Trait information relies on existing knowledge of a species. For poorly studied 
 4. **Lack of population and demographic information**
 
 Trait data do not capture population size or demographic dynamics. However, these data are essential for species risk assessment and are sourced separately from spatial datasets such as IUCN, BirdLife Data Zone, or published studies.
+
+---
 
 ### Scope of this report
 

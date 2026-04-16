@@ -27,7 +27,7 @@ candi %>%
     full_width = FALSE,
     font_size = 12
   ) %>%
-  collapse_rows(columns = 1, valign = "top") ## merge the Lv 2 indicator col
+  collapse_rows(columns = 1, valign = "middle") ## merge the Lv 2 indicator col
 
 ```
 

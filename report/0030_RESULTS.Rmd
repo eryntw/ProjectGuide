@@ -1,0 +1,71 @@
+# Results
+
+## The Raw Coin
+
+The raw coin contains all variables considered as candidate indicators. These variables have passed initial data checks and are ready for processing; however, none of the data processing steps mentioned in the Method section \@ref(dataprocess) have been applied at this stage. The raw coin therefore serves as a raw dataset from which variables can be included or excluded in subsequent analyses.
+
+## The Base Coin
+
+The Base Coin consists of a selected subset of candidate indicators from the Raw Coin and serves as the baseline for the risk assessment. Only essential log transformations were applied to variables with large numbers. All other data processing steps followed default methods, including min–max normalisation and arithmetic mean aggregation.
+
+```{r basecoin, echo=FALSE}
+
+targets::tar_source(fs::path(here::here(), "..", "envBird", "R", "coin"))
+
+## Name variable for knitting child
+h_df <- coin_1$Meta$Ind %>% 
+  dplyr::select(iCode, Parent, iName) %>% 
+  dplyr::mutate(Percentage = 1)
+
+coin <- coin_1
+  
+```
+
+### iMeta of a Coin
+
+Metadata structure of a coin. Each variable (candidate indicator) is identified by its `iCode` and grouped under a corresponding parent category. Weight indicates the contribution of each indicator during aggregation to the next level, while `iName` provides a descriptive label for each variable.
+
+```{r imeta, echo=FALSE}
+
+coin$Meta$Ind %>% 
+  kableExtra::kbl(
+  ) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+  ) %>% 
+  kableExtra::column_spec(2, extra_css = "position: sticky; background-color: white; left: 0; z-index: 10;") %>%
+  kableExtra::scroll_box(width = "100%", height = "500px")
+
+```
+
+### iData of a Coin
+
+Each unit is identified by the `uCode` column, while the remaining columns represent variables (candidate indicators) corresponding to `iCode` entries defined in the metadata
+
+```{r idata, echo=FALSE}
+
+coin$Data$Raw %>% 
+  kableExtra::kbl(
+  ) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+  ) %>% 
+  kableExtra::column_spec(2, extra_css = "position: sticky; background-color: white; left: 0; z-index: 10;") %>%
+  kableExtra::scroll_box(width = "100%", height = "500px", fixed_thead = TRUE)
+
+```
+
+### Structure of the Base Coin
+
+```{r basechild, echo=FALSE, results='asis'}
+
+library(plotly)
+library(htmlwidgets)
+library(patchwork)
+
+base <- knitr::knit_child("child/30_coin-display.Rmd", quiet = TRUE)
+cat(base, sep = '\n')
+
+```
+
+### Analysis of internal structure

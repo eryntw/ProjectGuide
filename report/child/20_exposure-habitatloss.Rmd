@@ -8,7 +8,9 @@ Species-level habitat loss can be conceptualised through two key components:
 
 The first component is assessed using species distribution model (SDM) predictions, which estimate the overlap between infrastructure and suitable habitat. The second component is addressed through exposure analysis, capturing the intensity and ecological consequences of disturbance.
 
-Renewable energy developments vary in the extent of vegetation clearance and ground disturbance. As outlined in the Introduction ([Ecosystem Impacts](#ecosystemimpacts)), site preparation typically involves clearing and levelling, including trenching for infrastructure installation. While grasses may regenerate post-construction, taller vegetation, particularly trees, is usually permanently removed to prevent shading of solar panels and to maintain access along the access roads and around the infrastructure.
+Both wind and solar developments often choose flat or gently south-facing slopes for construction, as steep inclines or north-facing terrain are less suitable. Battery storage facilities also favour flat terrain, though their concrete foundations allow limited flexibility on uneven ground. Plant species that naturally occur on similar flat or gently sloping terrain are therefore highly exposed to habitat loss and disturbance pressures associated with these developments.
+
+The extent of vegetation clearance and ground disturbance vary across activities. As outlined in the Introduction ([Ecosystem Impacts](#ecosystemimpacts)), site preparation typically involves clearing and levelling, including trenching for infrastructure installation. While grasses may regenerate post-construction, taller vegetation, particularly trees, is usually permanently removed to prevent shading of solar panels and to maintain access along the access roads and around the infrastructure.
 
 As a result, habitat loss is not uniform across vegetation types. Woodland habitats experience the greatest structural loss, followed by shrublands and then grasslands. This gradient of impact informs species-level exposure:
 

@@ -9,6 +9,14 @@ Despite this, collision risk is highly site- and species-specific. A small numbe
 
 Accurate estimation of collision mortality is inherently challenging and often biased by carcass detection probability, scavenger removal, turbine size, and delayed mortality (i.e., individuals dying outside search areas) [@Smallwood2007]. Turbine size is also positively associated with fatality rates [@Thaxter2017]. In contrast, collision risk in bats remains poorly understood, particularly in arid and tropical regions, due to limited research outside the northern temperate zone.
 
+Based on the available evidence, collision risk can be conceptualised as a function of two primary components:
+
+1. The likelihood that a species operates within collision risk zones (e.g., flight height, migratory behaviour, foraging strategy)
+
+2. The ability of a species to detect and evade infrastructure (e.g., manoeuvrability, body size, wing morphology)
+
+Model outputs may assign higher collision risk to migratory species relative to raptors. However, this result should be interpreted with caution. Empirical evidence suggests that large raptors may experience equal or greater impacts in some contexts, particularly where local abundance and site characteristics increase exposure. As such, relative risk among groups is likely to be context dependent and not fully captured by trait-based models alone.
+
 #### Wind farm collisions {-}
 
 Collision risk at wind farms is primarily determined by the overlap between species’ flight behaviour and turbine rotor-swept zones. Two broad groups are consistently identified as high risk:
@@ -20,14 +28,3 @@ Collision risk at wind farms is primarily determined by the overlap between spec
 #### Solar farm collisions {-}
 
 Collision risk at solar facilities is driven by different mechanisms. Waterbirds appear particularly vulnerable due to the “lake effect,” where reflective photovoltaic panels are mistaken for water bodies. Species that landing on or dive into water surfaces are therefore more likely to approach and collide with solar infrastructure. These impacts are largely restricted to aquatic or semi-aquatic species and differ fundamentally from the risks observed at wind farms.
-
-#### Trait-based representation of collision risk {-}
-
-Based on the available evidence, collision risk can be conceptualised as a function of two primary components:
-
-1. The likelihood that a species operates within collision risk zones (e.g., flight height, migratory behaviour, foraging strategy)
-
-2. The ability of a species to detect and evade infrastructure (e.g., manoeuvrability, body size, wing morphology)
-
-Model outputs may assign higher collision risk to migratory species relative to raptors. However, this result should be interpreted with caution. Empirical evidence suggests that large raptors may experience equal or greater impacts in some contexts, particularly where local abundance and site characteristics increase exposure. As such, relative risk among groups is likely to be context dependent and not fully captured by trait-based models alone.
-

@@ -2,6 +2,8 @@
 
 **Definition:** The degree to which a species is affected, either adversely or beneficially, by environmental disturbances or climatic variability. It is an inherent, intrinsic characteristic determined by the species’ biology, physiology, and ecological traits. Here, it is combined with adaptability, or adaptive capacity to include all the relative intrinsic traits. Adaptive capacity refers to the ability of a species to adjust, cope with, or respond to changing conditions to moderate potential damage, take advantage of opportunities, or survive in new environments.
 
+---
+
 ## Thematic Sub-groups
 
 Traits were selected following a comprehensive review of available trait databases and relevant literature on large-scale, cross-species meta-analyses. Selected traits were subsequently grouped into thematic subcategories to reflect key dimensions of species sensitivity.
@@ -120,7 +122,7 @@ Given these challenges in classification and interpretation, mating system was e
 
 ---
 
-## Mapping Traits and Indicators - Bird
+## Mapping Traits and Indicators
 
 ```{r bird, results='asis', echo=FALSE}
 avian <- knitr::knit_child("child/20_birdsens.Rmd", quiet = TRUE)

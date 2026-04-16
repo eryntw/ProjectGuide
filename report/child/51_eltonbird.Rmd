@@ -1,0 +1,47 @@
+## Elton Birds {#eltbird}
+
+EltonTraits 1.0 is a globally compiled database that provides standardised, species-level foraging attributes for all extant birds (9993 species) and mammals (5400 species). These traits characterise the “Eltonian” niche of species, focusing on their functional roles, diet, and foraging behaviour within ecosystems.
+
+Although the trait structure is broadly comparable between birds and mammals, some categories differ (e.g., activity), and caution is required when combining the two groups. In addition, bird data are generally more detailed and comprehensive than mammal data. For example, foraging strategy in birds is quantified as proportional use (percentages), whereas in mammals it is typically represented using categorical classifications.
+
+**Link to the database: ** [Figshare](https://doi.org/10.6084/m9.figshare.c.3306933)
+
+The database can also be accessed programmatically through the [`traitdata` R package](https://github.com/RS-eco/traitdata).
+
+**Link to the publication: **[https://esajournals.onlinelibrary.wiley.com/doi/10.1890/13-1917.1](https://esajournals.onlinelibrary.wiley.com/doi/10.1890/13-1917.1)
+
+```{r eltbird, results='asis', echo=FALSE}
+
+# database
+df <- elt_birds[, c(11:20, 25:32, 36:37)]
+cov <- knitr::knit_child("50_DbCovTp.Rmd", quiet = TRUE)
+cat(cov, sep = '\n')
+
+```
+
+### Summary
+
+* **Scope:** Global
+* **Total number of species:** `r nrow(distinct(elt_birds, Genus, Species))`
+* **Total number of traits:** `r nrow(coverage)`
+* **Year of release:** 2014
+* **Missing data:** Trait coverage ranged from `r round(summary_vals["Min."], 2)` to `r round(summary_vals["Max."], 2)`, with a median of `r round(summary_vals["Median"], 2)` (IQR: `r round(summary_vals["1st Qu."], 2)`–`r round(summary_vals["3rd Qu."], 2)`).
+* **Imputation approach:** Missing values retained as `NA`
+
+### Strengths
+
+* One of the few databases that standardises trait fields across major taxonomic groups (birds and mammals)
+* Provides proportional (percentage-based) data for diet and foraging strategies in birds, offering greater resolution than categorical classifications
+
+### Limitations
+
+* Covers a relatively limited set of traits
+* The dataset is over a decade old and may not reflect recent taxonomic updates or changes in species traits
+
+### Metadata
+
+**Link to the metadata: ** [https://www.esapubs.org/archive/ecol/E095/178/metadata.php](https://www.esapubs.org/archive/ecol/E095/178/metadata.php)
+
+### Data type
+
+`r summarise_column_types(df)`

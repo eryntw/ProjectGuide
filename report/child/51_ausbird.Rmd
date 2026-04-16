@@ -53,7 +53,7 @@ meta <- readxl::read_excel(fs::path(here::here(), "..", "envBird", "database",
 
 * Some traits (e.g., specialisation indices and climate-related metrics) are only available for core or mainland taxa, limiting completeness across all records
 * These derived traits are model-based or processed variables and are therefore difficult to impute for missing taxa
-* The dataset is over a decade old and may not reflect recent taxonomic updates or changes in species status and distributions
+* The dataset is over a decade old and may not reflect recent taxonomic updates or changes in species traits
 * Most trait are coded in binary format
 
 ### Metadata

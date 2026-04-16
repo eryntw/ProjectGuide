@@ -9,6 +9,8 @@ output:
     toc_depth: 3
     fig_caption: true
     reference_docx: "Styles.docx"
+header-includes:
+   - \usepackage[singlelinecheck=false]{caption}
 link-citations: yes
 always_allow_html: yes
 csl: "bib_style.csl"

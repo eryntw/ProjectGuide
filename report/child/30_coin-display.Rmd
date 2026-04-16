@@ -1,0 +1,114 @@
+
+#### The hierarchy {-}
+
+```{r hierarchy, warning=FALSE, fig.height=8, fig.width=13, out.width="100%"}
+
+plot_coin_hierarchy(h_df)
+
+```
+
+#### Data processing log {-}
+
+- n_minmax: scale using the min and max value of the variable for normalisation, bounded by 0 to 100 (or 1 to 100 for geometric mean) or 0 to 1.
+
+- a_amean: the weighted arithmetic mean for aggregation
+
+- a_gmean: the weighted geometric mean for aggregation
+
+```{r log, echo=FALSE, out.width="90%"}
+
+extract_log_table(coin) %>% 
+  kableExtra::kbl(
+    escape = FALSE,
+    caption = "Extracted data-processing specifications from the coin log. The table summarises the parameters applied at each processing stage and enables comparison across different coins."
+  ) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+  ) %>% 
+  kableExtra::column_spec(1:4, width = "10em")
+
+```
+
+#### Deconstructing each composite indicator {-}
+
+**Vulnerability**
+
+```{r CI4, echo=FALSE, warning=FALSE, fig.height=5, fig.width=10, out.width="100%"}
+plot_coin_bar(coin, "Vulnerability", text.size = 6)
+```
+
+**The Sub-Indices**
+
+<style type="text/css">
+    div.plotly { height: auto !important;}
+</style>
+
+```{r CI3, echo=FALSE, message=FALSE, warning=FALSE, fig.height=15, fig.width=10, out.width="100%"}
+
+## Static plots ------
+
+subindex <- c("Sensitivity", "Exposure", "Pressure")
+ncol <- c(3, 4, 3)
+
+plots_static <- Map(function(x, nc) {
+  
+  p1 <- plot_coin_bar(coin, x)
+  p2 <- plot_coin_bar(coin, x, mode = "children", ncol = nc)
+  
+  patchwork::wrap_plots(p1 / p2) +
+    patchwork::plot_layout(heights = c(1, 2)) +
+    patchwork::plot_annotation(title = x)
+  
+}, subindex, ncol)
+
+## Interactive plots ------
+
+plots_interactive <- Map(function(x, nc) {
+  
+  p1 <- plot_coin_bar(coin, x, interactive = TRUE)
+  
+  p2 <- plot_coin_bar(
+    coin,
+    x,
+    mode = "children",
+    ncol = 3,
+    interactive = TRUE
+  )
+  
+  plotly::subplot(
+    p1, p2,
+    nrows = 2,
+    margin = 0.1, # spacing between p1 and p2
+    heights = c(0.6, 0.4)
+  ) %>%
+    plotly::layout(title = list(text = x),
+                   height = 700,
+                   width = 700)
+  
+  
+}, subindex, ncol)
+
+htmltools::tagList(plots_interactive)
+  
+```
+
+#### Vulnerability scores {-}
+
+```{r scoretable}
+
+coin$Meta$Unit %>% 
+  dplyr::left_join(coin$Data$Aggregated, by = "uCode") %>% 
+  dplyr::select(uName, Vulnerability, all_of(subindex)) %>% 
+  dplyr::mutate(across(where(is.numeric), round, digits = 2)) %>%
+  dplyr::arrange(desc(Vulnerability)) %>% 
+    kableExtra::kbl(
+    escape = FALSE,
+    caption = "Aggregated vulnerability scores and contributing subindices by species, sorted by highest to lowest estimated vulnerability."
+  ) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+  ) %>% 
+  kableExtra::scroll_box(width = "100%", height = "500px")
+  
+```
+

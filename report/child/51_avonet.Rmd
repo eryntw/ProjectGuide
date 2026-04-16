@@ -38,7 +38,7 @@ meta <- readxl::read_excel(fs::path(here::here(), "..", "envBird", "database",
 ### Summary
 
 * **Scope:** Global
-* **Total number of species:** `r nrow(distinct(traitdata::avonet, Genus, Species))`
+* **Total number of species:** `r nrow(distinct(avonet, Genus, Species))`
 * **Total number of traits:** `r nrow(coverage)`
 * **Year of release:** 2022
 * **Missing data:** Trait coverage ranged from `r round(summary_vals["Min."], 2)` to `r round(summary_vals["Max."], 2)`, with a median of `r round(summary_vals["Median"], 2)` (IQR: `r round(summary_vals["1st Qu."], 2)`–`r round(summary_vals["3rd Qu."], 2)`).

@@ -1,0 +1,11 @@
+## The Semi-arid Ecosystems
+
+The Upper Spencer Gulf-Gawler Ranges and Braemar Province regions are dominated by chenopod and samphire shrublands and Acacia shrublands, interspersed with patches of Acacia woodland, Casuarina woodland, and Eucalyptus mallee forest mosaics ([envMap](http://spatialwebapps.environment.sa.gov.au/envmaps/?locale=en-us&viewer=envmaps#)). 
+
+These semi-arid ecosystems are largely **fire-sensitive** and inherently fragile, with ecological processes strongly constrained by highly variable rainfall in space, time, and intensity. Vegetation regeneration is episodic and typically dependent on prolonged rainfall events, resulting in slow recovery following disturbance [@Lambers2018].
+
+Despite this vulnerability, systematic biodiversity monitoring in chenopod and Acacia shrublands remains extremely limited, with most existing programs focused on the impacts of pastoral production rather than baseline ecosystem dynamics [@Recio2014]. Consequently, the ecological effects of large-scale vegetation removal and landscape modification in these systems remain poorly understood but are likely to result in long-term, and potentially irreversible, changes.
+
+---
+
+### ECO MAPS

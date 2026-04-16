@@ -19,6 +19,10 @@ packages:
   - yaml
   - knitr
   - kableExtra
+  - patchwork
+  - ggplot2
+  - plotly
+  - ggraph
   
   ## env
   - envTargets

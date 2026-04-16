@@ -4,6 +4,8 @@
 
 Species traits (e.g., migratory status, habitat use) and ecological indicators (e.g., extent of occurrence) were used to develop the scoring framework for quantifying species vulnerability. These variables were sourced using three complementary approaches: (1) existing trait databases, (2) extraction from species observation records, and (3) manual coding from published literature and online resources. Combining these approaches allows for broader trait coverage while balancing data availability and quality across species groups.
 
+---
+
 ### Existing database
 
 Trait information was sourced from established databases where available. The availability and quality of these databases vary across taxonomic groups: birds and freshwater fish are relatively well represented, while plants often have structured trait systems but remain data-deficient for many species. In contrast, mammals, reptiles, and amphibians currently lack comprehensive and well-populated trait databases.
@@ -13,6 +15,8 @@ Existing databases provide analysis-ready data with standardised coding, often d
 
 **Limitations:**
 Integrating multiple databases can be challenging due to differences in classification systems, variable definitions, and formats. Missing data are also common and may require imputation, which can introduce additional uncertainty.
+
+---
 
 ### Extraction from observation records {#recextract}
 
@@ -24,6 +28,8 @@ This method is entirely data-driven and avoids the need for imputation. It is es
 **Limitations:**
 Observation data are subject to several biases. These include sampling effort bias (uneven survey effort distorts habitat use), spatial accuracy issues (imprecise coordinates assigning records to incorrect locations), and detection bias (e.g., waterbirds recorded primarily along shorelines). In addition, species with few records may yield unreliable estimates. Importantly, this method is only applicable to traits that have a spatial signal; life-history traits such as migratory status or generation length cannot be derived in this way.
 
+---
+
 ### Literature-based coding
 
 Where data were not available from databases or could not be derived from occurrence records, traits were manually compiled from published literature, field guides, and credible online sources.
@@ -33,6 +39,8 @@ This approach allows the inclusion of important ecological and life-history trai
 
 **Limitations:**
 Manual coding can be time-intensive and may introduce subjectivity, particularly when translating qualitative descriptions into quantitative scores. Consistency in interpretation and documentation is therefore critical.
+
+---
 
 ## Theoretical Framework
 
@@ -44,15 +52,17 @@ The definition of vulnerability can vary depending on the context and objectives
 
 In this pilot study, species vulnerability is defined as a function of three core, interacting dimensions: 
 
-1. Sensitivity: the intrinsic degree to which a species, community, or ecosystem is affected by environmental disturbances or climatic variability. Due to limited availability of adaptability-related data, and its conceptual overlap with sensitivity, adaptive capacity is incorporated within the sensitivity dimension [@Hyman2025].
+1. **Sensitivity:** the intrinsic degree to which a species, community, or ecosystem is affected by environmental disturbances or climatic variability. Due to limited availability of adaptability-related data, and its conceptual overlap with sensitivity, adaptive capacity is incorporated within the sensitivity dimension [@Hyman2025].
 
-2. Exposure: the rate, magnitude, or intensity of environmental change, stressors, or human-driven disturbances that an individual, species, or population experiences.
+2. **Exposure:** the rate, magnitude, or intensity of environmental change, stressors, or human-driven disturbances that an individual, species, or population experiences.
 
-3 Cumulative Pressure: the combined, interactive effects of multiple environmental stressors—such as habitat fragmentation, climate change, pollution, and invasive species—acting simultaneously or sequentially on a specific species or population over time. 
+3. **Cumulative Pressure:** the combined, interactive effects of multiple environmental stressors—such as habitat fragmentation, climate change, pollution, and invasive species—acting simultaneously or sequentially on a specific species or population over time. 
 
 The inclusion of cumulative pressure provides important context by accounting for species that may not be intrinsically sensitive but are already under significant pressure due to ongoing or historical human activities and land-use conflicts. Where spatial data are available, current and anticipated development pressures beyond the study area can also be incorporated within this dimension to better reflect the overall risk profile of each species [@Bennun2021].
 
 These dimensions provide a comprehensive and context-appropriate representation of species vulnerability, supporting the identification and spatial management of risks associated with future development and land-use planning.
+
+---
 
 ### Steps of compressing information
 
@@ -133,6 +143,8 @@ digraph risk_index {
 
 ```
 
+---
+
 ### Mapping vulnerability
 
 The species-specific vulnerability scores are spatially projected by overlaying them onto each species’ distribution model. These layers are then stacked, and for each spatial unit (pixel), the maximum vulnerability value across all species is extracted to represent the highest level of biodiversity risk at that location.
@@ -166,6 +178,8 @@ Term definitions provide clear explanations of specific words and concepts used 
 * **Vulnerability** – A species’ overall susceptibility to a specific development type, integrating its sensitivity, exposure, and cumulative pressures. Vulnerability serves as the core construct for spatial representation of species risk.
 
 * **Risk zone** – A spatially defined area classified based on vulnerability scores, indicating levels of biodiversity risk and suitability for development.
+
+---
 
 ### Reproducibility {-}
 
