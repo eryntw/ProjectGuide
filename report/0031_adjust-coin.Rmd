@@ -1,0 +1,29 @@
+
+```{r adjustcoins}
+
+```
+
+
+
+```{r rendercoins, results='asis'}
+
+# coins <- list(
+#   "Baseline" = coin_1,
+#   "Scenario A" = coin_2,
+#   "Scenario B" = coin_3
+# )
+# 
+# for (nm in names(coins)) {
+#   
+#   cat(knitr::knit_child(
+#     "child.Rmd",
+#     envir = list2env(list(
+#       coin = coins[[nm]],
+#       coin_name = nm
+#     )),
+#     quiet = TRUE
+#   ))
+# }
+
+```
+

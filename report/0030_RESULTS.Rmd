@@ -4,9 +4,13 @@
 
 The raw coin contains all variables considered as candidate indicators. These variables have passed initial data checks and are ready for processing; however, none of the data processing steps mentioned in the Method section \@ref(dataprocess) have been applied at this stage. The raw coin therefore serves as a raw dataset from which variables can be included or excluded in subsequent analyses.
 
+---
+
 ## The Base Coin
 
 The Base Coin consists of a selected subset of candidate indicators from the Raw Coin and serves as the baseline for the risk assessment. Only essential log transformations were applied to variables with large numbers. All other data processing steps followed default methods, including min–max normalisation and arithmetic mean aggregation.
+
+Below is a detailed demonstration of a Base Coin.
 
 ```{r basecoin, echo=FALSE}
 
@@ -55,7 +59,7 @@ coin$Data$Raw %>%
 
 ```
 
-### Structure of the Base Coin
+### Structure
 
 ```{r basechild, echo=FALSE, results='asis'}
 
@@ -63,9 +67,15 @@ library(plotly)
 library(htmlwidgets)
 library(patchwork)
 
-base <- knitr::knit_child("child/30_coin-display.Rmd", quiet = TRUE)
-cat(base, sep = '\n')
+cat(knitr::knit_child(
+    "child/30_coin-display.Rmd",
+    envir = list2env(list(
+      coin = coin,
+      coin_name = "Base Coin"
+    )),
+    quiet = TRUE
+  ))
 
 ```
 
-### Analysis of internal structure
+### Internal consistency

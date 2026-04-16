@@ -1,5 +1,5 @@
 
-#### The hierarchy {-}
+#### The hierarchy of `r coin_name`{-}
 
 ```{r hierarchy, warning=FALSE, fig.height=8, fig.width=13, out.width="100%"}
 
@@ -7,7 +7,7 @@ plot_coin_hierarchy(h_df)
 
 ```
 
-#### Data processing log {-}
+#### Data processing log of `r coin_name` {-}
 
 - n_minmax: scale using the min and max value of the variable for normalisation, bounded by 0 to 100 (or 1 to 100 for geometric mean) or 0 to 1.
 
@@ -29,15 +29,13 @@ extract_log_table(coin) %>%
 
 ```
 
-#### Deconstructing each composite indicator {-}
-
-**Vulnerability**
+#### Vulnerability of `r coin_name` {-}
 
 ```{r CI4, echo=FALSE, warning=FALSE, fig.height=5, fig.width=10, out.width="100%"}
 plot_coin_bar(coin, "Vulnerability", text.size = 6)
 ```
 
-**The Sub-Indices**
+#### The Sub-Indices of `r coin_name` {-}
 
 <style type="text/css">
     div.plotly { height: auto !important;}
@@ -48,25 +46,27 @@ plot_coin_bar(coin, "Vulnerability", text.size = 6)
 ## Static plots ------
 
 subindex <- c("Sensitivity", "Exposure", "Pressure")
-ncol <- c(3, 4, 3)
+heights <- c()
 
-plots_static <- Map(function(x, nc) {
+plots_static <- Map(function(x) {
   
   p1 <- plot_coin_bar(coin, x)
-  p2 <- plot_coin_bar(coin, x, mode = "children", ncol = nc)
+  p2 <- plot_coin_bar(coin, x, mode = "children", ncol = 3)
   
   patchwork::wrap_plots(p1 / p2) +
     patchwork::plot_layout(heights = c(1, 2)) +
-    patchwork::plot_annotation(title = x)
+    patchwork::plot_annotation(title = paste0(x, ": ", coin_name))
   
-}, subindex, ncol)
+}, subindex)
 
 ## Interactive plots ------
 
-plots_interactive <- Map(function(x, nc) {
+plots_interactive <- lapply(subindex, function(x) {
   
+  # ---- parent ----
   p1 <- plot_coin_bar(coin, x, interactive = TRUE)
   
+  # ---- children ----
   p2 <- plot_coin_bar(
     coin,
     x,
@@ -75,24 +75,40 @@ plots_interactive <- Map(function(x, nc) {
     interactive = TRUE
   )
   
+  # ---- count children ----
+  n_children <- length(na.omit(
+    coin$Meta$Ind$iCode[coin$Meta$Ind$Parent == x]
+  ))
+  
+  # ---- compute rows (since ncol = 3) ----
+  n_rows_child <- ceiling(n_children / 3)
+  
+  # ---- dynamic heights ----
+  h1 <- 1.5                 # parent weight
+  h2 <- max(1, n_rows_child)  # children scale
+  
+  heights <- c(h1, h2) / (h1 + h2)
+  
+  # ---- subplot ----
   plotly::subplot(
     p1, p2,
     nrows = 2,
-    margin = 0.1, # spacing between p1 and p2
-    heights = c(0.6, 0.4)
+    margin = 0.1,
+    heights = heights
   ) %>%
-    plotly::layout(title = list(text = x),
-                   height = 700,
-                   width = 700)
+    plotly::layout(
+      title = list(text = paste0(x, ": ", coin_name)),
+      height = 700,
+      width = 700
+    )
   
-  
-}, subindex, ncol)
+})
 
 htmltools::tagList(plots_interactive)
-  
+
 ```
 
-#### Vulnerability scores {-}
+#### Vulnerability scores of `r coin_name`{-}
 
 ```{r scoretable}
 
