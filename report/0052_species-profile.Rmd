@@ -1,0 +1,51 @@
+## Species Profile
+
+```{r spcoindf}
+
+coin <- coins[["w1"]]
+
+## df for Lv3 bar ----
+
+df <- COINr::get_results(coin, dset = "Aggregated", tab_type = "Aggs") %>% 
+  left_join(coin_11$Meta$Unit, by = "uCode")
+
+## dfs for Lv2 decomposition
+
+lv2list <- setNames(cols, cols) %>%
+  purrr::map(function(si) {
+    meta <- coin$Meta$Lineage %>%
+      dplyr::filter(`Sub-index` == si)
+    
+    data <- coin$Data$Aggregated %>%
+      dplyr::select(uCode, all_of(meta$Variable))
+    
+    list(meta = meta, data = data)
+  })
+
+## tif stack for SDM map USG ----
+
+usg_birdstack <- terra::rast(fs::path(here::here(), usg_bird$use_tif))
+
+## tif stack for SDM map BP ----
+
+bp_birdstack <- terra::rast(fs::path(here::here(), bp_bird$use_tif))
+
+```
+
+```{r rendersp, results='asis'}
+
+for (nm in df$uCode[1:5]) {
+
+  cat(knitr::knit_child(
+    "child/52_SpeciesProfile.Rmd",
+    envir = list2env(list(
+      species = nm,
+      sp = gsub("_", " ", nm),
+      uName = df$uName[df$uCode == nm],
+      coin_name = "w1"
+    )),
+    quiet = TRUE
+  ))
+}
+
+```

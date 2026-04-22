@@ -12,8 +12,11 @@ rmd_files:
 - 0023_pressure-framework.Rmd
 - 0024_process-data.Rmd
 - 0030_RESULTS.Rmd
+- 0031_adjust-coin.Rmd
+- 0032_comparisons.Rmd
 - 0040_References.Rmd
 - 0050_APPENDIX.Rmd
 - 0051_bird-database.Rmd
-- 0052_r-packages.Rmd
+- 0052_species-profile.Rmd
+- 0053_r-packages.Rmd
 repo: https://github.com/eryntw/RiskMap.git

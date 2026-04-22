@@ -1,0 +1,76 @@
+## Comparisons
+
+Because the proportion of dominance pairs is low (in this study the it is zero; see Section \@ref(internalconsist)), the final results are highly sensitive to the choice of methodology. Therefore, composite indicator scores are compared across different methods (\@ref(aggmethod)) to assess the effect of method choice and to properly interpret the results.
+
+```{r coinresults}
+coin_results <- list()
+coin_results<- lapply(coins, 
+       function(x){COINr::get_results(x, dset = "Aggregated", tab_type = "Aggs")})
+```
+
+### Level 3
+
+When aggregated to Level 3, the max-based approach shifts the distribution of scores towards higher values, whereas the geometric mean produces a more centralised distribution with a pronounced peak at lower values. This occurs because the geometric mean penalises low scores, reducing overall values when a species has uneven performance across indicators.
+
+In contrast, the max-based method increases overall scores by selecting only the highest contributing indicator at each aggregation step. This effect is more pronounced when applied at Level 2 than at Level 1, resulting in a stronger rightward shift in the distributions. For Sensitivity and Pressure, the Level 2 max-based approach also produces a bimodal pattern, separating species into two distinct groups.
+
+```{r lv3comp, echo=FALSE, message=FALSE, fig.cap="Density plots comparing the distribution of scores across methodologies, highlighting differences in central tendency and spread."}
+
+plot_list <- compare_density_multi(coin_results, cols)
+# print without showing list names/indices
+purrr::walk(plot_list, print)
+
+```
+
+--- 
+
+### Level 2
+
+Density plot comparisons can likewise be conducted for Level 2 indicators. However, the `Max-Lv2` method is excluded from this analysis, as the methodological change is not relevant at this level of aggregation.
+
+```{r lv2comp, fig.height=15}
+plot_list <- compare_density_multi(coin_results[-3], cols2)
+patchwork::wrap_plots(plot_list, ncol = 2) +
+  patchwork::plot_layout(guides = 'collect',
+                         axis_titles = "collect") & 
+  theme(legend.position = 'bottom',
+        legend.key.size = unit(1, "cm"))
+```
+
+---
+
+### Score comparisons
+
+The final Vulnerability scores were compared in the following table sorted by the scores of `w1` baseline.
+
+```{r vulntable}
+
+vulntable <- COINr::compare_coins_multi(coins, 
+                                        dset = "Aggregated", 
+                                        iCode = "Vulnerability",
+                                        also_get = c("uName"),
+                                        tabtype = "Values",
+                                        ibase = 1,
+                                        sort_table = TRUE,
+                                        compare_by = "scores") %>% 
+  dplyr::mutate(across(where(is.numeric), round, digits = 1)) %>% 
+  dplyr::select(-uCode)
+
+
+vulntable %>% kableExtra::kbl() %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed")) %>% 
+  kableExtra::scroll_box(width = "100%", height = "500px", fixed_thead = TRUE)
+
+```
+
+---
+
+### Rank change
+
+```{r ranktable}
+
+rank_table_gt(vulntable, uName, names(coins), ref_col = "w1")
+
+```
+

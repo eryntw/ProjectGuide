@@ -23,6 +23,8 @@ packages:
   - ggplot2
   - plotly
   - ggraph
+  - gt
+
   
   ## env
   - envTargets

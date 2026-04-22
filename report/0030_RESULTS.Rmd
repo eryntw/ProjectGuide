@@ -18,8 +18,8 @@ targets::tar_source(fs::path(here::here(), "..", "envBird", "R", "coin"))
 
 ## Name variable for knitting child
 h_df <- coin_1$Meta$Ind %>% 
-  dplyr::select(iCode, Parent, iName) %>% 
-  dplyr::mutate(Percentage = 1)
+  dplyr::select(iCode, Parent, iName, Weight) %>% 
+  dplyr::mutate(Percentage = Weight)
 
 coin <- coin_1
   
@@ -52,12 +52,14 @@ coin$Data$Raw %>%
   kableExtra::kbl(
   ) %>%
   kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed"),
+    bootstrap_options = c("striped", "hover", "condensed")
   ) %>% 
   kableExtra::column_spec(2, extra_css = "position: sticky; background-color: white; left: 0; z-index: 10;") %>%
   kableExtra::scroll_box(width = "100%", height = "500px", fixed_thead = TRUE)
 
 ```
+
+---
 
 ### Structure
 
@@ -68,14 +70,17 @@ library(htmlwidgets)
 library(patchwork)
 
 cat(knitr::knit_child(
-    "child/30_coin-display.Rmd",
+    "child/30_CoinDisplay.Rmd",
     envir = list2env(list(
       coin = coin,
-      coin_name = "Base Coin"
+      coin_name = "Base",
+      h_df = h_df
     )),
     quiet = TRUE
   ))
 
 ```
 
-### Internal consistency
+---
+
+### Internal consistency {#internalconsist}

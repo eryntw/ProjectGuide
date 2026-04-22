@@ -54,7 +54,7 @@ Aggregation is the process of combining multiple indicators into a single compos
 
 The choice of aggregation method determines the degree of compensability—whether strong performance in one component can offset poor performance in another.
 
-In this study, aggregation methods were selected based on the context of species risk assessment. A combination of limiting-factor approaches (e.g., selecting the maximum value within a subgroup) and arithmetic means (allowing full compensation) was applied to reflect different ecological processes and risk dynamics.
+In this study, aggregation methods were selected based on the context of species risk assessment. A combination of approaches such as arithmetic means (allowing full compensation), geometric mean (no compensation), selecting the maximum value within a subgroup(limiting factor) were applied to test the performance and reflect different ecological processes and risk dynamics.
 
 ---
 

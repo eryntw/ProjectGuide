@@ -74,7 +74,7 @@ knitr::include_graphics("images/riskmap_framework.png")
 
 ```
 
-Each thematic sub-group comprises one or more traits or indicators as variables. These variables were treated with log transformation where necessary and normalised using min-max approach [@OECD2008; @Becker2025]. Where multiple variables are included within a sub-group, the one with the highest score was chosen to represent the highest risk/limiting factor for that theme. These thematic sub-groups are then further aggregated using arithmetic mean to construct the three primary sub-indices (Level 3), which form the basis for the vulnerability index (Fig. \@ref(fig:index)).
+Each thematic sub-group comprises one or more traits or indicators as variables. These variables were treated with log transformation where necessary and normalised using min-max approach [@OECD2008; @Becker2025]. Where multiple variables are included within a sub-group, they are aggregated using a specific aggregation method to construct the three primary sub-indices (Level 3), which form the basis for the vulnerability index (Fig. \@ref(fig:index)).
 
 This hierarchical structure (Fig. \@ref(fig:index)) allows the composite indicator to be traced back to its underlying components, enabling analysis of its internal structure at each level. From a framework design perspective, it is also highly flexible, as traits and indicators can be readily added to or removed from thematic sub-groups. This supports ongoing refinement, allowing the relevance and contribution of each component to be transparently evaluated and updated over time.
 

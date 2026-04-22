@@ -1,0 +1,138 @@
+### `r coin_name` {#`r coin_name`}
+
+#### The hierarchy of `r coin_name`{-}
+
+The dendrogram shows how indicators are aggregated up to Level 4 (Vulnerability), with the contribution of each indicator to the next level represented by the colour and thickness of the edges. Contributions are determined by two factors: (1) the assigned weight and (2) the use of the limiting-factor (max-based) approach. Specifically, contribution is calculated as the proportion of units for which an indicator is selected (i.e., number of selections divided by total units), multiplied by its weight.
+
+This visualisation is particularly important under the max-based approach, as the likelihood of an indicator being selected varies substantially with its absolute value, resulting in uneven contributions across indicators.
+
+```{r hierarchy, warning=FALSE, fig.height=15, fig.width=15,  dev='svg', out.width="100%"}
+
+plot_coin_hierarchy(h_df)
+
+```
+
+#### Data processing log of `r coin_name` {-}
+
+- n_minmax: scale using the min and max value of the variable for normalisation, bounded by 0 to 100 (or 1 to 100 for geometric mean) or 0 to 1.
+
+- a_amean: the weighted arithmetic mean for aggregation
+
+- a_gmean: the weighted geometric mean for aggregation
+
+```{r log, echo=FALSE, out.width="90%"}
+
+extract_log_table(coin) %>% 
+  kableExtra::kbl(
+    escape = FALSE,
+    caption = "Extracted data-processing specifications from the coin log. The table summarises the parameters applied at each processing stage and enables comparison across different coins."
+  ) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+  ) %>% 
+  kableExtra::column_spec(1:4, width = "10em")
+
+```
+
+#### Vulnerability of `r coin_name` {-}
+
+<style type="text/css">
+    div.plotly { height: auto !important;}
+</style>
+
+```{r CI4, echo=FALSE, warning=FALSE, fig.height=5, fig.width=10, out.width="100%"}
+plot_coin_bar(coin, "Vulnerability", interactive = TRUE)
+```
+
+#### The Sub-Indices of `r coin_name` {-}
+
+<style type="text/css">
+    div.plotly { height: auto !important;}
+</style>
+
+```{r CI3, echo=FALSE, message=FALSE, warning=FALSE, fig.height=15, fig.width=10, out.width="100%"}
+
+## Static plots ------
+
+subindex <- c("Sensitivity", "Exposure", "Pressure")
+heights <- c()
+
+plots_static <- Map(function(x) {
+
+  p1 <- plot_coin_bar(coin, x)
+  p2 <- plot_coin_bar(coin, x, mode = "children", ncol = 3)
+
+  patchwork::wrap_plots(p1 / p2) +
+    patchwork::plot_layout(heights = c(1, 2)) +
+    patchwork::plot_annotation(title = paste0(x, ": ", coin_name))
+
+}, subindex)
+
+## Interactive plots ------
+
+plots_interactive <- lapply(subindex, function(x) {
+
+  # ---- parent ----
+  p1 <- plot_coin_bar(coin, x, interactive = TRUE)
+
+  # ---- children ----
+  p2 <- plot_coin_bar(
+    coin,
+    x,
+    mode = "children",
+    ncol = 3,
+    interactive = TRUE
+  )
+
+  # ---- count children ----
+  n_children <- length(na.omit(
+    coin$Meta$Ind$iCode[coin$Meta$Ind$Parent == x]
+  ))
+
+  # ---- compute rows (since ncol = 3) ----
+  n_rows_child <- ceiling(n_children / 3)
+
+  # ---- dynamic heights ----
+  h1 <- 1.5                 # parent weight
+  h2 <- max(1, n_rows_child)  # children scale
+
+  heights <- c(h1, h2) / (h1 + h2)
+
+  # ---- subplot ----
+  plotly::subplot(
+    p1, p2,
+    nrows = 2,
+    margin = 0.1,
+    heights = heights
+  ) %>%
+    plotly::layout(
+      title = list(text = paste0(x, ": ", coin_name)),
+      height = 700,
+      width = 700
+    )
+
+})
+
+htmltools::tagList(plots_interactive)
+
+```
+
+#### Vulnerability scores of `r coin_name`{-}
+
+```{r scoretable}
+
+coin$Meta$Unit %>%
+  dplyr::left_join(coin$Data$Aggregated, by = "uCode") %>%
+  dplyr::select(uName, Vulnerability, all_of(subindex)) %>%
+  dplyr::mutate(across(where(is.numeric), round, digits = 2)) %>%
+  dplyr::arrange(desc(Vulnerability)) %>%
+    kableExtra::kbl(
+    escape = FALSE,
+    caption = "Aggregated vulnerability scores and contributing subindices by species, sorted by highest to lowest estimated vulnerability."
+  ) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+  ) %>%
+  kableExtra::scroll_box(width = "100%", height = "500px")
+  
+```

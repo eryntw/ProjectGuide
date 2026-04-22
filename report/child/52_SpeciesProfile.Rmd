@@ -1,0 +1,125 @@
+### `r uName` (*`r sp`*) {-}
+
+[Rank: `r df$Rank` in `r nrow(df)` species]{style="font-size: 16px}
+
+[Vulnerability score: `r df$Vulnerability`]{style="font-size: 18px}
+
+```{r lv3plot, fig.width=6, fig.height=2}
+
+# =========================================================
+# 1. Bar plot (LEFT)
+# =========================================================
+
+spdf <- df %>% filter(uCode == species)
+
+plot_indicator_bar(spdf, indicators = c("Sensitivity", "Exposure", "Pressure"),
+                   colour_mode = "multi") + 
+  labs(title = paste0("Vulnerability Sub-Indices-", coin_name, " dataset"))
+
+```
+---
+
+#### SDM predicted distribution in the pilot areas {-}
+
+```{r sdms, fig.height=5, fig.width=10}
+# =========================================================
+# 2. SDM (USG or BP will auto show via function logic)
+# =========================================================
+
+plot_species_raster(
+  sp,
+  usg_birdstack,
+  bp_birdstack,
+  name_A = "Upper Spencer Gulf - Gawler Range",
+  name_B = "Braemar Province"
+)
+
+```
+
+---
+
+#### Indicator details {-}
+
+```{r datatbl}
+species_data <- purrr::map(lv2list, function(x) {
+  x$data %>% dplyr::filter(uCode == species)
+})
+
+make_datatbl <- function(d){
+  d <- d %>% 
+    dplyr::select(-uCode) %>%
+    t() %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column("Variable") %>%
+    dplyr::rename(value = V1) %>%
+    dplyr::left_join(
+      coin$Meta$Ind %>% select(iName, iCode, Parent),
+      by = c("Variable" = "iCode")
+    ) %>%
+    dplyr::mutate(value = round(as.numeric(value), 2)) %>%
+    dplyr::select(group = Parent, iName, value) %>%
+    knitr::kable(col.names = c("Group", "Indicator", "Value"))
+  return(d)
+}
+  
+```
+
+---
+
+<div style="display: flex;">
+  <div>
+```{r sensplot, echo=FALSE}
+
+# =========================================================
+# 3. Sensitivity details
+# =========================================================
+
+plot_indicator_bar(spdf, unique(lv2list$Sensitivity$meta$Indicator), colour_mode = "single", single_colour = "royalblue3") + labs(title = "Sensitivity")
+```
+  </div>
+  <div>
+```{r senstable, echo=FALSE}
+make_datatbl(species_data$Sensitivity)
+```
+  </div>
+</div>
+
+---
+
+<div style="display: flex;">
+  <div>
+```{r expoplot, echo=FALSE}
+
+# =========================================================
+# 4. Exposure details
+# =========================================================
+
+plot_indicator_bar(spdf, unique(lv2list$Exposure$meta$Indicator), colour_mode = "single", single_colour = "darkslategrey") + labs(title = "Exposure")
+```
+  </div>
+  <div>
+```{r expotable, echo=FALSE}
+make_datatbl(species_data$Exposure)
+```
+  </div>
+</div>
+
+---
+
+<div style="display: flex;">
+  <div>
+```{r presplot, echo=FALSE}
+
+# =========================================================
+# 5. Pressure details
+# =========================================================
+
+plot_indicator_bar(spdf, unique(lv2list$Pressure$meta$Indicator), colour_mode = "single", single_colour = "lightpink") + labs(title = "Pressure")
+```
+  </div>
+  <div>
+```{r prestable, echo=FALSE}
+make_datatbl(species_data$Pressure)
+```
+  </div>
+</div>

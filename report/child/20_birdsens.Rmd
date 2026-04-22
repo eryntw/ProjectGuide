@@ -3,7 +3,7 @@
 
 #### Candidate trait/indicator table {-}
 
-```{r candidates, echo=FALSE}
+```{r candidates, echo=FALSE, out.width="100%"}
 library(dplyr)
 library(knitr)
 library(kableExtra)
@@ -24,10 +24,16 @@ candi %>%
   ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
-    full_width = FALSE,
+    full_width = TRUE,
     font_size = 12
   ) %>%
-  collapse_rows(columns = 1, valign = "middle") ## merge the Lv 2 indicator col
+  collapse_rows(columns = 1, valign = "middle") %>% ## merge the Lv 2 indicator col
+    kableExtra::scroll_box(
+    width = "100%",
+    height = "500px",
+    fixed_thead = TRUE
+  )
+
 
 ```
 
@@ -54,6 +60,7 @@ score %>%
     escape = TRUE
   ) %>%
   kable_styling(
+    position = "left",
     bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
     font_size = 12

@@ -121,23 +121,30 @@ These thematic sub-groups were derived from the literature review of individual 
 m <- readxl::read_excel(fs::path(here::here(), "..", "TraitsMeta",
                                      "ExposureTraits.xlsx"),
                             sheet = "StressorTraitMapping")
-
 m %>%
-  mutate(
-    Trait = str_wrap(Trait, 20),
-    birdcol_original = str_wrap(birdcol_original, 20),
-    birdcol_new = str_wrap(birdcol_new, 20),
+  dplyr::mutate(
+    Trait = stringr::str_wrap(Trait, 20),
+    birdcol_original = stringr::str_wrap(birdcol_original, 20),
+    birdcol_new = stringr::str_wrap(birdcol_new, 20)
   ) %>%
-  kbl(
+  knitr::kable(
     caption = "Trait–stressor matrix linking traits and variables to the identified stressors (thematic sub-groups) across plant and animal species. Trait categories are scored, and non-applicable entries are treated as NA."
   ) %>%
-  kable_styling(
+  kableExtra::kable_styling(
+    position = "left",
     bootstrap_options = c("striped", "hover", "condensed"),
-    full_width = FALSE,
+    full_width = TRUE,
     font_size = 12
   ) %>% 
-  column_spec(1:4, extra_css = "position: sticky; background-color: white; left: 0; z-index: 10;") %>%
-  scroll_box(width = "100%", height = "500px", fixed_thead = TRUE)
+  kableExtra::column_spec(
+    1:4,
+    extra_css = "position: sticky; background-color: white; left: 0; z-index: 10;"
+  ) %>%
+  kableExtra::scroll_box(
+    width = "100%",
+    height = "500px",
+    fixed_thead = TRUE
+  )
 
 ```
 
