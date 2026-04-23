@@ -1,8 +1,12 @@
-### `r uName` (*`r sp`*) {-}
+## `r uName` {-}
 
-[Rank: `r df$Rank` in `r nrow(df)` species]{style="font-size: 16px}
+[*`r sp`*]{style="font-size: 16px;"}
 
-[Vulnerability score: `r df$Vulnerability`]{style="font-size: 18px}
+[Current IUCN status: *`r unique(iucn_threat$code[iucn_threat$scientific_name == sp])`*]{style="font-size: 16px;"}
+
+[Rank: `r df$Rank[df$uCode == nm]` in `r nrow(df)` species]{style="font-size: 16px;"}
+
+[Vulnerability score: `r df$Vulnerability[df$uCode == nm]`]{style="font-size: 16px;"}
 
 ```{r lv3plot, fig.width=6, fig.height=2}
 
@@ -17,9 +21,8 @@ plot_indicator_bar(spdf, indicators = c("Sensitivity", "Exposure", "Pressure"),
   labs(title = paste0("Vulnerability Sub-Indices-", coin_name, " dataset"))
 
 ```
----
 
-#### SDM predicted distribution in the pilot areas {-}
+### SDM predicted distribution in the pilot areas {-}
 
 ```{r sdms, fig.height=5, fig.width=10}
 # =========================================================
@@ -38,77 +41,72 @@ plot_species_raster(
 
 ---
 
-#### Indicator details {-}
+#### Sensitivity breadown and raw data {-}
 
-```{r datatbl}
-species_data <- purrr::map(lv2list, function(x) {
-  x$data %>% dplyr::filter(uCode == species)
-})
-
-make_datatbl <- function(d){
-  d <- d %>% 
-    dplyr::select(-uCode) %>%
-    t() %>%
-    as.data.frame() %>%
-    tibble::rownames_to_column("Variable") %>%
-    dplyr::rename(value = V1) %>%
-    dplyr::left_join(
-      coin$Meta$Ind %>% select(iName, iCode, Parent),
-      by = c("Variable" = "iCode")
-    ) %>%
-    dplyr::mutate(value = round(as.numeric(value), 2)) %>%
-    dplyr::select(group = Parent, iName, value) %>%
-    knitr::kable(col.names = c("Group", "Indicator", "Value"))
-  return(d)
-}
-  
-```
-
----
-
-<div style="display: flex;">
-  <div>
-```{r sensplot, echo=FALSE}
+```{r sensplot, echo=FALSE, fig.height=5, fig.width=10}
 
 # =========================================================
 # 3. Sensitivity details
 # =========================================================
 
-plot_indicator_bar(spdf, unique(lv2list$Sensitivity$meta$Indicator), colour_mode = "single", single_colour = "royalblue3") + labs(title = "Sensitivity")
+plot_indicator_bar(spdf, unique(lv2list$Sensitivity$meta$Indicator), colour_mode = "single", single_colour = "royalblue3")
+
 ```
-  </div>
-  <div>
+
 ```{r senstable, echo=FALSE}
-make_datatbl(species_data$Sensitivity)
+options(scipen = 999) # avoid scientific notations
+
+sensitivity_imputed %>%
+  dplyr::filter(search_term == sp) %>% 
+  dplyr::select(all_of(lv2list$Sensitivity$meta$Variable)) %>% 
+  t() %>%
+  as.data.frame() %>%
+  tibble::rownames_to_column("Variable") %>%
+  dplyr::rename(Value = V1) %>%
+  dplyr::left_join(
+    coin$Meta$Ind %>% select(iName, iCode, Parent),
+    by = c("Variable" = "iCode")
+  ) %>%
+  dplyr::select(Parent, iName, Value) %>% 
+  dplyr::rename(Group = Parent, Indicator = iName) %>% 
+  kableExtra::kbl(caption = "The raw value of each indicator in Sensitivity.") %>% 
+  style_kable(style = "compact")
+
 ```
-  </div>
-</div>
 
 ---
 
-<div style="display: flex;">
-  <div>
-```{r expoplot, echo=FALSE}
+#### Exposure breadown and raw data {-}
+
+```{r expoplot, echo=FALSE, fig.height=5, fig.width=10}
 
 # =========================================================
 # 4. Exposure details
 # =========================================================
 
-plot_indicator_bar(spdf, unique(lv2list$Exposure$meta$Indicator), colour_mode = "single", single_colour = "darkslategrey") + labs(title = "Exposure")
+plot_indicator_bar(spdf, unique(lv2list$Exposure$meta$Indicator), colour_mode = "single", single_colour = "darkslategrey")
+
 ```
-  </div>
-  <div>
+
 ```{r expotable, echo=FALSE}
-make_datatbl(species_data$Exposure)
+
+exposure_indicator %>% 
+  dplyr::filter(search_term == sp) %>% 
+  dplyr::select(-search_term) %>% 
+  t() %>% as.data.frame() %>% 
+  tibble::rownames_to_column("Indicator") %>% 
+  tidyr::separate(Indicator, into = c("Group", "Indicator"), sep = "_", fill = "right") %>% 
+  dplyr::rename(Value = V1) %>% 
+  kableExtra::kbl(caption = "Exposure scores derived from the product of the trait–species matrix and the trait–stressor matrix.") %>% 
+  style_kable(style = "compact")
+
 ```
-  </div>
-</div>
 
 ---
 
-<div style="display: flex;">
-  <div>
-```{r presplot, echo=FALSE}
+#### Pressure breadown and raw data {-}
+
+```{r presplot, echo=FALSE, fig.height=5, fig.width=10}
 
 # =========================================================
 # 5. Pressure details
@@ -116,10 +114,18 @@ make_datatbl(species_data$Exposure)
 
 plot_indicator_bar(spdf, unique(lv2list$Pressure$meta$Indicator), colour_mode = "single", single_colour = "lightpink") + labs(title = "Pressure")
 ```
-  </div>
-  <div>
+
 ```{r prestable, echo=FALSE}
-make_datatbl(species_data$Pressure)
+
+iucn_threat %>% 
+  dplyr::filter(scientific_name == sp) %>% 
+  dplyr::select(threat_code, threat_scope, threat_timing, threat_severity, threat_ias) %>% 
+  dplyr::mutate(threat_code2 = sub("^(([^_]+_){1}[^_]+).*", "\\1", threat_code)) %>% # ID lv2 threats
+  dplyr::left_join(iucncode, by = c("threat_code2" = "Code")) %>% 
+  dplyr::select(-threat_code2, -threat_code) %>% 
+  dplyr::relocate(Threat, threat_ias) %>%
+  dplyr::rename_with(~ sub("^threat_", "", .x)) %>% 
+  kableExtra::kbl(caption = "Identified IUCN threats for each species. Threats are classified at Level 2, and ias denotes identified alien species associated with invasive species threats.") %>% 
+  style_kable(style = "compact")
+  
 ```
-  </div>
-</div>

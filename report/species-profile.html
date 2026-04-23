@@ -1,0 +1,3361 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>B Species Profile | Developing composite indicators for species risk assessment</title>
+  <meta name="description" content="B Species Profile | Developing composite indicators for species risk assessment" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="B Species Profile | Developing composite indicators for species risk assessment" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="B Species Profile | Developing composite indicators for species risk assessment" />
+  
+  
+  
+
+<meta name="author" content="Department for Environment and Water" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bird-database.html"/>
+<link rel="next" href="r-packages.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Aim</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#renewable-energy-transition"><i class="fa fa-check"></i><b>1.1</b> Renewable energy transition</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#bioregional-planning"><i class="fa fa-check"></i><b>1.2</b> Bioregional planning</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#gawler-ranges"><i class="fa fa-check"></i>Gawler Ranges</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#braemar-province"><i class="fa fa-check"></i>Braemar Province</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#the-semi-arid-ecosystems"><i class="fa fa-check"></i><b>1.3</b> The Semi-arid Ecosystems</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#eco-maps"><i class="fa fa-check"></i><b>1.3.1</b> ECO MAPS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#ecosystemimpacts"><i class="fa fa-check"></i><b>1.4</b> Ecosystem Impacts</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="introduction.html"><a href="introduction.html#wind-and-solar-energy-developments"><i class="fa fa-check"></i><b>1.4.1</b> Wind and solar energy developments</a></li>
+<li class="chapter" data-level="1.4.2" data-path="introduction.html"><a href="introduction.html#potential-impacts"><i class="fa fa-check"></i><b>1.4.2</b> Potential impacts</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#species-risk-assessment"><i class="fa fa-check"></i><b>1.5</b> Species Risk Assessment</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#integration-with-species-distribution-models"><i class="fa fa-check"></i><b>1.5.1</b> Integration with species distribution models</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#trait-based-approaches"><i class="fa fa-check"></i><b>1.5.2</b> Trait-based approaches</a></li>
+<li class="chapter" data-level="1.5.3" data-path="introduction.html"><a href="introduction.html#limitations"><i class="fa fa-check"></i><b>1.5.3</b> Limitations</a></li>
+<li class="chapter" data-level="1.5.4" data-path="introduction.html"><a href="introduction.html#scope-of-this-report"><i class="fa fa-check"></i><b>1.5.4</b> Scope of this report</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="general-methods.html"><a href="general-methods.html"><i class="fa fa-check"></i><b>2</b> General Methods</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="general-methods.html"><a href="general-methods.html#trait-and-indicator-selection"><i class="fa fa-check"></i><b>2.1</b> Trait and Indicator Selection</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="general-methods.html"><a href="general-methods.html#existing-database"><i class="fa fa-check"></i><b>2.1.1</b> Existing database</a></li>
+<li class="chapter" data-level="2.1.2" data-path="general-methods.html"><a href="general-methods.html#recextract"><i class="fa fa-check"></i><b>2.1.2</b> Extraction from observation records</a></li>
+<li class="chapter" data-level="2.1.3" data-path="general-methods.html"><a href="general-methods.html#literature-based-coding"><i class="fa fa-check"></i><b>2.1.3</b> Literature-based coding</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="general-methods.html"><a href="general-methods.html#theoretical-framework"><i class="fa fa-check"></i><b>2.2</b> Theoretical Framework</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="general-methods.html"><a href="general-methods.html#steps-of-compressing-information"><i class="fa fa-check"></i><b>2.2.1</b> Steps of compressing information</a></li>
+<li class="chapter" data-level="2.2.2" data-path="general-methods.html"><a href="general-methods.html#mapping-vulnerability"><i class="fa fa-check"></i><b>2.2.2</b> Mapping vulnerability</a></li>
+<li class="chapter" data-level="" data-path="general-methods.html"><a href="general-methods.html#definition"><i class="fa fa-check"></i>Term definitions</a></li>
+<li class="chapter" data-level="" data-path="general-methods.html"><a href="general-methods.html#reproducibility"><i class="fa fa-check"></i>Reproducibility</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sensitivity.html"><a href="sensitivity.html"><i class="fa fa-check"></i><b>3</b> Sensitivity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sensitivity.html"><a href="sensitivity.html#thematic-sub-groups"><i class="fa fa-check"></i><b>3.1</b> Thematic Sub-groups</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="sensitivity.html"><a href="sensitivity.html#climate-specialisation"><i class="fa fa-check"></i><b>3.1.1</b> Climate specialisation</a></li>
+<li class="chapter" data-level="3.1.2" data-path="sensitivity.html"><a href="sensitivity.html#habitat-specialisation"><i class="fa fa-check"></i><b>3.1.2</b> Habitat specialisation</a></li>
+<li class="chapter" data-level="3.1.3" data-path="sensitivity.html"><a href="sensitivity.html#diet-specialisation"><i class="fa fa-check"></i><b>3.1.3</b> Diet specialisation</a></li>
+<li class="chapter" data-level="3.1.4" data-path="sensitivity.html"><a href="sensitivity.html#adaptability"><i class="fa fa-check"></i><b>3.1.4</b> Adaptability</a></li>
+<li class="chapter" data-level="3.1.5" data-path="sensitivity.html"><a href="sensitivity.html#constraints"><i class="fa fa-check"></i><b>3.1.5</b> Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sensitivity.html"><a href="sensitivity.html#traits-or-indicators-not-included"><i class="fa fa-check"></i><b>3.2</b> Traits or Indicators Not Included</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#trophic-level"><i class="fa fa-check"></i>Trophic level</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#population-trend-and-conservation-status"><i class="fa fa-check"></i>Population trend and conservation status</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#body-mass"><i class="fa fa-check"></i>Body mass</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#nest-type"><i class="fa fa-check"></i>Nest type</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#mating-system"><i class="fa fa-check"></i>Mating system</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sensitivity.html"><a href="sensitivity.html#mapping-traits-and-indicators"><i class="fa fa-check"></i><b>3.3</b> Mapping Traits and Indicators</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sensitivity.html"><a href="sensitivity.html#bird"><i class="fa fa-check"></i><b>3.3.1</b> Bird</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exposure.html"><a href="exposure.html"><i class="fa fa-check"></i><b>4</b> Exposure</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="exposure.html"><a href="exposure.html#identification-of-exposure-pathways"><i class="fa fa-check"></i><b>4.1</b> Identification of Exposure Pathways</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="exposure.html"><a href="exposure.html#impact-pathway-diagram"><i class="fa fa-check"></i><b>4.1.1</b> Impact Pathway Diagram</a></li>
+<li class="chapter" data-level="4.1.2" data-path="exposure.html"><a href="exposure.html#exposure-analysis-diagram"><i class="fa fa-check"></i><b>4.1.2</b> Exposure analysis diagram</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="exposure.html"><a href="exposure.html#the-stressors"><i class="fa fa-check"></i><b>4.2</b> The Stressors</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="exposure.html"><a href="exposure.html#habitat-loss"><i class="fa fa-check"></i><b>4.2.1</b> Habitat loss</a></li>
+<li class="chapter" data-level="4.2.2" data-path="exposure.html"><a href="exposure.html#invasive-species"><i class="fa fa-check"></i><b>4.2.2</b> Invasive Species</a></li>
+<li class="chapter" data-level="4.2.3" data-path="exposure.html"><a href="exposure.html#habitat-fragmentation"><i class="fa fa-check"></i><b>4.2.3</b> Habitat fragmentation</a></li>
+<li class="chapter" data-level="4.2.4" data-path="exposure.html"><a href="exposure.html#altered-fire-regime"><i class="fa fa-check"></i><b>4.2.4</b> Altered fire regime</a></li>
+<li class="chapter" data-level="4.2.5" data-path="exposure.html"><a href="exposure.html#collisions"><i class="fa fa-check"></i><b>4.2.5</b> Collisions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="exposure.html"><a href="exposure.html#traitstressor-matrix"><i class="fa fa-check"></i><b>4.3</b> Trait–Stressor Matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="exposure.html"><a href="exposure.html#thematic-sub-groups-1"><i class="fa fa-check"></i><b>4.4</b> Thematic Sub-groups</a></li>
+<li class="chapter" data-level="4.5" data-path="exposure.html"><a href="exposure.html#potential-stressors-not-included"><i class="fa fa-check"></i><b>4.5</b> Potential Stressors Not Included</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="exposure.html"><a href="exposure.html#habitat-degradation"><i class="fa fa-check"></i><b>4.5.1</b> Habitat degradation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cumulative-pressure.html"><a href="cumulative-pressure.html"><i class="fa fa-check"></i><b>5</b> Cumulative Pressure</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="cumulative-pressure.html"><a href="cumulative-pressure.html#thematic-sub-groups-2"><i class="fa fa-check"></i><b>5.1</b> Thematic Sub-groups</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="cumulative-pressure.html"><a href="cumulative-pressure.html#threats"><i class="fa fa-check"></i><b>5.1.1</b> Threats</a></li>
+<li class="chapter" data-level="5.1.2" data-path="cumulative-pressure.html"><a href="cumulative-pressure.html#population-trend"><i class="fa fa-check"></i><b>5.1.2</b> Population trend</a></li>
+<li class="chapter" data-level="5.1.3" data-path="cumulative-pressure.html"><a href="cumulative-pressure.html#popluation-status"><i class="fa fa-check"></i><b>5.1.3</b> Popluation status</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dataprocess.html"><a href="dataprocess.html"><i class="fa fa-check"></i><b>6</b> Process Data</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="dataprocess.html"><a href="dataprocess.html#imputation"><i class="fa fa-check"></i><b>6.1</b> Imputation</a></li>
+<li class="chapter" data-level="6.2" data-path="dataprocess.html"><a href="dataprocess.html#data-treatment"><i class="fa fa-check"></i><b>6.2</b> Data Treatment</a></li>
+<li class="chapter" data-level="6.3" data-path="dataprocess.html"><a href="dataprocess.html#normalisation"><i class="fa fa-check"></i><b>6.3</b> Normalisation</a></li>
+<li class="chapter" data-level="6.4" data-path="dataprocess.html"><a href="dataprocess.html#weighing"><i class="fa fa-check"></i><b>6.4</b> Weighing</a></li>
+<li class="chapter" data-level="6.5" data-path="dataprocess.html"><a href="dataprocess.html#aggregation"><i class="fa fa-check"></i><b>6.5</b> Aggregation</a></li>
+<li class="chapter" data-level="6.6" data-path="dataprocess.html"><a href="dataprocess.html#the-workflow"><i class="fa fa-check"></i><b>6.6</b> The Workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>7</b> Results</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="results.html"><a href="results.html#the-raw-coin"><i class="fa fa-check"></i><b>7.1</b> The Raw Coin</a></li>
+<li class="chapter" data-level="7.2" data-path="results.html"><a href="results.html#the-base-coin"><i class="fa fa-check"></i><b>7.2</b> The Base Coin</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="results.html"><a href="results.html#imeta-of-a-coin"><i class="fa fa-check"></i><b>7.2.1</b> iMeta of a Coin</a></li>
+<li class="chapter" data-level="7.2.2" data-path="results.html"><a href="results.html#idata-of-a-coin"><i class="fa fa-check"></i><b>7.2.2</b> iData of a Coin</a></li>
+<li class="chapter" data-level="7.2.3" data-path="results.html"><a href="results.html#structure"><i class="fa fa-check"></i><b>7.2.3</b> Structure</a></li>
+<li class="chapter" data-level="7.2.4" data-path="results.html"><a href="results.html#Base"><i class="fa fa-check"></i><b>7.2.4</b> Base</a></li>
+<li class="chapter" data-level="7.2.5" data-path="results.html"><a href="results.html#internalconsist"><i class="fa fa-check"></i><b>7.2.5</b> Internal consistency</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="results.html"><a href="results.html#adjustments"><i class="fa fa-check"></i><b>7.3</b> Adjustments</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="results.html"><a href="results.html#weight"><i class="fa fa-check"></i><b>7.3.1</b> Weight</a></li>
+<li class="chapter" data-level="7.3.2" data-path="results.html"><a href="results.html#aggmethod"><i class="fa fa-check"></i><b>7.3.2</b> Aggregation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="results.html"><a href="results.html#adjusted-coins"><i class="fa fa-check"></i><b>7.4</b> Adjusted coins</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="results.html"><a href="results.html#w1"><i class="fa fa-check"></i><b>7.4.1</b> w1</a></li>
+<li class="chapter" data-level="7.4.2" data-path="results.html"><a href="results.html#Max-Lv1"><i class="fa fa-check"></i><b>7.4.2</b> Max-Lv1</a></li>
+<li class="chapter" data-level="7.4.3" data-path="results.html"><a href="results.html#Max-Lv2"><i class="fa fa-check"></i><b>7.4.3</b> Max-Lv2</a></li>
+<li class="chapter" data-level="7.4.4" data-path="results.html"><a href="results.html#Agg-gmean"><i class="fa fa-check"></i><b>7.4.4</b> Agg-gmean</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="results.html"><a href="results.html#comparisons"><i class="fa fa-check"></i><b>7.5</b> Comparisons</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="results.html"><a href="results.html#level-3"><i class="fa fa-check"></i><b>7.5.1</b> Level 3</a></li>
+<li class="chapter" data-level="7.5.2" data-path="results.html"><a href="results.html#level-2"><i class="fa fa-check"></i><b>7.5.2</b> Level 2</a></li>
+<li class="chapter" data-level="7.5.3" data-path="results.html"><a href="results.html#score-comparisons"><i class="fa fa-check"></i><b>7.5.3</b> Score comparisons</a></li>
+<li class="chapter" data-level="7.5.4" data-path="results.html"><a href="results.html#rank-change"><i class="fa fa-check"></i><b>7.5.4</b> Rank change</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="bird-database.html"><a href="bird-database.html"><i class="fa fa-check"></i><b>A</b> Bird Database</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="bird-database.html"><a href="bird-database.html#ausbird"><i class="fa fa-check"></i><b>A.1</b> Australian Bird</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="bird-database.html"><a href="bird-database.html#summary"><i class="fa fa-check"></i><b>A.1.1</b> Summary</a></li>
+<li class="chapter" data-level="A.1.2" data-path="bird-database.html"><a href="bird-database.html#strengths"><i class="fa fa-check"></i><b>A.1.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.1.3" data-path="bird-database.html"><a href="bird-database.html#limitations-1"><i class="fa fa-check"></i><b>A.1.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.1.4" data-path="bird-database.html"><a href="bird-database.html#metadata"><i class="fa fa-check"></i><b>A.1.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.1.5" data-path="bird-database.html"><a href="bird-database.html#data-type"><i class="fa fa-check"></i><b>A.1.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="bird-database.html"><a href="bird-database.html#avonet"><i class="fa fa-check"></i><b>A.2</b> AVONET</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="bird-database.html"><a href="bird-database.html#summary-1"><i class="fa fa-check"></i><b>A.2.1</b> Summary</a></li>
+<li class="chapter" data-level="A.2.2" data-path="bird-database.html"><a href="bird-database.html#strengths-1"><i class="fa fa-check"></i><b>A.2.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.2.3" data-path="bird-database.html"><a href="bird-database.html#limitations-2"><i class="fa fa-check"></i><b>A.2.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.2.4" data-path="bird-database.html"><a href="bird-database.html#metadata-1"><i class="fa fa-check"></i><b>A.2.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.2.5" data-path="bird-database.html"><a href="bird-database.html#data-type-1"><i class="fa fa-check"></i><b>A.2.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="bird-database.html"><a href="bird-database.html#birdbase"><i class="fa fa-check"></i><b>A.3</b> BirdBase</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="bird-database.html"><a href="bird-database.html#summary-2"><i class="fa fa-check"></i><b>A.3.1</b> Summary</a></li>
+<li class="chapter" data-level="A.3.2" data-path="bird-database.html"><a href="bird-database.html#strengths-2"><i class="fa fa-check"></i><b>A.3.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.3.3" data-path="bird-database.html"><a href="bird-database.html#limitations-3"><i class="fa fa-check"></i><b>A.3.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.3.4" data-path="bird-database.html"><a href="bird-database.html#metadata-2"><i class="fa fa-check"></i><b>A.3.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.3.5" data-path="bird-database.html"><a href="bird-database.html#data-type-2"><i class="fa fa-check"></i><b>A.3.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="bird-database.html"><a href="bird-database.html#birdbehav"><i class="fa fa-check"></i><b>A.4</b> Bird Behaviour</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="bird-database.html"><a href="bird-database.html#summary-3"><i class="fa fa-check"></i><b>A.4.1</b> Summary</a></li>
+<li class="chapter" data-level="A.4.2" data-path="bird-database.html"><a href="bird-database.html#strengths-3"><i class="fa fa-check"></i><b>A.4.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.4.3" data-path="bird-database.html"><a href="bird-database.html#limitations-4"><i class="fa fa-check"></i><b>A.4.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.4.4" data-path="bird-database.html"><a href="bird-database.html#metadata-3"><i class="fa fa-check"></i><b>A.4.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.4.5" data-path="bird-database.html"><a href="bird-database.html#data-type-3"><i class="fa fa-check"></i><b>A.4.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="bird-database.html"><a href="bird-database.html#birdlife"><i class="fa fa-check"></i><b>A.5</b> BirdLife Data</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="bird-database.html"><a href="bird-database.html#summary-4"><i class="fa fa-check"></i><b>A.5.1</b> Summary</a></li>
+<li class="chapter" data-level="A.5.2" data-path="bird-database.html"><a href="bird-database.html#strengths-4"><i class="fa fa-check"></i><b>A.5.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.5.3" data-path="bird-database.html"><a href="bird-database.html#limitations-5"><i class="fa fa-check"></i><b>A.5.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.5.4" data-path="bird-database.html"><a href="bird-database.html#metadata-4"><i class="fa fa-check"></i><b>A.5.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.5.5" data-path="bird-database.html"><a href="bird-database.html#data-type-4"><i class="fa fa-check"></i><b>A.5.5</b> Data type</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="bird-database.html"><a href="bird-database.html#eltbird"><i class="fa fa-check"></i><b>A.6</b> Elton Birds</a>
+<ul>
+<li class="chapter" data-level="A.6.1" data-path="bird-database.html"><a href="bird-database.html#summary-5"><i class="fa fa-check"></i><b>A.6.1</b> Summary</a></li>
+<li class="chapter" data-level="A.6.2" data-path="bird-database.html"><a href="bird-database.html#strengths-5"><i class="fa fa-check"></i><b>A.6.2</b> Strengths</a></li>
+<li class="chapter" data-level="A.6.3" data-path="bird-database.html"><a href="bird-database.html#limitations-6"><i class="fa fa-check"></i><b>A.6.3</b> Limitations</a></li>
+<li class="chapter" data-level="A.6.4" data-path="bird-database.html"><a href="bird-database.html#metadata-5"><i class="fa fa-check"></i><b>A.6.4</b> Metadata</a></li>
+<li class="chapter" data-level="A.6.5" data-path="bird-database.html"><a href="bird-database.html#data-type-5"><i class="fa fa-check"></i><b>A.6.5</b> Data type</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="species-profile.html"><a href="species-profile.html"><i class="fa fa-check"></i><b>B</b> Species Profile</a>
+<ul>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#australasian-bittern"><i class="fa fa-check"></i>Australasian Bittern</a>
+<ul>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas"><i class="fa fa-check"></i>SDM predicted distribution in the pilot areas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#australasian-darter"><i class="fa fa-check"></i>Australasian Darter</a>
+<ul>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas-1"><i class="fa fa-check"></i>SDM predicted distribution in the pilot areas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#australasian-shoveler"><i class="fa fa-check"></i>Australasian Shoveler</a>
+<ul>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas-2"><i class="fa fa-check"></i>SDM predicted distribution in the pilot areas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#australian-bustard"><i class="fa fa-check"></i>Australian Bustard</a>
+<ul>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas-3"><i class="fa fa-check"></i>SDM predicted distribution in the pilot areas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#australian-painted-snipe"><i class="fa fa-check"></i>Australian Painted Snipe</a>
+<ul>
+<li class="chapter" data-level="" data-path="species-profile.html"><a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas-4"><i class="fa fa-check"></i>SDM predicted distribution in the pilot areas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="r-packages.html"><a href="r-packages.html"><i class="fa fa-check"></i><b>C</b> R packages</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Developing composite indicators for species risk assessment</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="species-profile" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">B</span> Species Profile<a href="species-profile.html#species-profile" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="australasian-bittern" class="section level2 unnumbered hasAnchor">
+<h2>Australasian Bittern<a href="species-profile.html#australasian-bittern" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span style="font-size: 16px;"><em>Botaurus poiciloptilus</em></span></p>
+<p><span style="font-size: 16px;">Current IUCN status: <em>VU</em></span></p>
+<p><span style="font-size: 16px;">Rank: 69 in 143 species</span></p>
+<p><span style="font-size: 16px;">Vulnerability score: 41.74</span></p>
+<p><img src="_main_files/figure-html/lv3plot-1.png" width="576" /></p>
+<div id="sdm-predicted-distribution-in-the-pilot-areas" class="section level3 unnumbered hasAnchor">
+<h3>SDM predicted distribution in the pilot areas<a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="_main_files/figure-html/sdms-1.png" width="960" /></p>
+<hr />
+<div id="sensitivity-breadown-and-raw-data" class="section level4 unnumbered hasAnchor">
+<h4>Sensitivity breadown and raw data<a href="species-profile.html#sensitivity-breadown-and-raw-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/sensplot-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:senstable">Table B.1: </span>The raw value of each indicator in Sensitivity.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Adaptability
+</td>
+<td style="text-align:left;">
+Anthropogenic score
+</td>
+<td style="text-align:right;">
+2.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Min seasonal EOO
+</td>
+<td style="text-align:right;">
+10200000.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Climate simpson
+</td>
+<td style="text-align:right;">
+0.80
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Obligate migrant
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Reproductive rate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Generation length
+</td>
+<td style="text-align:right;">
+4.77
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Raptor
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:left;">
+Diet Simpson
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Feeding habitat breadth
+</td>
+<td style="text-align:right;">
+4.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Habitat breadth
+</td>
+<td style="text-align:right;">
+2.00
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="exposure-breadown-and-raw-data" class="section level4 unnumbered hasAnchor">
+<h4>Exposure breadown and raw data<a href="species-profile.html#exposure-breadown-and-raw-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/expoplot-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:expotable">Table B.2: </span>Exposure scores derived from the product of the trait–species matrix and the trait–stressor matrix.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Migratory
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+FireAsAThreat
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+AdultBodySize
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingStructure
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+TerritorialResidents
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="pressure-breadown-and-raw-data" class="section level4 unnumbered hasAnchor">
+<h4>Pressure breadown and raw data<a href="species-profile.html#pressure-breadown-and-raw-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/presplot-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:prestable">Table B.3: </span>Identified IUCN threats for each species. Threats are classified at Level 2, and ias denotes identified alien species associated with invasive species threats.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Threat
+</th>
+<th style="text-align:left;">
+ias
+</th>
+<th style="text-align:left;">
+scope
+</th>
+<th style="text-align:left;">
+timing
+</th>
+<th style="text-align:left;">
+severity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Droughts
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Whole (&gt;90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dams &amp; water management/use
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other ecosystem modifications
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Utility &amp; service lines
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Annual &amp; perennial non-timber crops
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hunting &amp; collecting terrestrial animals
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Capra hircus
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Sus scrofa
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fire &amp; fire suppression
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Felis catus
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Vulpes vulpes
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Equus caballus
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Unspecified CERVIDAE
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Recreational activities
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="australasian-darter" class="section level2 unnumbered hasAnchor">
+<h2>Australasian Darter<a href="species-profile.html#australasian-darter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span style="font-size: 16px;"><em>Anhinga novaehollandiae</em></span></p>
+<p><span style="font-size: 16px;">Current IUCN status: <em>LC</em></span></p>
+<p><span style="font-size: 16px;">Rank: 135 in 143 species</span></p>
+<p><span style="font-size: 16px;">Vulnerability score: 29.96</span></p>
+<p><img src="_main_files/figure-html/lv3plot-125-1.png" width="576" /></p>
+<div id="sdm-predicted-distribution-in-the-pilot-areas-1" class="section level3 unnumbered hasAnchor">
+<h3>SDM predicted distribution in the pilot areas<a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="_main_files/figure-html/sdms-126-1.png" width="960" /></p>
+<hr />
+<div id="sensitivity-breadown-and-raw-data-1" class="section level4 unnumbered hasAnchor">
+<h4>Sensitivity breadown and raw data<a href="species-profile.html#sensitivity-breadown-and-raw-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/sensplot-127-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:senstable-128">Table B.4: </span>The raw value of each indicator in Sensitivity.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Adaptability
+</td>
+<td style="text-align:left;">
+Anthropogenic score
+</td>
+<td style="text-align:right;">
+3.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Min seasonal EOO
+</td>
+<td style="text-align:right;">
+13100000.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Climate simpson
+</td>
+<td style="text-align:right;">
+0.90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Obligate migrant
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Reproductive rate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Generation length
+</td>
+<td style="text-align:right;">
+6.62
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Raptor
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:left;">
+Diet Simpson
+</td>
+<td style="text-align:right;">
+0.46
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Feeding habitat breadth
+</td>
+<td style="text-align:right;">
+5.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Habitat breadth
+</td>
+<td style="text-align:right;">
+3.00
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="exposure-breadown-and-raw-data-1" class="section level4 unnumbered hasAnchor">
+<h4>Exposure breadown and raw data<a href="species-profile.html#exposure-breadown-and-raw-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/expoplot-129-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:expotable-130">Table B.5: </span>Exposure scores derived from the product of the trait–species matrix and the trait–stressor matrix.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Migratory
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+FireAsAThreat
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+AdultBodySize
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingStructure
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+TerritorialResidents
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="pressure-breadown-and-raw-data-1" class="section level4 unnumbered hasAnchor">
+<h4>Pressure breadown and raw data<a href="species-profile.html#pressure-breadown-and-raw-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/presplot-131-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:prestable-132">Table B.6: </span>Identified IUCN threats for each species. Threats are classified at Level 2, and ias denotes identified alien species associated with invasive species threats.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Threat
+</th>
+<th style="text-align:left;">
+ias
+</th>
+<th style="text-align:left;">
+scope
+</th>
+<th style="text-align:left;">
+timing
+</th>
+<th style="text-align:left;">
+severity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="australasian-shoveler" class="section level2 unnumbered hasAnchor">
+<h2>Australasian Shoveler<a href="species-profile.html#australasian-shoveler" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span style="font-size: 16px;"><em>Spatula rhynchotis</em></span></p>
+<p><span style="font-size: 16px;">Current IUCN status: <em>LC</em></span></p>
+<p><span style="font-size: 16px;">Rank: 121 in 143 species</span></p>
+<p><span style="font-size: 16px;">Vulnerability score: 32.69</span></p>
+<p><img src="_main_files/figure-html/lv3plot-141-1.png" width="576" /></p>
+<div id="sdm-predicted-distribution-in-the-pilot-areas-2" class="section level3 unnumbered hasAnchor">
+<h3>SDM predicted distribution in the pilot areas<a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="_main_files/figure-html/sdms-142-1.png" width="960" /></p>
+<hr />
+<div id="sensitivity-breadown-and-raw-data-2" class="section level4 unnumbered hasAnchor">
+<h4>Sensitivity breadown and raw data<a href="species-profile.html#sensitivity-breadown-and-raw-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/sensplot-143-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:senstable-144">Table B.7: </span>The raw value of each indicator in Sensitivity.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Adaptability
+</td>
+<td style="text-align:left;">
+Anthropogenic score
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Min seasonal EOO
+</td>
+<td style="text-align:right;">
+13200000.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Climate simpson
+</td>
+<td style="text-align:right;">
+0.84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Obligate migrant
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Reproductive rate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Generation length
+</td>
+<td style="text-align:right;">
+4.66
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Raptor
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:left;">
+Diet Simpson
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Feeding habitat breadth
+</td>
+<td style="text-align:right;">
+5.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Habitat breadth
+</td>
+<td style="text-align:right;">
+2.00
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="exposure-breadown-and-raw-data-2" class="section level4 unnumbered hasAnchor">
+<h4>Exposure breadown and raw data<a href="species-profile.html#exposure-breadown-and-raw-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/expoplot-145-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:expotable-146">Table B.8: </span>Exposure scores derived from the product of the trait–species matrix and the trait–stressor matrix.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Migratory
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+FireAsAThreat
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+AdultBodySize
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingStructure
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+TerritorialResidents
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="pressure-breadown-and-raw-data-2" class="section level4 unnumbered hasAnchor">
+<h4>Pressure breadown and raw data<a href="species-profile.html#pressure-breadown-and-raw-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/presplot-147-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:prestable-148">Table B.9: </span>Identified IUCN threats for each species. Threats are classified at Level 2, and ias denotes identified alien species associated with invasive species threats.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Threat
+</th>
+<th style="text-align:left;">
+ias
+</th>
+<th style="text-align:left;">
+scope
+</th>
+<th style="text-align:left;">
+timing
+</th>
+<th style="text-align:left;">
+severity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="australian-bustard" class="section level2 unnumbered hasAnchor">
+<h2>Australian Bustard<a href="species-profile.html#australian-bustard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span style="font-size: 16px;"><em>Ardeotis australis</em></span></p>
+<p><span style="font-size: 16px;">Current IUCN status: <em>LC</em></span></p>
+<p><span style="font-size: 16px;">Rank: 107 in 143 species</span></p>
+<p><span style="font-size: 16px;">Vulnerability score: 36.12</span></p>
+<p><img src="_main_files/figure-html/lv3plot-157-1.png" width="576" /></p>
+<div id="sdm-predicted-distribution-in-the-pilot-areas-3" class="section level3 unnumbered hasAnchor">
+<h3>SDM predicted distribution in the pilot areas<a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="_main_files/figure-html/sdms-158-1.png" width="960" /></p>
+<hr />
+<div id="sensitivity-breadown-and-raw-data-3" class="section level4 unnumbered hasAnchor">
+<h4>Sensitivity breadown and raw data<a href="species-profile.html#sensitivity-breadown-and-raw-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/sensplot-159-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:senstable-160">Table B.10: </span>The raw value of each indicator in Sensitivity.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Adaptability
+</td>
+<td style="text-align:left;">
+Anthropogenic score
+</td>
+<td style="text-align:right;">
+2.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Min seasonal EOO
+</td>
+<td style="text-align:right;">
+9080000.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Climate simpson
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Obligate migrant
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Reproductive rate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Generation length
+</td>
+<td style="text-align:right;">
+10.52
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Raptor
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:left;">
+Diet Simpson
+</td>
+<td style="text-align:right;">
+0.78
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Feeding habitat breadth
+</td>
+<td style="text-align:right;">
+5.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Habitat breadth
+</td>
+<td style="text-align:right;">
+5.00
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="exposure-breadown-and-raw-data-3" class="section level4 unnumbered hasAnchor">
+<h4>Exposure breadown and raw data<a href="species-profile.html#exposure-breadown-and-raw-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/expoplot-161-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:expotable-162">Table B.11: </span>Exposure scores derived from the product of the trait–species matrix and the trait–stressor matrix.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Migratory
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+FireAsAThreat
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+AdultBodySize
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.93
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingStructure
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+TerritorialResidents
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="pressure-breadown-and-raw-data-3" class="section level4 unnumbered hasAnchor">
+<h4>Pressure breadown and raw data<a href="species-profile.html#pressure-breadown-and-raw-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/presplot-163-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:prestable-164">Table B.12: </span>Identified IUCN threats for each species. Threats are classified at Level 2, and ias denotes identified alien species associated with invasive species threats.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Threat
+</th>
+<th style="text-align:left;">
+ias
+</th>
+<th style="text-align:left;">
+scope
+</th>
+<th style="text-align:left;">
+timing
+</th>
+<th style="text-align:left;">
+severity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Ovis aries
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Vulpes vulpes
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Livestock farming &amp; ranching
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Past, Unlikely to Return
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Agricultural &amp; forestry effluents
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Rapid Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+Bos taurus
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Work &amp; other activities
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hunting &amp; collecting terrestrial animals
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Past, Unlikely to Return
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fire &amp; fire suppression
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Negligible declines
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="australian-painted-snipe" class="section level2 unnumbered hasAnchor">
+<h2>Australian Painted Snipe<a href="species-profile.html#australian-painted-snipe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span style="font-size: 16px;"><em>Rostratula australis</em></span></p>
+<p><span style="font-size: 16px;">Current IUCN status: <em>EN</em></span></p>
+<p><span style="font-size: 16px;">Rank: 25 in 143 species</span></p>
+<p><span style="font-size: 16px;">Vulnerability score: 51.44</span></p>
+<p><img src="_main_files/figure-html/lv3plot-173-1.png" width="576" /></p>
+<div id="sdm-predicted-distribution-in-the-pilot-areas-4" class="section level3 unnumbered hasAnchor">
+<h3>SDM predicted distribution in the pilot areas<a href="species-profile.html#sdm-predicted-distribution-in-the-pilot-areas-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="_main_files/figure-html/sdms-174-1.png" width="960" /></p>
+<hr />
+<div id="sensitivity-breadown-and-raw-data-4" class="section level4 unnumbered hasAnchor">
+<h4>Sensitivity breadown and raw data<a href="species-profile.html#sensitivity-breadown-and-raw-data-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/sensplot-175-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:senstable-176">Table B.13: </span>The raw value of each indicator in Sensitivity.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Adaptability
+</td>
+<td style="text-align:left;">
+Anthropogenic score
+</td>
+<td style="text-align:right;">
+2.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Min seasonal EOO
+</td>
+<td style="text-align:right;">
+5200000.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Climate
+</td>
+<td style="text-align:left;">
+Climate simpson
+</td>
+<td style="text-align:right;">
+0.90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Obligate migrant
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Reproductive rate
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Generation length
+</td>
+<td style="text-align:right;">
+3.84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Constraints
+</td>
+<td style="text-align:left;">
+Raptor
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:left;">
+Diet Simpson
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Feeding habitat breadth
+</td>
+<td style="text-align:right;">
+2.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Habitat
+</td>
+<td style="text-align:left;">
+Habitat breadth
+</td>
+<td style="text-align:right;">
+2.00
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="exposure-breadown-and-raw-data-4" class="section level4 unnumbered hasAnchor">
+<h4>Exposure breadown and raw data<a href="species-profile.html#exposure-breadown-and-raw-data-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/expoplot-177-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:expotable-178">Table B.14: </span>Exposure scores derived from the product of the trait–species matrix and the trait–stressor matrix.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Group
+</th>
+<th style="text-align:left;">
+Indicator
+</th>
+<th style="text-align:right;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionSolar
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CollisionWind
+</td>
+<td style="text-align:left;">
+Migratory
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+Maneuverability
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragmentation
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HabitatLoss
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Activity
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+AridZoneVegetation
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+FireAsAThreat
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IncreasedFire
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+AdultBodySize
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingStructure
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasCat
+</td>
+<td style="text-align:left;">
+TerritorialResidents
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+ForagingStrategy
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iasRabbitGoat
+</td>
+<td style="text-align:left;">
+NestingSubstrate
+</td>
+<td style="text-align:right;">
+0.33
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="pressure-breadown-and-raw-data-4" class="section level4 unnumbered hasAnchor">
+<h4>Pressure breadown and raw data<a href="species-profile.html#pressure-breadown-and-raw-data-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="_main_files/figure-html/presplot-179-1.png" width="960" /></p>
+<table class="table table-striped table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:prestable-180">Table B.15: </span>Identified IUCN threats for each species. Threats are classified at Level 2, and ias denotes identified alien species associated with invasive species threats.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Threat
+</th>
+<th style="text-align:left;">
+ias
+</th>
+<th style="text-align:left;">
+scope
+</th>
+<th style="text-align:left;">
+timing
+</th>
+<th style="text-align:left;">
+severity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Livestock farming &amp; ranching
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Minority (&lt;50%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dams &amp; water management/use
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Rapid Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Annual &amp; perennial non-timber crops
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Rapid Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Invasive non-native/alien species/diseases
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Future
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dams &amp; water management/use
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Majority (50-90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Rapid Declines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Droughts
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Whole (&gt;90%)
+</td>
+<td style="text-align:left;">
+Ongoing
+</td>
+<td style="text-align:left;">
+Slow, Significant Declines
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bird-database.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-packages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https =//github.com/dew-landscapes/RiskMap/edit/master/0052_species-profile.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

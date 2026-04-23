@@ -1,4 +1,4 @@
-## Species Profile
+# Species Profile
 
 ```{r spcoindf}
 
@@ -11,16 +11,24 @@ df <- COINr::get_results(coin, dset = "Aggregated", tab_type = "Aggs") %>%
 
 ## dfs for Lv2 decomposition
 
-lv2list <- setNames(cols, cols) %>%
-  purrr::map(function(si) {
-    meta <- coin$Meta$Lineage %>%
+lv2list <- setNames(cols, cols) %>% 
+  purrr::map(function(si) { 
+    meta <- coin$Meta$Lineage %>% 
       dplyr::filter(`Sub-index` == si)
     
-    data <- coin$Data$Aggregated %>%
+    data <- coin$Data$Aggregated %>% 
       dplyr::select(uCode, all_of(meta$Variable))
-    
-    list(meta = meta, data = data)
+    list(meta = meta, data = data) 
   })
+
+### Sensitivity
+tar_load(sensitivity_imputed, store = fs::path(here::here(), tars$envBird$sensitivity$store))
+### Exposure
+tar_load(exposure_indicator, store = fs::path(here::here(), tars$envBird$exposure$store))
+### Pressure
+tar_load(iucn_threat, store = fs::path(here::here(), tars$envBird$threat$store))
+iucncode <- readxl::read_excel(fs::path(here::here(), "..", "TraitsMeta", "IUCN_threats.xlsx"), 
+                               sheet = "Threat-IUCN")
 
 ## tif stack for SDM map USG ----
 
@@ -34,7 +42,7 @@ bp_birdstack <- terra::rast(fs::path(here::here(), bp_bird$use_tif))
 
 ```{r rendersp, results='asis'}
 
-for (nm in df$uCode[1:5]) {
+for (nm in df$uCode[order(df$uName)][1:5]) {
 
   cat(knitr::knit_child(
     "child/52_SpeciesProfile.Rmd",

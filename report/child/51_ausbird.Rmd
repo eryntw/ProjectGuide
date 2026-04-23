@@ -61,12 +61,8 @@ meta <- readxl::read_excel(fs::path(here::here(), "..", "envBird", "database",
 Metadata were obtained from the original publication.
 
 ```{r ausbirdmeta, echo=FALSE}
-knitr::kable(meta) %>%
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover"),
-    full_width = FALSE
-  ) %>%
-  kableExtra::scroll_box(width = "100%", height = "400px")
+kableExtra::kbl(meta) %>%
+  style_kable(style = "scrollable")
 ```
 
 ### Data type

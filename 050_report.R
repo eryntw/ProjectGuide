@@ -1,6 +1,6 @@
-
 library(targets)
 library(tarchetypes)
+tar_source()
 
 # tars -------
 tars <- yaml::read_yaml("_targets.yaml")

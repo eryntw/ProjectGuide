@@ -22,7 +22,7 @@ h_df <- coin_1$Meta$Ind %>%
   dplyr::mutate(Percentage = Weight)
 
 coin <- coin_1
-  
+
 ```
 
 ### iMeta of a Coin
@@ -32,14 +32,8 @@ Metadata structure of a coin. Each variable (candidate indicator) is identified 
 ```{r imeta, echo=FALSE}
 
 coin$Meta$Ind %>% 
-  kableExtra::kbl(
-  ) %>%
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed"),
-  ) %>% 
-  kableExtra::column_spec(2, extra_css = "position: sticky; background-color: white; left: 0; z-index: 10;") %>%
-  kableExtra::scroll_box(width = "100%", height = "500px")
-
+  kableExtra::kbl() %>%
+  style_kable(style = "scrollable_freeze")
 ```
 
 ### iData of a Coin
@@ -49,13 +43,8 @@ Each unit is identified by the `uCode` column, while the remaining columns repre
 ```{r idata, echo=FALSE}
 
 coin$Data$Raw %>% 
-  kableExtra::kbl(
-  ) %>%
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed")
-  ) %>% 
-  kableExtra::column_spec(2, extra_css = "position: sticky; background-color: white; left: 0; z-index: 10;") %>%
-  kableExtra::scroll_box(width = "100%", height = "500px", fixed_thead = TRUE)
+  kableExtra::kbl() %>% 
+  style_kable(style = "scrollable_freeze")
 
 ```
 
@@ -70,14 +59,14 @@ library(htmlwidgets)
 library(patchwork)
 
 cat(knitr::knit_child(
-    "child/30_CoinDisplay.Rmd",
-    envir = list2env(list(
-      coin = coin,
-      coin_name = "Base",
-      h_df = h_df
-    )),
-    quiet = TRUE
-  ))
+  "child/30_CoinDisplay.Rmd",
+  envir = list2env(list(
+    coin = coin,
+    coin_name = "Base",
+    h_df = h_df
+  )),
+  quiet = TRUE
+))
 
 ```
 

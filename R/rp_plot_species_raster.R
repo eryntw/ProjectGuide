@@ -24,11 +24,20 @@ plot_species_raster <- function(sp_name,
   library(patchwork)
   
   # ---- extract layers safely ----
-  r_usg <- rast_A[[sp_name]]
-  r_bp  <- rast_B[[sp_name]]
+  r_usg <- if (sp_name %in% names(rast_A)) rast_A[[sp_name]] else NULL
+  r_bp  <- if (sp_name %in% names(rast_B)) rast_B[[sp_name]] else NULL
   
   if (is.null(r_usg) && is.null(r_bp)) {
-    stop(paste0("Species '", species, "' not found in either raster stack."))
+    
+    msg <- paste0("Species '", sp_name, "' not predicted in either area.")
+    
+    p <- ggplot() +
+      annotate("text", x = 0.5, y = 0.5, label = msg, size = 6, hjust = 0.5) +
+      xlim(0, 1) +
+      ylim(0, 1) +
+      theme_void()
+    
+    return(p)
   }
   
   # =========================================================
@@ -44,7 +53,9 @@ plot_species_raster <- function(sp_name,
       ggplot2::theme_void()
   } else {
     p_usg <- ggplot() + ggplot2::theme_void() +
-      ggplot2::ggtitle(paste(sp_name, "not predicted in", name_A))
+      ggplot2::ggtitle(paste0("Not predicted in", 
+                              "\n",
+                              name_A))
   }
   
   # =========================================================
@@ -60,7 +71,9 @@ plot_species_raster <- function(sp_name,
       ggplot2::theme_void()
   } else {
     p_bp <- ggplot() + ggplot2::theme_void() +
-      ggplot2::ggtitle(paste0(sp_name, "not predicted in", name_B))
+      ggplot2::ggtitle(paste0("Not predicted in", 
+                              "\n",
+                              name_B))
   }
   
   # =========================================================

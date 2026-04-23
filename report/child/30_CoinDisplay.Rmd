@@ -130,9 +130,6 @@ coin$Meta$Unit %>%
     escape = FALSE,
     caption = "Aggregated vulnerability scores and contributing subindices by species, sorted by highest to lowest estimated vulnerability."
   ) %>%
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed"),
-  ) %>%
-  kableExtra::scroll_box(width = "100%", height = "500px")
+style_kable(style = "scrollable")
   
 ```
