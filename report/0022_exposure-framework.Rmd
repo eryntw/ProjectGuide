@@ -126,10 +126,9 @@ m %>%
     birdcol_original = stringr::str_wrap(birdcol_original, 20),
     birdcol_new = stringr::str_wrap(birdcol_new, 20)
   ) %>%
-  kableExtra::kbl(
-    caption = "Trait–stressor matrix linking traits and variables to the identified stressors (thematic sub-groups) across plant and animal species. Trait categories are scored, and non-applicable entries are treated as NA."
-  ) %>%
-  style_kable(style = "scrollable_freeze", sticky_cols = 4)
+  style_gt(style = "scrollable",
+           sticky_cols = 4,
+           caption = "Trait–stressor matrix linking traits and variables to the identified stressors (thematic sub-groups) across plant and animal species. Trait categories are scored, and non-applicable entries are treated as NA.")
 
 ```
 

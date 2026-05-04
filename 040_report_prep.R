@@ -3,10 +3,13 @@ library(geotargets)
 library(tarchetypes)
 library(crew)
 library(dplyr)
-tar_source()
+
+tar_option_set(packages = yaml::read_yaml("settings/packages.yaml")$packages, 
+               controller = crew_controller_local(workers = 10))
 
 # tars -------
 tars <- yaml::read_yaml("_targets.yaml")
+tar_source()
 
 # from other scripts ---------
 

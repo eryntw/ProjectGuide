@@ -53,4 +53,6 @@ cat(cov, sep = '\n')
 
 ### Data type
 
-`r summarise_column_types(df)`
+```{r birdlifedatatype, results='asis'}
+summarise_column_types(df)
+```

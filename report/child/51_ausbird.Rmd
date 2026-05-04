@@ -60,15 +60,16 @@ meta <- readxl::read_excel(fs::path(dbdir,
 
 Metadata were obtained from the original publication.
 
-```{r ausbirdmeta, echo=FALSE}
-kableExtra::kbl(meta) %>%
-  style_kable(style = "scrollable")
+```{r ausbirdmeta, echo=FALSE, results='asis'}
+meta %>% 
+  style_gt(style = "scrollable")
 ```
 
 ### Data type
 
 The data below is obtained from `traitdata` R package.
 
-`r summarise_column_types(df)`
+```{r ausbirddatatype, results='asis'}
+summarise_column_types(df)
+```
 
-***

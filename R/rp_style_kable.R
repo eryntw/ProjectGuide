@@ -1,3 +1,19 @@
+
+# Helper: hoist caption outside scroll box
+hoist_caption <- function(html_str) {
+  cap_match <- regmatches(html_str, regexpr(
+    '<caption[^>]*>.*?</caption>', html_str, perl = TRUE
+  ))
+  if (length(cap_match) == 0) return(html_str)
+  
+  html_str  <- sub('<caption[^>]*>.*?</caption>', '', html_str, perl = TRUE)
+  cap_clean <- sub('<caption[^>]*>',
+                   '<p class="kable-caption" style="text-align:left; margin-bottom:4px; font-size:12px;">',
+                   cap_match)
+  cap_clean <- sub('</caption>', '</p>', cap_clean)
+  paste0(cap_clean, html_str)
+}
+
 style_kable <- function(kbl,
                         style = c("compact", 
                                   "scrollable",
@@ -35,7 +51,8 @@ style_kable <- function(kbl,
       full_width = FALSE,
       font_size = 12
     ) %>%
-      kableExtra::scroll_box(width = "100%", height = "500px")
+      kableExtra::scroll_box(width = "100%", 
+                             height = scroll_height)
   }
   
   # -------------------------
@@ -71,12 +88,30 @@ style_kable <- function(kbl,
   }
   
   # -------------------------
-  # Optional column wrapping (applies to both styles)
+  # Optional column wrapping (applies to all styles)
   # -------------------------
   if (!is.null(wrap_col)) {
     kbl <- kbl %>%
       kableExtra::column_spec(wrap_col, width = wrap_width)
   }
   
-  return(kbl)
+  # -------------------------
+  # Wrap in self-contained div with left-aligned caption
+  # prevents HTML bleed in knit_child() context
+  # -------------------------
+  # html_out <- paste0(
+  #   '<style>caption{text-align:left!important;}</style>',
+  #   '<div class="kable-wrapper">',
+  #   as.character(kbl),
+  #   '</div>'
+  # )
+  # htmltools::HTML(html_out)
+  html_out <- as.character(kbl) %>%
+    hoist_caption() %>%
+    paste0('<style>caption{text-align:left!important;}</style><div class="kable-wrapper">',
+           ., 
+           '</div>')
+  
+  structure(html_out, class = "knitr_kable", format = "html")
+  
 }

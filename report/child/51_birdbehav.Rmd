@@ -43,4 +43,6 @@ The metadata can only be found in the Method section of the original publication
 
 ### Data type
 
-`r summarise_column_types(df)`
+```{r birdbehavdatatype, results='asis'}
+summarise_column_types(df)
+```

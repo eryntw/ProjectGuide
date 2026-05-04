@@ -29,9 +29,8 @@ Metadata structure of a coin. Each variable (candidate indicator) is identified 
 
 ```{r imeta, echo=FALSE}
 
-coin$Meta$Ind %>% 
-  kableExtra::kbl() %>%
-  style_kable(style = "scrollable_freeze")
+coin$Meta$Ind %>%
+  style_gt(style = "scrollable")
 ```
 
 ### iData of a Coin
@@ -41,8 +40,7 @@ Each unit is identified by the `uCode` column, while the remaining columns repre
 ```{r idata, echo=FALSE}
 
 coin$Data$Raw %>% 
-  kableExtra::kbl() %>% 
-  style_kable(style = "scrollable_freeze")
+style_gt(style = "scrollable")
 
 ```
 
@@ -106,8 +104,8 @@ ca_table <- data.frame(
 rownames(ca_table) <- NULL
 ca_table %>% 
   mutate(across(where(is.numeric), round, 2)) %>% 
-  kableExtra::kbl(caption = "Cronbach’s alpha (c-alpha) for each thematic group indicating internal consistency reliability. NaN values occur where only one indicator is present. The ‘Constraints’ group shows low c-alpha, reflecting that the constraint traits are mostly independent of each other.") %>% 
-  style_kable(style = "compact")
+  style_gt(style = "compact",
+           caption = "Cronbach’s alpha (c-alpha) for each thematic group indicating internal consistency reliability. NaN values occur where only one indicator is present. The ‘Constraints’ group shows low c-alpha, reflecting that the constraint traits are mostly independent of each other.")
 
 ```
 

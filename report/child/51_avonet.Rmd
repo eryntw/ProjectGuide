@@ -57,17 +57,13 @@ meta <- readxl::read_excel(fs::path(dbdir,
 
 ### Metadata
 
-```{r avonetmeta, echo=FALSE}
-knitr::kable(meta) %>%
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover"),
-    full_width = FALSE
-  ) %>%
-  kableExtra::scroll_box(width = "100%", height = "400px")
+```{r avonetmeta, echo=FALSE, results='asis'}
+meta %>% 
+  style_gt(style = "scrollable")
 ```
 
 ### Data type
 
-`r summarise_column_types(df)`
-
-***
+```{r avonetdatatype, results='asis'}
+summarise_column_types(df)
+```

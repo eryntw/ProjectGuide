@@ -1,9 +1,12 @@
 library(targets)
 library(tarchetypes)
-tar_source()
+
+tar_option_set(packages = yaml::read_yaml("settings/packages.yaml")$packages, 
+               controller = crew_controller_local(workers = 30))
 
 # tars -------
 tars <- yaml::read_yaml("_targets.yaml")
+tar_source()
 
 # tar options --------
 tar_option_set(packages = yaml::read_yaml("settings/packages.yaml")$packages)

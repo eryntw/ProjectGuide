@@ -42,10 +42,8 @@ Population trend was incorporated by assigning ordinal scores based on IUCN tren
 trend_scores <- data.frame(
   Trend = c("Decreasing", "Stable", "Increasing", "unknown"),
   Score = c(2, 1, 0, 1)
-)
-
-kbl(trend_scores, align = c("l", "c")) %>%
-  kable_styling(full_width = FALSE)
+) %>% 
+  style_gt(style = "compact")
 ```
 
 ### Popluation status
@@ -58,9 +56,7 @@ For species not assessed by the IUCN, population status was inferred from estima
 status_scores <- data.frame(
   Status = c("CR", "EN", "VU", "NT", "LC"),
   Score  = c(5, 4, 3, 2, 1)
-)
-
-kbl(status_scores, align = c("l", "c")) %>%
-  kable_styling(full_width = FALSE)
+) %>% 
+  style_gt(style = "compact")
 ```
 

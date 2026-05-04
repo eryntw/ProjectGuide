@@ -10,13 +10,12 @@ dbdir <- "/mnt/envshare/data/traits/raw/bird"
 child_files <- list.files(
   path = fs::path(here::here(), "report", "child"),
   pattern = "^51_.*\\.Rmd$", # regex: starts with 51_ and ends with .Rmd
-  full.names = TRUE
+  full.names = FALSE
 )
 
 for (f in child_files) {
-  cat(knitr::knit_child(f, quiet = TRUE), sep = "\n")
+  cat(knitr::knit_child(paste0("child/", f), quiet = TRUE), sep = "\n")
 }
 
 ```
 
-***

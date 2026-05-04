@@ -27,7 +27,7 @@ plot_coin_bar <- function(
     mode = c("parent", "children"),
     colours = NULL,
     ncol = 2,
-    text.size = 4,
+    text.size = 8,
     interactive = FALSE
 ) {
   

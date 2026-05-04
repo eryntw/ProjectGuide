@@ -95,8 +95,8 @@ sensitivity_imputed %>%
   ) %>%
   dplyr::select(Parent, iName, Value) %>% 
   dplyr::rename(Group = Parent, Indicator = iName) %>% 
-  kableExtra::kbl(caption = "The raw value of each indicator in Sensitivity.") %>% 
-  style_kable(style = "compact")
+  style_gt(style = "compact",
+           caption = "The raw value of each indicator in Sensitivity.")
 
 ```
 
@@ -131,8 +131,8 @@ exposure_indicator %>%
   tibble::rownames_to_column("Indicator") %>% 
   tidyr::separate(Indicator, into = c("Group", "Indicator"), sep = "_", fill = "right") %>% 
   dplyr::rename(Value = V1) %>% 
-  kableExtra::kbl(caption = "Exposure scores derived from the product of the trait–species matrix and the trait–stressor matrix.") %>% 
-  style_kable(style = "compact")
+  style_gt(style = "compact",
+           caption = "Exposure scores derived from the product of the trait–species matrix and the trait–stressor matrix.")
 
 ```
 
@@ -178,8 +178,8 @@ if (nrow(prestable) == 1 && is.na(prestable$threat_index)) {
     dplyr::select(-threat_code2, -threat_code) %>% 
     dplyr::relocate(Threat, threat_ias) %>%
     dplyr::rename_with(~ sub("^threat_", "", .x)) %>% 
-    kableExtra::kbl(caption = "Identified IUCN threats for each species. Threats are classified at Level 2, and ias denotes identified alien species associated with invasive species threats.") %>% 
-    style_kable(style = "compact")
+    style_gt(style = "compact",
+             caption = "Identified IUCN threats for each species. Threats are classified at Level 2, and ias denotes identified alien species associated with invasive species threats.")
 }  
 
 ```

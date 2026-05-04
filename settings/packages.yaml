@@ -18,7 +18,6 @@ packages:
   - ymlthis
   - yaml
   - knitr
-  - kableExtra
   - patchwork
   - ggplot2
   - plotly

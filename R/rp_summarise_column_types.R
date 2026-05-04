@@ -8,10 +8,10 @@
 #' @param df A data frame.
 #' @param n_example Number of example values to display for non-numeric columns (default = 5).
 #' @param digits Number of decimal places for numeric ranges (default = 2).
-#' @param render Logical; if TRUE, renders a styled table with knitr/kableExtra. Default TRUE.
+#' @param render Logical; if TRUE, renders a styled table with gt pkg. Default TRUE.
 #' @param scroll_height Height for scrollable table (default = "400px"). Only used if render = TRUE.
 #'
-#' @return A data frame summarising column structure or a kable table.
+#' @return A data frame summarising column structure or a gt table.
 #'
 #' @examples
 #' summarise_column_types(my_data)
@@ -51,12 +51,8 @@ summarise_column_types <- function(df, n_example = 5, digits = 2, render = TRUE,
   )
   
   if (render) {
-    knitr::kable(summary_df) %>%
-      kableExtra::kable_styling(
-        bootstrap_options = c("striped", "hover"),
-        full_width = FALSE
-      ) %>%
-      kableExtra::scroll_box(width = "100%", height = scroll_height)
+    summary_df %>% 
+      style_gt(style = "scrollable")
   } else {
     return(summary_df)
   }

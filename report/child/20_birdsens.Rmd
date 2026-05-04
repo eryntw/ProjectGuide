@@ -6,7 +6,6 @@
 ```{r candidates, echo=FALSE, out.width="100%"}
 library(dplyr)
 library(knitr)
-library(kableExtra)
 library(stringr)
 
 candi <- readxl::read_excel(
@@ -19,21 +18,9 @@ candi %>%
     Source = str_wrap(Source, 20),
     Calculation = str_wrap(Calculation, 25)
   ) %>%
-  kbl(
-    caption = "Summary of candidate trait-based indicators used to assess the intrinsic sensitivity. The table outlines each variable, its data source, measurement type, spatial coverage, and calculation method, along with the expected direction of association with risk and whether the relationship has been empirically supported."
-  ) %>%
-  kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed"),
-    full_width = TRUE,
-    font_size = 12
-  ) %>%
-  collapse_rows(columns = 1, valign = "middle") %>% ## merge the Lv 2 indicator col
-    kableExtra::scroll_box(
-    width = "100%",
-    height = "500px",
-    fixed_thead = TRUE
-  )
-
+  dplyr::mutate(across(1, ~ ifelse(duplicated(.), "", as.character(.)))) %>% 
+  style_gt(style = "compact",
+           caption = "Summary of candidate trait-based indicators used to assess the intrinsic sensitivity. The table outlines each variable, its data source, measurement type, spatial coverage, and calculation method, along with the expected direction of association with risk and whether the relationship has been empirically supported.")
 
 ```
 
@@ -55,16 +42,10 @@ score %>%
     Trait = str_wrap(Trait, 20),
     Value = str_wrap(Value, 25)
   ) %>%
-  kbl(
-    caption = "Summary of traits, definitions, and scoring criteria for the sensitivity sub-index. Numeric traits are transformed or scaled as indicated; categorical and binary traits are assigned scores according to ecological criteria.",
-    escape = TRUE
-  ) %>%
-  kable_styling(
-    position = "left",
-    bootstrap_options = c("striped", "hover", "condensed"),
-    full_width = FALSE,
-    font_size = 12
-  ) %>%
-  collapse_rows(columns = 1, valign = "top")
+   dplyr::mutate(
+    across(1, ~ ifelse(duplicated(.), "", as.character(.)))
+  ) %>% 
+  style_gt(style = "compact",
+           caption = "Summary of traits, definitions, and scoring criteria for the sensitivity sub-index. Numeric traits are transformed or scaled as indicated; categorical and binary traits are assigned scores according to ecological criteria.")
 
 ```

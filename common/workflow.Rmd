@@ -6,23 +6,17 @@ The data import, cleaning, analysis and report writing were done in a scripted w
 
 <br>
 
-```{r packages}
+(ref:rpackages) R [@R-base] packages used in the production of this report.
 
-  kable(tibble(package = packages) %>%
-          dplyr::mutate(citation = paste0("@R-"
-                                          , package
-                                          )
-                        ) %>%
-          dplyr::left_join(tibble::as_tibble(devtools::session_info(include_base = TRUE)$packages)) %>%
-          dplyr::select(package
-                        , citation
-                        , loadedversion
-                        , date
-                        , source
-                        )
-        , caption = "R [@R-base] packages used in the production of this report" 
-        )
-
+```{r rpackages, results='asis'}
+devtools::session_info(include_base = TRUE)$packages %>%
+  tibble::as_tibble() %>%
+  dplyr::right_join(tibble(package = packages), by = "package") %>%
+  dplyr::select(package, loadedversion, date, source) %>%
+  style_gt(
+    caption = "(ref:rpackages)",
+    style   = "scrollable"
+  )
 ```
 
 <br>

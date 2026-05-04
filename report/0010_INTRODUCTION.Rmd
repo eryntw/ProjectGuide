@@ -1,0 +1,35 @@
+# Introduction
+
+## Renewable energy transition
+
+South Australia is a global leader in the renewable energy transition, having increased the share of net renewable electricity generation from approximately 1% to 74% over just 16 years [@DEW2024]. The state has set ambitious targets, including achieving 100% net renewable electricity generation by 2027 and net zero emissions by 2050, supported by a legislated interim goal of reducing net greenhouse gas emissions by at least 60% by 2030.
+
+This transition is underpinned by abundant wind and solar resources. As of 2021–22, 24 operational wind farms supplied more than 44% of the state’s electricity, while six large-scale solar farms, together with world-leading uptake of rooftop solar (installed on approximately 40% of homes), contributed over 24% [@DEW2024; @DCCEEW2025].
+
+To facilitate further expansion, the state has identified key regions as pilot areas for renewable energy development in the semi-arid zone of South Australia, including the Upper Spencer Gulf (in the Gawler Ranges) and the Braemar region (Fig. \@ref(fig:pilotarea)).
+
+---
+
+## Bioregional planning
+
+Bioregional planning is a critical strategic initiative designed to facilitate better, faster decision-making by establishing clear conservation priorities and identifying areas where these development can proceed with minimal environmental harm [@West2025]. It is essential for ensuring that the rapid expansion of renewable energy required for net-zero targets does not result in an unacceptable cost to nature, specifically by identifying high-risk areas early to address cumulative impacts that individual project assessments might miss. The framework prioritises siting wind and solar farms on previously modified or degraded landscapes, including agricultural lands, brownfields, and disused industrial sites, while avoiding fragile arid ecosystems and terrain features that concentrate bird or bat movements, such as ridges and important migratory routes. Ultimately, this proactive approach provides greater certainty for stakeholders and developers by streamlining approvals in low-risk areas and fostering outcomes where sustainable energy production and biodiversity restoration can coexist.
+
+---
+
+### Gawler Ranges {-}
+
+The district is an ancient arid landscape characterised by calcrete plains, gypsum dune fields, and weathered rocky ranges (including rounded hills or bornhardts) that drain into extensive terminal salt lakes such as Lake Gairdner, Lake Acraman, and Lake Everard. Land use is dominated by large pastoral stations (primarily sheep and cattle), with additional activities including mining (notably iron ore), energy production, tourism, conservation, military use, and recreation. The only township, Iron Knob, has a small and declining population.
+
+[Gawler Range District Plan](https://cdn.environment.sa.gov.au/landscape/images/saal/2024_DAP_GR.pdf)
+
+### Braemar Province {-}
+
+The Braemar Province is a major magnetite iron ore region in South Australia, located northeast of Adelaide near the NSW border, containing over 7-8 billion tonnes of defined ore. It is recognized for its potential to produce high-grade iron concentrate for green steel, though development is constrained by limited water and power infrastructure.
+
+[North-east Pastoral District Plan](https://cdn.environment.sa.gov.au/landscape/images/saal/2024-26_DistrictPlan_NEP.pdf)
+
+```{r pilotarea, echo=FALSE, fig.cap = "Location of the two pilot areas used in the species risk assessment framework: Upper Spencer Gulf/Gawler Ranges (400–500 km northwest of Adelaide) and Braemar Province (300–400 km northeast of Adelaide). Both are situated in the semi-arid zone of South Australia. Map produced by the GIS team, DEW (2025)."}
+
+knitr::include_graphics("images/SA_PilotBioregionalAreas_Map_July2025_Rev.jpg")
+
+```

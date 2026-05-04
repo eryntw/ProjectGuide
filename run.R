@@ -46,7 +46,7 @@ envTargets::write_tars(tars)
 
 # run everything ----------
 # in _targets.yaml
-unlink(fs::path(tars$report, "compiled_html"), recursive = TRUE)
+fs::dir_delete("/projects/dev/out/RiskMap/_targets/report/compiled_html")
 purrr::walk2(purrr::map(tars_local, "script")
              , purrr::map(tars_local, "store")
              , \(x, y) targets::tar_make(script = x, store = y)
