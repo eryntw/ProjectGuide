@@ -17,7 +17,7 @@ store_base <- envFunc::get_env_dir() |>
            , "out"
   )
 
-tars_local <- envTargets::make_tars(settings = envFunc::extract_scale("RiskMap")
+tars_local <- envTargets::make_tars(settings = envFunc::extract_scale("RiskGuide")
                                     , store_base = store_base
                                     , save_yaml = FALSE
                                     , list_names = "store"
@@ -27,6 +27,15 @@ tars_bird <- envTargets::make_tars(
   # same structure as local path
   settings = envFunc::extract_scale(), 
   project_base = fs::path("..", "envBird"),
+  store_base = store_base,
+  local = FALSE,
+  list_names = "store"
+)
+
+tars_RiskMap <- envTargets::make_tars(
+  # same structure as local path
+  settings = envFunc::extract_scale(), 
+  project_base = fs::path("..", "RiskMap"),
   store_base = store_base,
   local = FALSE,
   list_names = "store"

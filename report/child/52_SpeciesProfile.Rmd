@@ -7,7 +7,9 @@ htmltools::div(
   # LEFT: info card
   htmltools::div(
     style = "flex: 1; border: 1px solid #ddd; padding: 12px; border-radius: 8px; margin-top: 0;",
-    htmltools::p(style = "margin-top:0; font-size:16px;", htmltools::em(htmltools::strong(sp))),
+    htmltools::p(style = "margin-top:0; font-size:14px;", htmltools::em(htmltools::strong(sp))),
+    htmltools::p(style = "margin:6px 0;", htmltools::strong("Vulnerability: "),
+                 df$Vulnerability[df$uCode == nm]),
     htmltools::p(style = "margin:6px 0;", htmltools::strong("IUCN status: "),
                  unique(iucn_threat$code[iucn_threat$scientific_name == sp])),
     htmltools::p(style = "margin:6px 0;", htmltools::strong("Trend: "),
@@ -49,8 +51,8 @@ htmltools::div(
 
 plot_species_raster(
   sp,
-  usg_birdstack,
-  bp_birdstack,
+  usg_spstack,
+  bp_spstack,
   name_A = "Upper Spencer Gulf - Gawler Range",
   name_B = "Braemar Province"
 )

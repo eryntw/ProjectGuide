@@ -1,0 +1,80 @@
+# Methodology - Practice
+
+## Trait/Indicator Selection
+
+Trait and indicator selection is based on an extensive literature review and published meta-analyses. For example, if long-distance migration (e.g. crossing oceans) is consistently identified in multiple meta-analyses as a predictor of higher risk, lower likelihood of colonisation, or increased sensitivity, it is included as a candidate trait.
+
+## Dealing With Each Trait/Indicator
+
+Trait and indicator data are sourced from a combination of existing databases and spatially derived information. Manual coding is only used when these approaches are not feasible.
+
+Traits and indicators are also selected within taxonomic classes, as trait databases are typically structured by taxonomic group.
+
+Missing trait data were extracted into a manual worksheet, where missing values were coded. The worksheet was then re-imported into the workflow to replace missing data (hot-deck single imputation). If information is genuinely unknown for a species, the value is imputed using the closest related species or the most common trait value within the genus (cold-deck single imputation).
+
+## Dealing With Multiple Trait/Indicators
+
+Because traits and indicators have different properties, each is treated separately (@ref(fig:fig2)) before being normalised using the simple min–max method. This step is referred to as **normalisation**.
+
+The simplest method is generally applied across the system unless a specific purpose requires an alternative approach.
+
+## Trait/Indicator Classification
+
+Given the large number of traits and indicators, and the fact that they differ across taxonomic groups, it is sensible to organise them within a consistent classification scheme that can be applied across all groups.
+
+First, we identify the sources of risk. Based on the literature and the objectives of bioregional planning, risk is derived from three mutually exclusive pathways:
+
+1. Direct impacts from proposed developments (e.g. wind and solar farms) that are not yet implemented but need to be estimated.
+
+2. The intrinsic sensitivity of the species, independent of human intervention.
+
+3. Accumulated pressure experienced by the species, accounting for long-term human–wildlife interactions, where even relatively insensitive species may become threatened due to sustained impacts. An extreme example is the Passenger Pigeon (*Ectopistes migratorius*).
+
+These three sources of risk form the top level of grouping: **Exposure**, **Sensitivity**, and **Pressure**. These are referred to as *sub-indices* of the final composite indicator, termed **Vulnerability**.
+
+These sub-indices were constructed following established methodologies from published studies:
+
+**Exposure:**
+
+* A trait-based framework for assessing the vulnerability of marine species to human impacts. [@Butt2022]
+
+```{r buttfig, echo=FALSE, out.width="50%", fig.align = 'center'}
+knitr::include_graphics("images/butt2022_fig1_adapted.png")
+```
+
+**Sensitivity:**
+
+* Compilation of traits for Australian bird species killed by cats. [@Woinarski2017]
+* Trait-based indices to assess benthic vulnerability to trawling and model loss of ecosystem functions. [@Hinz2021]
+* Additional studies using similar approaches.
+
+**Pressure:**
+
+* A national-scale dataset of threats impacting Australia’s imperiled flora and fauna. [@Ward2021]
+
+## Balancing
+
+As traits and indicators are often measured independent of purposes, an additional level of classification is required to group them into broader “themes”. For example, extent of occurrence and the proportions of occupied climate zones can together represent the climatic specialisation of a species. Similarly, long-distance migration and long generation length can be grouped together to reflect biological constraints.
+
+For the Exposure sub-index, relevant stressors must also be identified so that their impacts on species can be estimated. For example, vegetation clearance associated with solar farm development may cause substantial habitat loss for species that depend on trees or dense shrubs for foraging and nesting, while having relatively lower impacts on ground-dwelling or burrowing species.
+
+Therefore, stressors provide a logical classification framework for traits and indicators within the Exposure sub-index, while Sensitivity traits and indicators can be grouped into broader thematic categories.
+
+The framework was then constructed as a hierarchical system: Level 1 consists of individual traits and indicators collected from various sources; Level 2 contains thematic groups; Level 3 comprises the sub-indices (**Exposure**, **Sensitivity**, and **Pressure**); and Level 4 represents the final composite indicator, *Vulnerability*, which summarises species risk.
+
+## Streamlining the Process
+
+Because many methods exist for normalisation and aggregation, and weights can be assigned to traits, indicators, or composite indicators at multiple levels, managing different settings and experimental outputs can become complex. To organise results, support comparisons, and facilitate visualisation, the R package *COINr* was used to streamline the workflow.
+
+*COINr* was originally developed for social science applications and the construction of socio-economic composite indicators, which often involve even larger and more complex indicator systems. However, it is also well suited for ecological applications that require flexible weighting and aggregation of traits and indicators.
+
+The package follows the key principles outlined in [this handbook](https://www.oecd.org/en/publications/handbook-on-constructing-composite-indicators-methodology-and-user-guide_9789264043466-en.html), a widely used reference for composite indicator development. In this study, we applied the core steps of normalisation, internal analysis, and aggregation.
+
+## Comparing Between Taxonomic Classes
+
+Once the hierarchical framework is established, Level 1 traits and indicators can be swapped, added, or removed as needed. Although this is not an ideal solution, it provides flexibility to incorporate improved data in the future and to test equivalent traits derived from different sources.
+
+Traits can also be replaced within the same framework when they are not applicable to a particular taxonomic class. Indicators are generally more comparable across groups, whereas trait comparisons between classes are inherently comparing oranges and apples. Despite these limitations, cross-group comparisons are frequently required in policy and risk assessment contexts. Therefore, the aim is to minimise bias while clearly recognising these constraints.
+
+A key advantage of the hierarchical framework is that different Level 1 traits can still be aggregated into comparable higher-level components. For example, the “Constraints” theme for birds may be composed of traits A, B, and C, while for mammals it may consist of traits D, E, and F. Although the underlying traits differ, once normalised and aggregated to Level 2 they both represent the same conceptual component (“Constraints”), which ironically, catches more attention from the decision makers.
+

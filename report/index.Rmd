@@ -1,6 +1,6 @@
 ---
-title: "Developing composite indicators for species risk assessment"
-subtitle: "A pilot study of avian risk in Gawler Range and Braemar"
+title: "Species Risk Assessment"
+subtitle: "A short guide"
 author:
 - Department for Environment and Water
 output:
@@ -83,11 +83,5 @@ terra::terraOptions(progress=0)
 
 # Aim {-}
 
-The goal of the species risk assessment is to develop a composite indicator of species vulnerability to development pressures, and to translate this into a spatially explicit three-tier zoning map. This map classifies areas as: (1) low risk to biodiversity values and generally suitable for development, (2) moderate risk requiring careful planning and mitigation, and (3) high risk and not suitable for development.
-
-By integrating intrinsic species sensitivity with external pressures (including current, past, and projected impacts), the assessment identifies species most at risk and quantifies the level of pressure they face. This enables the evaluation of both existing and future development impacts.
-
-The resulting spatial outputs are designed to support timely, evidence-based decision-making, guide development planning, and facilitate stakeholder discussions. The framework is flexible and can be adapted to specific development contexts, allowing risks to be reassessed as mitigation measures are incorporated.
-
-
+To systematically assess species vulnerability to solar and wind farm development in the Upper Spencer Gulf–Gawler Ranges and Braemar Province pilot area.
 

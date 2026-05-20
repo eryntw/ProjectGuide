@@ -1,1 +1,182 @@
 ## Mapping Vulnerability
+
+### The final dataset
+
+The final vulnerability scores were derived from `names(coins["Agg-gmean"])`, as this approach was considered to better represent species risk within the pilot areas. These species-level vulnerability scores were integrated with species distribution model (SDM) predictions and combined into a multi-layer *SpatRaster* object for subsequent spatial analyses.
+
+```{r thefinalcoin}
+finalcoin <- coins[["Agg-gmean"]]
+
+tar_source(fs::path(here::here(), "..", "envBird", "R"))
+
+final_sp <- finalcoin$Data$Aggregated %>% 
+  dplyr::select(uCode, Vulnerability) %>% 
+  dplyr::mutate(uCode = gsub("_", " ", uCode)) %>% 
+  replace_taxa(taxa_col = "uCode", direction = "reverse")
+```
+
+### Vulnerability map - max method
+
+The maximum value across the raster stack was extracted for each pixel to represent the highest species-level risk at that location. The resulting map therefore reflects the maximum vulnerability score observed per pixel.
+
+```{r vulndf}
+## paths joining vulnerability
+usg_sp <- usg_sp %>% dplyr::inner_join(final_sp, by = c("taxa" = "uCode"))
+bp_sp <- bp_sp %>% dplyr::inner_join(final_sp, by = c("taxa" = "uCode"))
+```
+
+```{r calculateraster}
+
+dir = "/projects/dev/out/RiskMap/rasters"
+
+# Define inputs
+rast_inputs <- list(
+  usg = list(rast_stack = usg_rasts, df = usg_sp),
+  bp  = list(rast_stack = bp_rasts,  df = bp_sp)
+)
+
+agg_funs <- c("max", "sum")
+
+# Compute all combinations
+sp_rasts <- purrr::map(agg_funs, function(fun) {
+  purrr::map(rast_inputs, function(inp) {
+    calculate_vulnerability_surface(
+      rast_stack = inp$rast_stack,
+      df         = inp$df,
+      agg_fun    = fun
+    )
+  })
+}) %>%  
+  purrr::set_names(agg_funs)
+
+```
+
+**The vulnerability map of Upper Spencer Gulf - Gawler Ranges area**
+
+```{r usgmap, fig.width=10, out.width="100%"}
+terra::plot(sp_rasts$max$usg,
+            plg = list(title= "Vulnerability\nscore"))
+```
+
+**The vulnerability map of Braemar Province area**
+
+```{r bpmap, fig.width=10, out.width="100%"}
+terra::plot(sp_rasts$max$bp,
+            plg = list(title= "Vulnerability\nscore"))
+```
+
+#### Apply zoning thresholds {-}
+
+Theoretically, all species of conservation concern should fall within either the investigation (yellow) or no-go (red) zones. Therefore, under the current scenario where non-concerned species are not included, a threshold of 0 was applied to visualise the extent of the good-to-go (green) zone. The no-go (red) zone was defined using a threshold of 14, based on species with vulnerability scores near this boundary, including the Slender-billed Thornbill (14.1), Beautiful Firetail (13.5), and Chestnut-rumped Heathwren (15.0).
+
+```{r maxzonemap}
+purrr::walk2(
+  sp_rasts$max,
+  names(sp_rasts$max),
+  function(rast, nm) {
+    terra::plot(
+      rast,
+      breaks = c(0, 0.1, 14, Inf),
+      col    = c("forestgreen", "yellow", "red"),
+      main = paste0(toupper(nm), " — max: traffic light"),
+      plg  = list(title = "Vulnerability\nscore")
+    )
+  }
+)
+```
+
+### Vulnerability map - sum method
+
+The sum method aggregates the vulnerability scores of all species predicted to occur within a location and highlights the hot spot where multiple species of conservation concern.
+
+```{r sumzonemap}
+
+purrr::walk2(
+  sp_rasts$sum,
+  names(sp_rasts$sum),
+  function(rast, nm) {
+    terra::plot(
+      rast,
+      main = paste0(toupper(nm), " — sum"),
+      plg  = list(title = "Vulnerability\nscore")
+    )
+  }
+)
+```
+
+### Three-Tier Zoning
+
+Key considerations for applying a traffic-light (three-tier) zoning approach include:
+
+1. All species, including those not currently of concern, need to be assessed to derive meaningful thresholds; this is particularly challenging for data-deficient groups.
+
+2. Even with complete assessments, threshold selection remains inherently arbitrary, although it can be adjusted to reflect management priorities (e.g. a precautionary, risk-averse approach).
+
+3. Allowing 0 to serve as the first threshold, representing the absence of species of conservation concern, simplifies the zoning framework by requiring only a single additional threshold to define the no-go (red) zone.
+
+4. Using the maximum species-level risk to represent each pixel may oversimplify patterns, as it obscures variation among species and underlying biodiversity values.
+
+```{r scoredistribution, fig.cap="Distribution of final vulnerability scores and the application of threshold breaks for three-tier zoning."}
+
+## Natural breaks
+breaks <- classInt::classIntervals(
+  final_sp$Vulnerability, 
+  n = 2, 
+  style = "fisher"
+)
+
+# Extract just the two threshold values (drop min and max)
+threshold <- breaks$brks[c(-1, -length(breaks$brks))]
+
+# Count species per category
+cat_counts <- final_sp %>%
+  dplyr::mutate(
+    VulnerabilityClass = dplyr::case_when(
+      Vulnerability <= threshold[1] ~ "Moderate",
+      TRUE                          ~ "High"
+    )
+  ) %>%
+  dplyr::count(VulnerabilityClass) %>%
+  # Order by vulnerability level, not alphabetically
+  dplyr::mutate(
+    VulnerabilityClass = factor(VulnerabilityClass, 
+                                levels = c("Moderate", "High"))
+  ) %>%
+  dplyr::arrange(VulnerabilityClass) %>%
+  dplyr::mutate(
+    x = c(
+      mean(c(min(final_sp$Vulnerability), threshold)),
+      mean(c(threshold, max(final_sp$Vulnerability)))
+    )
+  )
+
+ggplot2::ggplot(final_sp, ggplot2::aes(x = Vulnerability)) +
+  ggplot2::geom_histogram(bins = 20, fill = "grey") +
+  ggplot2::geom_density(ggplot2::aes(y = ggplot2::after_stat(count)), 
+                        colour = "red") +
+  ggplot2::geom_vline(
+    xintercept = threshold,
+    colour     = "steelblue",
+    linetype   = "dashed",
+    linewidth  = 0.8
+  ) +
+  ggplot2::annotate(
+    "text",
+    x      = threshold,
+    y      = Inf,
+    label  = round(threshold, 1),
+    vjust  = 1.5,
+    hjust  = -0.2,
+    colour = "steelblue",
+    size   = 3.5
+  ) +
+  ggplot2::geom_text(
+    data    = cat_counts,
+    mapping = ggplot2::aes(x = x, y = Inf, label = paste0(VulnerabilityClass, "\nn = ", n)),
+    vjust   = 3,
+    size    = 3.5,
+    colour  = "grey30"
+  ) +
+  ggplot2::theme_minimal()
+```
+

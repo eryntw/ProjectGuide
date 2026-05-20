@@ -46,11 +46,11 @@ trend <- coin$Data$Raw %>%
 
 ## tif stack for SDM map USG ----
 
-usg_birdstack <- terra::rast(fs::path(here::here(), usg_bird$use_tif))
+usg_spstack <- terra::rast(fs::path(here::here(), usg_sp$use_tif))
 
 ## tif stack for SDM map BP ----
 
-bp_birdstack <- terra::rast(fs::path(here::here(), bp_bird$use_tif))
+bp_spstack <- terra::rast(fs::path(here::here(), bp_sp$use_tif))
 
 ```
 

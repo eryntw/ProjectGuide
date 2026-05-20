@@ -23,12 +23,14 @@ Unlike the max-based or arithmetic mean approaches, the geometric mean is applie
 
 ```{r adjustcoins}
 
-# Adjust weight for collisions and level 1 indicator aggregation
+# Adjust weight for collisions, pressure and level 1 indicator aggregation
 coin_11 <- coin_1
 w1 <- coin_11$Meta$Weights$Original
 w1$Weight[w1$iCode == "CollisionWind"] <- 0.5
 w1$Weight[w1$iCode == "CollisionSolar"] <- 0.5
+w1$Weight[w1$iCode == "Pressure"] <- 0.5
 coin_11$Meta$Weights$w1 <- w1
+
 coin_11 <- COINr::Aggregate(coin_11, dset = "Normalised", 
                             w = "w1",
                             regen = TRUE)
@@ -38,12 +40,6 @@ coin_12 <- COINr::Aggregate(coin_11, dset = "Normalised",
                             w = "w1", 
                             # narm_max stored in envBird/R/coin
                             f_ag = c("narm_max", "a_amean", "a_amean"), 
-                            regen = TRUE)
-
-## Adjust aggregation method: Lv2-lv3 max
-coin_13 <- COINr::Aggregate(coin_11, dset = "Normalised", 
-                            w = "w1", 
-                            f_ag = c("a_amean", "narm_max", "a_amean"),
                             regen = TRUE)
 
 ## Adjust aggregation method: all levels gmean
@@ -76,7 +72,6 @@ cols2 <- coin_1$Meta$Ind %>%
 coins <- list(
   "w1" = coin_11,
   "Max-Lv1"  = coin_12,
-  "Max-Lv2"  = coin_13,
   "Agg-gmean" = coin_14
 )
 
@@ -90,10 +85,6 @@ hdf_list <- list(
   
   "Max-Lv1" = extract_coin_maxcol(coin_12, cols2) %>% 
     dplyr::left_join(coin_12$Meta$Weights$w1, by = "iCode") %>% 
-    dplyr::mutate(Percentage = Percentage*Weight),
-  
-  "Max-Lv2" = extract_coin_maxcol(coin_13, cols) %>% 
-    dplyr::left_join(coin_13$Meta$Weights$w1, by = "iCode") %>% 
     dplyr::mutate(Percentage = Percentage*Weight),
   
   "Agg-gmean" = data.frame(

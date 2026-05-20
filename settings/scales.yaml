@@ -1,9 +1,10 @@
 # current project ------
-RiskMap:
+Guide:
   store:
     store: "_targets"
     
 # envBird ------ (as above)
+# envRiskMap ------ (as above)
 
 # envPIA ------
 envPIA:
