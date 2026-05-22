@@ -1,12 +1,9 @@
-birdraster:
-  script: ../RiskMap/010_birdraster.R
-  store: ../../../dev/out/RiskMap/_targets/birdraster
 report_prep:
-  script: ../RiskMap/040_report_prep.R
-  store: ../../../dev/out/RiskMap/_targets/report_prep
+  script: ../RiskGuide/010_report_prep.R
+  store: ../../../dev/out/RiskGuide/_targets/report_prep
 report:
-  script: ../RiskMap/050_report.R
-  store: ../../../dev/out/RiskMap/_targets/report
+  script: ../RiskGuide/020_report.R
+  store: ../../../dev/out/RiskGuide/_targets/report
 envBird:
   taxa:
     script: ../envBird/010_taxa.R

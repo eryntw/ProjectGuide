@@ -1,3 +1,101 @@
 # The Workflow
 
-##
+## Taxa
+
+Concerned species from the Upper Spencer Gulf (USG) and Braemar Province (BP) pilot areas were imported from `envPIA` and queried against the Atlas of Living Australia database to obtain taxonomic class information. Relevant working taxonomic classes were then selected for the project.
+
+The table below summarises the number of species within each taxonomic group. Plant species dominate the dataset, while birds are the largest animal group. Smaller groups, such as fish and frogs, contain only a few species each, yet still require the development of tailored trait and indicator sets.
+
+```{r taxa}
+
+tar_source(fs::path(here::here(), "../envBird/R"))
+tar_load(c("usg", "bp"), store = fs::path(here::here(),tars$envBird$taxa$store))
+
+# Galah config
+potions::brew(.pkg = "galah")
+galah::galah_config(
+  atlas = Sys.getenv("ALA_ATLAS"),
+  email = Sys.getenv("ALA_EMAIL"))
+               
+species_pooled <- 
+  usg %>% 
+  dplyr::bind_rows(bp) %>% 
+  dplyr::distinct() %>% 
+  organise_piaout()
+
+purrr::imap_dfr(species_pooled, 
+                \(df, name) 
+                tibble::tibble(
+                  Class   = name, 
+                  Species = nrow(df),
+                  EPBC    = sum(df$pia_epbc == TRUE, na.rm = TRUE)
+                )) %>% gt::gt()
+```
+
+## Database
+
+The second step was to compile a large database containing all available sources of traits and indicators. This is a time-consuming process because species names often vary across datasets due to taxonomic differences and synonyms.
+
+For example, bird data were sourced from more than 10 databases, including several international datasets. Using `make_taxonomy` directly would require querying over 10,000 species per dataset, which would be impractical, especially for plants. Instead, synonyms were compiled only for the concerned species and stored in a dedicated synonym database. This database can be reused across matching scenarios and updated either programmatically or manually. Using this approach, most species matched successfully, except for recently split species or subspecies that currently lack available data.
+
+Projects were organised by taxonomic class because each group requires different data sources and trait structures. For birds, for example, the number of trait and indicator columns rapidly expanded to `r ncol(joined_table)`. Managing all taxonomic groups within a single project would become difficult and increase the risk of errors during method revisions.
+
+In addition, normalisation should generally be conducted within taxonomic classes because raw trait values differ substantially among groups. If comparisons across taxonomic groups are deemed inappropriate, this structure also allows analyses to remain separated by class.
+
+Therefore, although some steps are repetitive, separating taxonomic classes into individual projects provides a clearer and more reliable workflow.
+
+## Sensitivity
+
+Sensitivity is composed of the following thematic subgroups:
+
+### Climate Specialisation {-}
+
+How many broad climate zones can the species occupy?
+Extent of occurrence (EOO) is included here because it is highly correlated with climatic breadth.
+
+1. Climate zones extracted from categorical climate raster layers using species occurrence records and summarised using the Simpson diversity index.
+2. Extent of occurrence (EOO).
+
+### Habitat Specialisation {-}
+
+How many broad habitat types can the species use?
+For animals, habitat focuses primarily on vegetation structure, as habitat categories may already incorporate climate information. For plants, this subgroup is replaced with soil type.
+
+1. Habitat types extracted from categorical vegetation structure raster layers using species occurrence records and summarised using the Simpson diversity index.
+2. Expert-curated habitat breadth trait data.
+3. IUCN habitat classification.
+
+### Diet Specialisation {-}
+
+How many diet categories can the species utilise?
+
+1. Expert-curated diet breadth trait data.
+2. Manual coding from literature and field guides.
+
+### Adaptability {-}
+
+Can the species utilise urban or agricultural environments as suitable habitat?
+
+1. Expert-curated trait data.
+2. IUCN habitat classification.
+
+### Constraints {-}
+
+Are there biological or ecological constraints that increase species sensitivity?
+
+This subgroup acts as a broad pool for traits that may reduce a species’ ability to adapt, colonise new areas, or recover from population decline. Traits within this group are often independent and vary substantially in their derivation and applicability across taxonomic classes.
+
+Details of candidate and selected traits are provided in the file `SensitivityTraits.xlsx`, located in `/mnt/envshare/data/traits/meta`.
+
+```{r}
+
+tar_load(coin, store = fs::path(here::here(),tars$envBird$taxa$store))
+
+```
+
+
+## Pressure
+
+## Exposure
+
+## Make Coins
